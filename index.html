@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0px";
+            } else {
+                document.getElementById("navbar").style.top = "-50px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+
+    </script>
+    <title>
+         codebusters
+    </title>
+
+
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <style>
+        
+        body {
+            margin: 0;
+            background-color: #f1f1f1;
+            font-family: torbalan, Helvetica, sans-serif;
+        }
+
+        #navbar {
+            background-color: #061a0c;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: block;
+            transition: top 0.3s;
+        }
+
+        #navbar a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navbar a:hover {
+            background-color: #ddd;
+            color: #061a0c;
+        }
+
+        .CenteredDiv {
+            margin: auto;
+            width: 80%;
+            background-color: gray;
+
+
+        }
+
+        #Information {
+            color: white;
+
+        }
+        #rules {
+            color: white;
+
+
+
+        }
+        #game {
+            color: white;
+			
+
+
+        }
+        .LogosInNav{
+            float:left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar">
+        <a href="#" >*logo website*</a>
+        <a href="#" >*logo team*</a>
+        <a href="#">*game*</a>
+        <a href="#">*rules*</a>
+        <a href="#">*info*</a>
+        <a href="#">*contact us*</a>
+    </div>
+
+    <div id="Information">
+        <div class="CenteredDiv">
+
+
+            <p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+
+        </div>
+    </div>
+	 <div id="rules">
+        <div class="CenteredDiv">
+
+
+            <p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+
+        </div>
+    </div>
+	 <div id="game">
+        <div class="CenteredDiv">
+
+
+            <p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+
+        </div>
+    </div>
+    <div id="rules">
+
+    </div>
+    <div id="game">
+
+    </div>
+
+
+
+</body>
+
+</html>
