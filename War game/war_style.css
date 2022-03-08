@@ -1,0 +1,19 @@
+html {
+    overflow: hidden;
+    height: 100%;
+    background: #191919;
+    width: 100%;
+}
+
+#canvas {
+    background: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#canvas.playing {
+    cursor: auto !important;
+    cursor: url('https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612589/Codepen/aim_red_j9cyuq.png') 17.5 17.5;
+}
