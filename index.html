@@ -17,19 +17,37 @@
 
     </script>
     <title>
-         codebusters
+        codebusters
     </title>
 
-
+    <!-- add icon link -->
+    <!-- !!!body --- choose font then apply torbalan to the letter only!-->
     <link rel="icon" href="icon.png" type="image/x-icon">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
         
         body {
+            cursor: url('icon.png'), auto;	
             margin: 0;
             background-color: #f1f1f1;
-            font-family: torbalan, Helvetica, sans-serif;
+            font-family: 'Goudy Bookletter 1911', serif;
         }
+        
 
+
+        @font-face{
+            font-family: 'torbalan';
+            src: url('torbalan.eot');
+            /* IE9 Compat Modes */
+            src: url('torbalan.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('torbalan.woff') format('woff'),
+                /* Modern Browsers */
+                url('torbalan.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+                url('torbalan.svg#svgFontName') format('svg');
+            /* Legacy iOS */
+        }
         #navbar {
             background-color: #061a0c;
             position: fixed;
@@ -48,7 +66,7 @@
             text-decoration: none;
             font-size: 17px;
         }
-
+        
         #navbar a:hover {
             background-color: #ddd;
             color: #061a0c;
@@ -57,29 +75,55 @@
         .CenteredDiv {
             margin: auto;
             width: 80%;
-            background-color: gray;
+        }
 
+        @media screen and(min-width: 1000px) {
+            .CenteredDiv {
+                margin: auto;
+                width: 60%;
+                background-image: url('https://i.pinimg.com/originals/c1/27/69/c127693b3af8120d642a7e3eeb3e2837.jpg');
 
+            }
         }
 
         #Information {
-            color: white;
-
+            color: black;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            background-size: cover;
         }
-        #rules {
-            color: white;
-
-
-
-        }
-        #game {
-            color: white;
-			
-
-
-        }
+        
         .LogosInNav{
             float:left;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky+.content {
+            padding-top: 60px;
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        #Information>.CenteredDiv {
+            background-image: url('papper.png');
+
+        }
+
+        #tittlebg {
+            background-image: url(blank.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            background-size: cover;
+
         }
     </style>
 </head>
@@ -87,11 +131,12 @@
 <body>
 
     <div id="navbar">
-        <a href="#" >*logo website*</a>
-        <a href="#" >*logo team*</a>
+        <a href="#" style="float:left">*logo website*</a>
+        <a href="#Information">*info*</a>
+        <!-- change navbar tabs-->
+        <a href="#" clas="LogosInNav">*logo team*</a>
         <a href="#">*game*</a>
-        <a href="#">*rules*</a>
-        <a href="#">*info*</a>
+        <a href="#rules">*rules*</a>
         <a href="#">*contact us*</a>
     </div>
 
@@ -128,7 +173,7 @@
                 aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                 dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                 deserunt mollit anim id est laborum.</p>
-
+                
         </div>
     </div>
     <div id="rules">
