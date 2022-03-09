@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
-    
+
+html{
+    cursor: url('../images/cursor.png'),auto;
+}
 body {
-    cursor: url(/*fix*/), auto;	
+
     margin: 0;
     background-color: #f1f1f1;
     font-family: 'Goudy Bookletter 1911', serif;
@@ -47,18 +50,19 @@ body {
 
 .CenteredDiv {
     margin: auto;
-    width: 80%;
+    width: 90%;
 }
 
 @media screen and(min-width: 1000px) {
     .CenteredDiv {
         margin: auto;
-        width: 80%;
+        width: 90%;
     }
 }
 
 #Information {
     color: black;
+    margin-top: 6%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
