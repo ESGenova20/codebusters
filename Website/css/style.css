@@ -1,15 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
 
 html{
-    cursor: url('../images/cursor.png'),auto;
+    cursor: url('../images/cursor.png'), auto;
 }
 body {
 
     margin: 0;
     background-color: #f1f1f1;
     font-family: 'Goudy Bookletter 1911', serif;
+
 }
 
+::selection{
+    background: rgb(26, 58, 30);
+    color: #ade7c1;
+  }
+
+a, button{
+    cursor: url('../images/cursor.png'), auto;
+}
 
 @font-face{
     font-family: 'torbalan';
@@ -24,7 +33,9 @@ body {
         url('torbalan.svg#svgFontName') format('svg');
     /* Legacy iOS */
 }
+
 #navbar {
+    cursor: url('../images/cursor.png'), auto;
     background-color: #061a0c;
     position: fixed;
     top: 0;
