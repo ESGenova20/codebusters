@@ -1,0 +1,62 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "markdown": {
+        "parser"   : "gfm",
+        "hardwrap" : false
+    },
+    "source": {
+        "include": [
+            "../phaser/src/",
+            "../phaser/plugins/fbinstant/src",
+            "../phaser/plugins/camera3d/src",
+            "../phaser/plugins/spine/src"
+        ],
+        "exclude": [
+            "../phaser/plugins/spine/src/runtimes",
+            "../phaser/src/phaser-arcade-physics.js",
+            "../phaser/src/phaser-core.js",
+            "../phaser/src/physics/matter-js/poly-decomp/",
+            "../phaser/src/physics/matter-js/lib",
+            "../phaser/src/polyfills",
+            "../phaser/src/phaser-ie9.js"
+        ],
+        "includePattern": ".+\\.js?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": [
+        "plugins/markdown",
+        "jsdoc-plugins/typedef",
+        "jsdoc-plugins/this"
+    ],
+    "templates": {
+        "version": "v3.51.0",
+        "systemName": "Phaser",
+        "logoFile": "img/phaser3-logo-nav.png",
+        "systemSummary": "HTML5 Game Framework",
+        "systemColor": "#0f0019",
+        "copyright": "Phaser Copyright © 2021 Photon Storm Ltd and the contributors to the Phaser projects.",
+        "linenums": true,
+        "inlineNav": true,
+        "includeDate": true,
+        "collapseSymbols": false,
+        "methodHeadingReturns": false,
+        "sort": "longname, version, since",
+        "theme": "cerulean",
+        "outputSourceFiles": false,
+        "outputSourcePath": true,
+        "dateFormat": "MMMM Do YYYY, h:mm:ss a",
+        "analytics": { "ua": "UA-44006568-1", "domain": "phaser.io" }
+    },
+    "opts": {
+        "debug": false,
+        "destination": "./out/",
+        "encoding": "utf8",
+        "recurse": true,
+        "private": false,
+        "lenient": true,
+        "sourceType": "script",
+        "template": "template"
+    }
+}

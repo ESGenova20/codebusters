@@ -1,0 +1,5025 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Phaser 3 API Documentation - Class: QuadraticBezier</title>
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+	<link type="text/css" rel="stylesheet" href="styles/search.loading.css" />
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html"><img class="branding-logo" src="img/phaser3-logo-nav.png"
+		alt="Phaser 3 logo" title="Phaser 3" /></a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Phaser.html">Phaser</a></li><li><a href="Phaser.Actions.html">Phaser.Actions</a></li><li><a href="Phaser.Animations.html">Phaser.Animations</a></li><li><a href="Phaser.Animations.Events.html">Phaser.Animations.Events</a></li><li><a href="Phaser.BlendModes.html">Phaser.BlendModes</a></li><li><a href="Phaser.Cache.html">Phaser.Cache</a></li><li><a href="Phaser.Cache.Events.html">Phaser.Cache.Events</a></li><li><a href="Phaser.Cameras.html">Phaser.Cameras</a></li><li><a href="Phaser.Cameras.Controls.html">Phaser.Cameras.Controls</a></li><li><a href="Phaser.Cameras.Scene2D.html">Phaser.Cameras.Scene2D</a></li><li><a href="Phaser.Cameras.Scene2D.Effects.html">Phaser.Cameras.Scene2D.Effects</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html">Phaser.Cameras.Scene2D.Events</a></li><li><a href="Phaser.Cameras.Sprite3D.html">Phaser.Cameras.Sprite3D</a></li><li><a href="Phaser.Core.html">Phaser.Core</a></li><li><a href="Phaser.Core.Events.html">Phaser.Core.Events</a></li><li><a href="Phaser.Create.html">Phaser.Create</a></li><li><a href="Phaser.Create.Palettes.html">Phaser.Create.Palettes</a></li><li><a href="Phaser.Curves.html">Phaser.Curves</a></li><li><a href="Phaser.Data.html">Phaser.Data</a></li><li><a href="Phaser.Data.Events.html">Phaser.Data.Events</a></li><li><a href="Phaser.Device.html">Phaser.Device</a></li><li><a href="Phaser.Display.html">Phaser.Display</a></li><li><a href="Phaser.Display.Align.html">Phaser.Display.Align</a></li><li><a href="Phaser.Display.Align.In.html">Phaser.Display.Align.In</a></li><li><a href="Phaser.Display.Align.To.html">Phaser.Display.Align.To</a></li><li><a href="Phaser.Display.Bounds.html">Phaser.Display.Bounds</a></li><li><a href="Phaser.Display.Canvas.html">Phaser.Display.Canvas</a></li><li><a href="Phaser.Display.Canvas.CanvasInterpolation.html">Phaser.Display.Canvas.CanvasInterpolation</a></li><li><a href="Phaser.Display.Canvas.CanvasPool.html">Phaser.Display.Canvas.CanvasPool</a></li><li><a href="Phaser.Display.Canvas.Smoothing.html">Phaser.Display.Canvas.Smoothing</a></li><li><a href="Phaser.Display.Color.Interpolate.html">Phaser.Display.Color.Interpolate</a></li><li><a href="Phaser.Display.Masks.html">Phaser.Display.Masks</a></li><li><a href="Phaser.DOM.html">Phaser.DOM</a></li><li><a href="Phaser.Events.html">Phaser.Events</a></li><li><a href="Phaser.GameObjects.html">Phaser.GameObjects</a></li><li><a href="Phaser.GameObjects.Components.html">Phaser.GameObjects.Components</a></li><li><a href="Phaser.GameObjects.Components.Alpha.html">Phaser.GameObjects.Components.Alpha</a></li><li><a href="Phaser.GameObjects.Components.AlphaSingle.html">Phaser.GameObjects.Components.AlphaSingle</a></li><li><a href="Phaser.GameObjects.Components.BlendMode.html">Phaser.GameObjects.Components.BlendMode</a></li><li><a href="Phaser.GameObjects.Components.ComputedSize.html">Phaser.GameObjects.Components.ComputedSize</a></li><li><a href="Phaser.GameObjects.Components.Crop.html">Phaser.GameObjects.Components.Crop</a></li><li><a href="Phaser.GameObjects.Components.Depth.html">Phaser.GameObjects.Components.Depth</a></li><li><a href="Phaser.GameObjects.Components.Flip.html">Phaser.GameObjects.Components.Flip</a></li><li><a href="Phaser.GameObjects.Components.GetBounds.html">Phaser.GameObjects.Components.GetBounds</a></li><li><a href="Phaser.GameObjects.Components.Mask.html">Phaser.GameObjects.Components.Mask</a></li><li><a href="Phaser.GameObjects.Components.Origin.html">Phaser.GameObjects.Components.Origin</a></li><li><a href="Phaser.GameObjects.Components.PathFollower.html">Phaser.GameObjects.Components.PathFollower</a></li><li><a href="Phaser.GameObjects.Components.Pipeline.html">Phaser.GameObjects.Components.Pipeline</a></li><li><a href="Phaser.GameObjects.Components.ScrollFactor.html">Phaser.GameObjects.Components.ScrollFactor</a></li><li><a href="Phaser.GameObjects.Components.Size.html">Phaser.GameObjects.Components.Size</a></li><li><a href="Phaser.GameObjects.Components.Texture.html">Phaser.GameObjects.Components.Texture</a></li><li><a href="Phaser.GameObjects.Components.TextureCrop.html">Phaser.GameObjects.Components.TextureCrop</a></li><li><a href="Phaser.GameObjects.Components.Tint.html">Phaser.GameObjects.Components.Tint</a></li><li><a href="Phaser.GameObjects.Components.Transform.html">Phaser.GameObjects.Components.Transform</a></li><li><a href="Phaser.GameObjects.Components.Visible.html">Phaser.GameObjects.Components.Visible</a></li><li><a href="Phaser.GameObjects.Events.html">Phaser.GameObjects.Events</a></li><li><a href="Phaser.GameObjects.Particles.html">Phaser.GameObjects.Particles</a></li><li><a href="Phaser.GameObjects.Particles.Zones.html">Phaser.GameObjects.Particles.Zones</a></li><li><a href="Phaser.GameObjects.RetroFont.html">Phaser.GameObjects.RetroFont</a></li><li><a href="Phaser.Geom.html">Phaser.Geom</a></li><li><a href="Phaser.Geom.Intersects.html">Phaser.Geom.Intersects</a></li><li><a href="Phaser.Geom.Mesh.html">Phaser.Geom.Mesh</a></li><li><a href="Phaser.Input.html">Phaser.Input</a></li><li><a href="Phaser.Input.Events.html">Phaser.Input.Events</a></li><li><a href="Phaser.Input.Gamepad.html">Phaser.Input.Gamepad</a></li><li><a href="Phaser.Input.Gamepad.Configs.html">Phaser.Input.Gamepad.Configs</a></li><li><a href="Phaser.Input.Gamepad.Events.html">Phaser.Input.Gamepad.Events</a></li><li><a href="Phaser.Input.InputPluginCache.html">Phaser.Input.InputPluginCache</a></li><li><a href="Phaser.Input.Keyboard.html">Phaser.Input.Keyboard</a></li><li><a href="Phaser.Input.Keyboard.Events.html">Phaser.Input.Keyboard.Events</a></li><li><a href="Phaser.Input.Keyboard.KeyCodes.html">Phaser.Input.Keyboard.KeyCodes</a></li><li><a href="Phaser.Input.Mouse.html">Phaser.Input.Mouse</a></li><li><a href="Phaser.Input.Touch.html">Phaser.Input.Touch</a></li><li><a href="Phaser.Loader.html">Phaser.Loader</a></li><li><a href="Phaser.Loader.Events.html">Phaser.Loader.Events</a></li><li><a href="Phaser.Loader.FileTypes.html">Phaser.Loader.FileTypes</a></li><li><a href="Phaser.Loader.FileTypesManager.html">Phaser.Loader.FileTypesManager</a></li><li><a href="Phaser.Math.html">Phaser.Math</a></li><li><a href="Phaser.Math.Angle.html">Phaser.Math.Angle</a></li><li><a href="Phaser.Math.Distance.html">Phaser.Math.Distance</a></li><li><a href="Phaser.Math.Easing.html">Phaser.Math.Easing</a></li><li><a href="Phaser.Math.Easing.Back.html">Phaser.Math.Easing.Back</a></li><li><a href="Phaser.Math.Easing.Bounce.html">Phaser.Math.Easing.Bounce</a></li><li><a href="Phaser.Math.Easing.Circular.html">Phaser.Math.Easing.Circular</a></li><li><a href="Phaser.Math.Easing.Cubic.html">Phaser.Math.Easing.Cubic</a></li><li><a href="Phaser.Math.Easing.Elastic.html">Phaser.Math.Easing.Elastic</a></li><li><a href="Phaser.Math.Easing.Expo.html">Phaser.Math.Easing.Expo</a></li><li><a href="Phaser.Math.Easing.Quadratic.html">Phaser.Math.Easing.Quadratic</a></li><li><a href="Phaser.Math.Easing.Quartic.html">Phaser.Math.Easing.Quartic</a></li><li><a href="Phaser.Math.Easing.Quintic.html">Phaser.Math.Easing.Quintic</a></li><li><a href="Phaser.Math.Easing.Sine.html">Phaser.Math.Easing.Sine</a></li><li><a href="Phaser.Math.Easing.html#.Stepped">Phaser.Math.Easing.Stepped</a></li><li><a href="Phaser.Math.Fuzzy.html">Phaser.Math.Fuzzy</a></li><li><a href="Phaser.Math.Interpolation.html">Phaser.Math.Interpolation</a></li><li><a href="Phaser.Math.Pow2.html">Phaser.Math.Pow2</a></li><li><a href="Phaser.Math.Snap.html">Phaser.Math.Snap</a></li><li><a href="Phaser.Physics.html">Phaser.Physics</a></li><li><a href="Phaser.Physics.Arcade.html">Phaser.Physics.Arcade</a></li><li><a href="Phaser.Physics.Arcade.Components.html">Phaser.Physics.Arcade.Components</a></li><li><a href="Phaser.Physics.Arcade.Components.Acceleration.html">Phaser.Physics.Arcade.Components.Acceleration</a></li><li><a href="Phaser.Physics.Arcade.Components.Angular.html">Phaser.Physics.Arcade.Components.Angular</a></li><li><a href="Phaser.Physics.Arcade.Components.Bounce.html">Phaser.Physics.Arcade.Components.Bounce</a></li><li><a href="Phaser.Physics.Arcade.Components.Debug.html">Phaser.Physics.Arcade.Components.Debug</a></li><li><a href="Phaser.Physics.Arcade.Components.Drag.html">Phaser.Physics.Arcade.Components.Drag</a></li><li><a href="Phaser.Physics.Arcade.Components.Enable.html">Phaser.Physics.Arcade.Components.Enable</a></li><li><a href="Phaser.Physics.Arcade.Components.Friction.html">Phaser.Physics.Arcade.Components.Friction</a></li><li><a href="Phaser.Physics.Arcade.Components.Gravity.html">Phaser.Physics.Arcade.Components.Gravity</a></li><li><a href="Phaser.Physics.Arcade.Components.Immovable.html">Phaser.Physics.Arcade.Components.Immovable</a></li><li><a href="Phaser.Physics.Arcade.Components.Mass.html">Phaser.Physics.Arcade.Components.Mass</a></li><li><a href="Phaser.Physics.Arcade.Components.Pushable.html">Phaser.Physics.Arcade.Components.Pushable</a></li><li><a href="Phaser.Physics.Arcade.Components.Size.html">Phaser.Physics.Arcade.Components.Size</a></li><li><a href="Phaser.Physics.Arcade.Components.Velocity.html">Phaser.Physics.Arcade.Components.Velocity</a></li><li><a href="Phaser.Physics.Arcade.Events.html">Phaser.Physics.Arcade.Events</a></li><li><a href="Phaser.Physics.Arcade.Tilemap.html">Phaser.Physics.Arcade.Tilemap</a></li><li><a href="Phaser.Physics.Matter.html">Phaser.Physics.Matter</a></li><li><a href="Phaser.Physics.Matter.Components.html">Phaser.Physics.Matter.Components</a></li><li><a href="Phaser.Physics.Matter.Components.Bounce.html">Phaser.Physics.Matter.Components.Bounce</a></li><li><a href="Phaser.Physics.Matter.Components.Collision.html">Phaser.Physics.Matter.Components.Collision</a></li><li><a href="Phaser.Physics.Matter.Components.Force.html">Phaser.Physics.Matter.Components.Force</a></li><li><a href="Phaser.Physics.Matter.Components.Friction.html">Phaser.Physics.Matter.Components.Friction</a></li><li><a href="Phaser.Physics.Matter.Components.Gravity.html">Phaser.Physics.Matter.Components.Gravity</a></li><li><a href="Phaser.Physics.Matter.Components.Mass.html">Phaser.Physics.Matter.Components.Mass</a></li><li><a href="Phaser.Physics.Matter.Components.Sensor.html">Phaser.Physics.Matter.Components.Sensor</a></li><li><a href="Phaser.Physics.Matter.Components.SetBody.html">Phaser.Physics.Matter.Components.SetBody</a></li><li><a href="Phaser.Physics.Matter.Components.Sleep.html">Phaser.Physics.Matter.Components.Sleep</a></li><li><a href="Phaser.Physics.Matter.Components.Static.html">Phaser.Physics.Matter.Components.Static</a></li><li><a href="Phaser.Physics.Matter.Components.Transform.html">Phaser.Physics.Matter.Components.Transform</a></li><li><a href="Phaser.Physics.Matter.Components.Velocity.html">Phaser.Physics.Matter.Components.Velocity</a></li><li><a href="Phaser.Physics.Matter.Events.html">Phaser.Physics.Matter.Events</a></li><li><a href="Phaser.Physics.Matter.Matter.html">Phaser.Physics.Matter.Matter</a></li><li><a href="Phaser.Physics.Matter.PhysicsEditorParser.html">Phaser.Physics.Matter.PhysicsEditorParser</a></li><li><a href="Phaser.Physics.Matter.PhysicsJSONParser.html">Phaser.Physics.Matter.PhysicsJSONParser</a></li><li><a href="Phaser.Plugins.html">Phaser.Plugins</a></li><li><a href="Phaser.Plugins.DefaultPlugins.html">Phaser.Plugins.DefaultPlugins</a></li><li><a href="Phaser.Plugins.PluginCache.html">Phaser.Plugins.PluginCache</a></li><li><a href="Phaser.Renderer.html">Phaser.Renderer</a></li><li><a href="Phaser.Renderer.Canvas.html">Phaser.Renderer.Canvas</a></li><li><a href="Phaser.Renderer.Events.html">Phaser.Renderer.Events</a></li><li><a href="Phaser.Renderer.Snapshot.html">Phaser.Renderer.Snapshot</a></li><li><a href="Phaser.Renderer.WebGL.html">Phaser.Renderer.WebGL</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.html">Phaser.Renderer.WebGL.Pipelines</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.Events.html">Phaser.Renderer.WebGL.Pipelines.Events</a></li><li><a href="Phaser.Renderer.WebGL.Utils.html">Phaser.Renderer.WebGL.Utils</a></li><li><a href="Phaser.Scale.html">Phaser.Scale</a></li><li><a href="Phaser.Scale.Center.html">Phaser.Scale.Center</a></li><li><a href="Phaser.Scale.Events.html">Phaser.Scale.Events</a></li><li><a href="Phaser.Scale.Orientation.html">Phaser.Scale.Orientation</a></li><li><a href="Phaser.Scale.ScaleModes.html">Phaser.Scale.ScaleModes</a></li><li><a href="Phaser.Scale.Zoom.html">Phaser.Scale.Zoom</a></li><li><a href="Phaser.ScaleModes.html">Phaser.ScaleModes</a></li><li><a href="Phaser.Scenes.html">Phaser.Scenes</a></li><li><a href="Phaser.Scenes.Events.html">Phaser.Scenes.Events</a></li><li><a href="Phaser.Scenes.Settings.html">Phaser.Scenes.Settings</a></li><li><a href="Phaser.Sound.html">Phaser.Sound</a></li><li><a href="Phaser.Sound.Events.html">Phaser.Sound.Events</a></li><li><a href="Phaser.Structs.html">Phaser.Structs</a></li><li><a href="Phaser.Structs.Events.html">Phaser.Structs.Events</a></li><li><a href="Phaser.Textures.html">Phaser.Textures</a></li><li><a href="Phaser.Textures.Events.html">Phaser.Textures.Events</a></li><li><a href="Phaser.Textures.FilterMode.html">Phaser.Textures.FilterMode</a></li><li><a href="Phaser.Textures.Parsers.html">Phaser.Textures.Parsers</a></li><li><a href="Phaser.Tilemaps.html">Phaser.Tilemaps</a></li><li><a href="Phaser.Tilemaps.Components.html">Phaser.Tilemaps.Components</a></li><li><a href="Phaser.Tilemaps.Formats.html">Phaser.Tilemaps.Formats</a></li><li><a href="Phaser.Tilemaps.Orientation.html">Phaser.Tilemaps.Orientation</a></li><li><a href="Phaser.Tilemaps.Parsers.html">Phaser.Tilemaps.Parsers</a></li><li><a href="Phaser.Tilemaps.Parsers.Impact.html">Phaser.Tilemaps.Parsers.Impact</a></li><li><a href="Phaser.Tilemaps.Parsers.Tiled.html">Phaser.Tilemaps.Parsers.Tiled</a></li><li><a href="Phaser.Time.html">Phaser.Time</a></li><li><a href="Phaser.Tweens.html">Phaser.Tweens</a></li><li><a href="Phaser.Tweens.Builders.html">Phaser.Tweens.Builders</a></li><li><a href="Phaser.Tweens.Events.html">Phaser.Tweens.Events</a></li><li><a href="Phaser.Types.html">Phaser.Types</a></li><li><a href="Phaser.Types.Actions.html">Phaser.Types.Actions</a></li><li><a href="Phaser.Types.Animations.html">Phaser.Types.Animations</a></li><li><a href="Phaser.Types.Cameras.html">Phaser.Types.Cameras</a></li><li><a href="Phaser.Types.Cameras.Controls.html">Phaser.Types.Cameras.Controls</a></li><li><a href="Phaser.Types.Cameras.Scene2D.html">Phaser.Types.Cameras.Scene2D</a></li><li><a href="Phaser.Types.Core.html">Phaser.Types.Core</a></li><li><a href="Phaser.Types.Create.html">Phaser.Types.Create</a></li><li><a href="Phaser.Types.Curves.html">Phaser.Types.Curves</a></li><li><a href="Phaser.Types.Display.html">Phaser.Types.Display</a></li><li><a href="Phaser.Types.GameObjects.html">Phaser.Types.GameObjects</a></li><li><a href="Phaser.Types.GameObjects.BitmapText.html">Phaser.Types.GameObjects.BitmapText</a></li><li><a href="Phaser.Types.GameObjects.Graphics.html">Phaser.Types.GameObjects.Graphics</a></li><li><a href="Phaser.Types.GameObjects.Group.html">Phaser.Types.GameObjects.Group</a></li><li><a href="Phaser.Types.GameObjects.Particles.html">Phaser.Types.GameObjects.Particles</a></li><li><a href="Phaser.Types.GameObjects.PathFollower.html">Phaser.Types.GameObjects.PathFollower</a></li><li><a href="Phaser.Types.GameObjects.RenderTexture.html">Phaser.Types.GameObjects.RenderTexture</a></li><li><a href="Phaser.Types.GameObjects.Sprite.html">Phaser.Types.GameObjects.Sprite</a></li><li><a href="Phaser.Types.GameObjects.Text.html">Phaser.Types.GameObjects.Text</a></li><li><a href="Phaser.Types.GameObjects.TileSprite.html">Phaser.Types.GameObjects.TileSprite</a></li><li><a href="Phaser.Types.Geom.html">Phaser.Types.Geom</a></li><li><a href="Phaser.Types.Geom.Mesh.html">Phaser.Types.Geom.Mesh</a></li><li><a href="Phaser.Types.Input.html">Phaser.Types.Input</a></li><li><a href="Phaser.Types.Input.Gamepad.html">Phaser.Types.Input.Gamepad</a></li><li><a href="Phaser.Types.Input.Keyboard.html">Phaser.Types.Input.Keyboard</a></li><li><a href="Phaser.Types.Loader.html">Phaser.Types.Loader</a></li><li><a href="Phaser.Types.Loader.FileTypes.html">Phaser.Types.Loader.FileTypes</a></li><li><a href="Phaser.Types.Math.html">Phaser.Types.Math</a></li><li><a href="Phaser.Types.Physics.html">Phaser.Types.Physics</a></li><li><a href="Phaser.Types.Physics.Arcade.html">Phaser.Types.Physics.Arcade</a></li><li><a href="Phaser.Types.Physics.Matter.html">Phaser.Types.Physics.Matter</a></li><li><a href="Phaser.Types.Plugins.html">Phaser.Types.Plugins</a></li><li><a href="Phaser.Types.Renderer.html">Phaser.Types.Renderer</a></li><li><a href="Phaser.Types.Renderer.Snapshot.html">Phaser.Types.Renderer.Snapshot</a></li><li><a href="Phaser.Types.Renderer.WebGL.html">Phaser.Types.Renderer.WebGL</a></li><li><a href="Phaser.Types.Scenes.html">Phaser.Types.Scenes</a></li><li><a href="Phaser.Types.Sound.html">Phaser.Types.Sound</a></li><li><a href="Phaser.Types.Textures.html">Phaser.Types.Textures</a></li><li><a href="Phaser.Types.Tilemaps.html">Phaser.Types.Tilemaps</a></li><li><a href="Phaser.Types.Time.html">Phaser.Types.Time</a></li><li><a href="Phaser.Types.Tweens.html">Phaser.Types.Tweens</a></li><li><a href="Phaser.Utils.html">Phaser.Utils</a></li><li><a href="Phaser.Utils.Array.html">Phaser.Utils.Array</a></li><li><a href="Phaser.Utils.Array.Matrix.html">Phaser.Utils.Array.Matrix</a></li><li><a href="Phaser.Utils.Base64.html">Phaser.Utils.Base64</a></li><li><a href="Phaser.Utils.Objects.html">Phaser.Utils.Objects</a></li><li><a href="Phaser.Utils.String.html">Phaser.Utils.String</a></li><li><a href="SpinePluginEvents.html">SpinePluginEvents</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Camera3DPlugin.html">Camera3DPlugin</a></li><li><a href="global.html#Class">Class</a></li><li><a href="Phaser.Animations.Animation.html">Phaser.Animations.Animation</a></li><li><a href="Phaser.Animations.AnimationFrame.html">Phaser.Animations.AnimationFrame</a></li><li><a href="Phaser.Animations.AnimationManager.html">Phaser.Animations.AnimationManager</a></li><li><a href="Phaser.Animations.AnimationState.html">Phaser.Animations.AnimationState</a></li><li><a href="Phaser.Cache.BaseCache.html">Phaser.Cache.BaseCache</a></li><li><a href="Phaser.Cache.CacheManager.html">Phaser.Cache.CacheManager</a></li><li><a href="Phaser.Cameras.Controls.FixedKeyControl.html">Phaser.Cameras.Controls.FixedKeyControl</a></li><li><a href="Phaser.Cameras.Controls.SmoothedKeyControl.html">Phaser.Cameras.Controls.SmoothedKeyControl</a></li><li><a href="Phaser.Cameras.Scene2D.BaseCamera.html">Phaser.Cameras.Scene2D.BaseCamera</a></li><li><a href="Phaser.Cameras.Scene2D.Camera.html">Phaser.Cameras.Scene2D.Camera</a></li><li><a href="Phaser.Cameras.Scene2D.CameraManager.html">Phaser.Cameras.Scene2D.CameraManager</a></li><li><a href="Phaser.Cameras.Scene2D.Effects.Fade.html">Phaser.Cameras.Scene2D.Effects.Fade</a></li><li><a href="Phaser.Cameras.Scene2D.Effects.Flash.html">Phaser.Cameras.Scene2D.Effects.Flash</a></li><li><a href="Phaser.Cameras.Scene2D.Effects.Pan.html">Phaser.Cameras.Scene2D.Effects.Pan</a></li><li><a href="Phaser.Cameras.Scene2D.Effects.RotateTo.html">Phaser.Cameras.Scene2D.Effects.RotateTo</a></li><li><a href="Phaser.Cameras.Scene2D.Effects.Shake.html">Phaser.Cameras.Scene2D.Effects.Shake</a></li><li><a href="Phaser.Cameras.Scene2D.Effects.Zoom.html">Phaser.Cameras.Scene2D.Effects.Zoom</a></li><li><a href="Phaser.Cameras.Sprite3D.Camera.html">Phaser.Cameras.Sprite3D.Camera</a></li><li><a href="Phaser.Cameras.Sprite3D.CameraManager.html">Phaser.Cameras.Sprite3D.CameraManager</a></li><li><a href="Phaser.Cameras.Sprite3D.OrthographicCamera.html">Phaser.Cameras.Sprite3D.OrthographicCamera</a></li><li><a href="Phaser.Cameras.Sprite3D.PerspectiveCamera.html">Phaser.Cameras.Sprite3D.PerspectiveCamera</a></li><li><a href="Phaser.Core.Config.html">Phaser.Core.Config</a></li><li><a href="Phaser.Core.TimeStep.html">Phaser.Core.TimeStep</a></li><li><a href="Phaser.Curves.CubicBezier.html">Phaser.Curves.CubicBezier</a></li><li><a href="Phaser.Curves.Curve.html">Phaser.Curves.Curve</a></li><li><a href="Phaser.Curves.Ellipse.html">Phaser.Curves.Ellipse</a></li><li><a href="Phaser.Curves.Line.html">Phaser.Curves.Line</a></li><li><a href="Phaser.Curves.MoveTo.html">Phaser.Curves.MoveTo</a></li><li><a href="Phaser.Curves.Path.html">Phaser.Curves.Path</a></li><li><a href="Phaser.Curves.QuadraticBezier.html">Phaser.Curves.QuadraticBezier</a></li><li><a href="Phaser.Curves.Spline.html">Phaser.Curves.Spline</a></li><li><a href="Phaser.Data.DataManager.html">Phaser.Data.DataManager</a></li><li><a href="Phaser.Data.DataManagerPlugin.html">Phaser.Data.DataManagerPlugin</a></li><li><a href="Phaser.Display.BaseShader.html">Phaser.Display.BaseShader</a></li><li><a href="Phaser.Display.Color.html">Phaser.Display.Color</a></li><li><a href="Phaser.Display.ColorMatrix.html">Phaser.Display.ColorMatrix</a></li><li><a href="Phaser.Display.Masks.BitmapMask.html">Phaser.Display.Masks.BitmapMask</a></li><li><a href="Phaser.Display.Masks.GeometryMask.html">Phaser.Display.Masks.GeometryMask</a></li><li><a href="Phaser.Display.RGB.html">Phaser.Display.RGB</a></li><li><a href="Phaser.DOM.RequestAnimationFrame.html">Phaser.DOM.RequestAnimationFrame</a></li><li><a href="Phaser.Events.EventEmitter.html">Phaser.Events.EventEmitter</a></li><li><a href="Phaser.FacebookInstantGamesLeaderboard.html">Phaser.FacebookInstantGamesLeaderboard</a></li><li><a href="Phaser.FacebookInstantGamesPlugin.html">Phaser.FacebookInstantGamesPlugin</a></li><li><a href="Phaser.Game.html">Phaser.Game</a></li><li><a href="Phaser.GameObjects.Arc.html">Phaser.GameObjects.Arc</a></li><li><a href="Phaser.GameObjects.BitmapText.html">Phaser.GameObjects.BitmapText</a></li><li><a href="Phaser.GameObjects.Blitter.html">Phaser.GameObjects.Blitter</a></li><li><a href="Phaser.GameObjects.Bob.html">Phaser.GameObjects.Bob</a></li><li><a href="Phaser.GameObjects.Components.TransformMatrix.html">Phaser.GameObjects.Components.TransformMatrix</a></li><li><a href="Phaser.GameObjects.Container.html">Phaser.GameObjects.Container</a></li><li><a href="Phaser.GameObjects.Curve.html">Phaser.GameObjects.Curve</a></li><li><a href="Phaser.GameObjects.DisplayList.html">Phaser.GameObjects.DisplayList</a></li><li><a href="Phaser.GameObjects.DOMElement.html">Phaser.GameObjects.DOMElement</a></li><li><a href="Phaser.GameObjects.DynamicBitmapText.html">Phaser.GameObjects.DynamicBitmapText</a></li><li><a href="Phaser.GameObjects.Ellipse.html">Phaser.GameObjects.Ellipse</a></li><li><a href="Phaser.GameObjects.Extern.html">Phaser.GameObjects.Extern</a></li><li><a href="Phaser.GameObjects.GameObject.html">Phaser.GameObjects.GameObject</a></li><li><a href="Phaser.GameObjects.GameObjectCreator.html">Phaser.GameObjects.GameObjectCreator</a></li><li><a href="Phaser.GameObjects.GameObjectFactory.html">Phaser.GameObjects.GameObjectFactory</a></li><li><a href="Phaser.GameObjects.Graphics.html">Phaser.GameObjects.Graphics</a></li><li><a href="Phaser.GameObjects.Grid.html">Phaser.GameObjects.Grid</a></li><li><a href="Phaser.GameObjects.Group.html">Phaser.GameObjects.Group</a></li><li><a href="Phaser.GameObjects.Image.html">Phaser.GameObjects.Image</a></li><li><a href="Phaser.GameObjects.IsoBox.html">Phaser.GameObjects.IsoBox</a></li><li><a href="Phaser.GameObjects.IsoTriangle.html">Phaser.GameObjects.IsoTriangle</a></li><li><a href="Phaser.GameObjects.Layer.html">Phaser.GameObjects.Layer</a></li><li><a href="Phaser.GameObjects.Light.html">Phaser.GameObjects.Light</a></li><li><a href="Phaser.GameObjects.LightsManager.html">Phaser.GameObjects.LightsManager</a></li><li><a href="Phaser.GameObjects.LightsPlugin.html">Phaser.GameObjects.LightsPlugin</a></li><li><a href="Phaser.GameObjects.Line.html">Phaser.GameObjects.Line</a></li><li><a href="Phaser.GameObjects.Mesh.html">Phaser.GameObjects.Mesh</a></li><li><a href="Phaser.GameObjects.Particles.EmitterOp.html">Phaser.GameObjects.Particles.EmitterOp</a></li><li><a href="Phaser.GameObjects.Particles.GravityWell.html">Phaser.GameObjects.Particles.GravityWell</a></li><li><a href="Phaser.GameObjects.Particles.Particle.html">Phaser.GameObjects.Particles.Particle</a></li><li><a href="Phaser.GameObjects.Particles.ParticleEmitter.html">Phaser.GameObjects.Particles.ParticleEmitter</a></li><li><a href="Phaser.GameObjects.Particles.ParticleEmitterManager.html">Phaser.GameObjects.Particles.ParticleEmitterManager</a></li><li><a href="Phaser.GameObjects.Particles.Zones.DeathZone.html">Phaser.GameObjects.Particles.Zones.DeathZone</a></li><li><a href="Phaser.GameObjects.Particles.Zones.EdgeZone.html">Phaser.GameObjects.Particles.Zones.EdgeZone</a></li><li><a href="Phaser.GameObjects.Particles.Zones.RandomZone.html">Phaser.GameObjects.Particles.Zones.RandomZone</a></li><li><a href="Phaser.GameObjects.PathFollower.html">Phaser.GameObjects.PathFollower</a></li><li><a href="Phaser.GameObjects.PointLight.html">Phaser.GameObjects.PointLight</a></li><li><a href="Phaser.GameObjects.Polygon.html">Phaser.GameObjects.Polygon</a></li><li><a href="Phaser.GameObjects.Rectangle.html">Phaser.GameObjects.Rectangle</a></li><li><a href="Phaser.GameObjects.RenderTexture.html">Phaser.GameObjects.RenderTexture</a></li><li><a href="Phaser.GameObjects.Rope.html">Phaser.GameObjects.Rope</a></li><li><a href="Phaser.GameObjects.Shader.html">Phaser.GameObjects.Shader</a></li><li><a href="Phaser.GameObjects.Shape.html">Phaser.GameObjects.Shape</a></li><li><a href="Phaser.GameObjects.Sprite.html">Phaser.GameObjects.Sprite</a></li><li><a href="Phaser.GameObjects.Sprite3D.html">Phaser.GameObjects.Sprite3D</a></li><li><a href="Phaser.GameObjects.Star.html">Phaser.GameObjects.Star</a></li><li><a href="Phaser.GameObjects.Text.html">Phaser.GameObjects.Text</a></li><li><a href="Phaser.GameObjects.TextStyle.html">Phaser.GameObjects.TextStyle</a></li><li><a href="Phaser.GameObjects.TileSprite.html">Phaser.GameObjects.TileSprite</a></li><li><a href="Phaser.GameObjects.Triangle.html">Phaser.GameObjects.Triangle</a></li><li><a href="Phaser.GameObjects.UpdateList.html">Phaser.GameObjects.UpdateList</a></li><li><a href="Phaser.GameObjects.Video.html">Phaser.GameObjects.Video</a></li><li><a href="Phaser.GameObjects.Zone.html">Phaser.GameObjects.Zone</a></li><li><a href="Phaser.Geom.Circle.html">Phaser.Geom.Circle</a></li><li><a href="Phaser.Geom.Ellipse.html">Phaser.Geom.Ellipse</a></li><li><a href="Phaser.Geom.Line.html">Phaser.Geom.Line</a></li><li><a href="Phaser.Geom.Mesh.Face.html">Phaser.Geom.Mesh.Face</a></li><li><a href="Phaser.Geom.Mesh.Vertex.html">Phaser.Geom.Mesh.Vertex</a></li><li><a href="Phaser.Geom.Point.html">Phaser.Geom.Point</a></li><li><a href="Phaser.Geom.Polygon.html">Phaser.Geom.Polygon</a></li><li><a href="Phaser.Geom.Rectangle.html">Phaser.Geom.Rectangle</a></li><li><a href="Phaser.Geom.Triangle.html">Phaser.Geom.Triangle</a></li><li><a href="Phaser.Input.Gamepad.Axis.html">Phaser.Input.Gamepad.Axis</a></li><li><a href="Phaser.Input.Gamepad.Button.html">Phaser.Input.Gamepad.Button</a></li><li><a href="Phaser.Input.Gamepad.Gamepad.html">Phaser.Input.Gamepad.Gamepad</a></li><li><a href="Phaser.Input.Gamepad.GamepadPlugin.html">Phaser.Input.Gamepad.GamepadPlugin</a></li><li><a href="Phaser.Input.InputManager.html">Phaser.Input.InputManager</a></li><li><a href="Phaser.Input.InputPlugin.html">Phaser.Input.InputPlugin</a></li><li><a href="Phaser.Input.Keyboard.Key.html">Phaser.Input.Keyboard.Key</a></li><li><a href="Phaser.Input.Keyboard.KeyboardManager.html">Phaser.Input.Keyboard.KeyboardManager</a></li><li><a href="Phaser.Input.Keyboard.KeyboardPlugin.html">Phaser.Input.Keyboard.KeyboardPlugin</a></li><li><a href="Phaser.Input.Keyboard.KeyCombo.html">Phaser.Input.Keyboard.KeyCombo</a></li><li><a href="Phaser.Input.Mouse.MouseManager.html">Phaser.Input.Mouse.MouseManager</a></li><li><a href="Phaser.Input.Pointer.html">Phaser.Input.Pointer</a></li><li><a href="Phaser.Input.Touch.TouchManager.html">Phaser.Input.Touch.TouchManager</a></li><li><a href="Phaser.Loader.File.html">Phaser.Loader.File</a></li><li><a href="Phaser.Loader.FileTypes.AnimationJSONFile.html">Phaser.Loader.FileTypes.AnimationJSONFile</a></li><li><a href="Phaser.Loader.FileTypes.AsepriteFile.html">Phaser.Loader.FileTypes.AsepriteFile</a></li><li><a href="Phaser.Loader.FileTypes.AtlasJSONFile.html">Phaser.Loader.FileTypes.AtlasJSONFile</a></li><li><a href="Phaser.Loader.FileTypes.AtlasXMLFile.html">Phaser.Loader.FileTypes.AtlasXMLFile</a></li><li><a href="Phaser.Loader.FileTypes.AudioFile.html">Phaser.Loader.FileTypes.AudioFile</a></li><li><a href="Phaser.Loader.FileTypes.AudioSpriteFile.html">Phaser.Loader.FileTypes.AudioSpriteFile</a></li><li><a href="Phaser.Loader.FileTypes.BinaryFile.html">Phaser.Loader.FileTypes.BinaryFile</a></li><li><a href="Phaser.Loader.FileTypes.BitmapFontFile.html">Phaser.Loader.FileTypes.BitmapFontFile</a></li><li><a href="Phaser.Loader.FileTypes.CSSFile.html">Phaser.Loader.FileTypes.CSSFile</a></li><li><a href="Phaser.Loader.FileTypes.GLSLFile.html">Phaser.Loader.FileTypes.GLSLFile</a></li><li><a href="Phaser.Loader.FileTypes.HTML5AudioFile.html">Phaser.Loader.FileTypes.HTML5AudioFile</a></li><li><a href="Phaser.Loader.FileTypes.HTMLFile.html">Phaser.Loader.FileTypes.HTMLFile</a></li><li><a href="Phaser.Loader.FileTypes.HTMLTextureFile.html">Phaser.Loader.FileTypes.HTMLTextureFile</a></li><li><a href="Phaser.Loader.FileTypes.ImageFile.html">Phaser.Loader.FileTypes.ImageFile</a></li><li><a href="Phaser.Loader.FileTypes.JSONFile.html">Phaser.Loader.FileTypes.JSONFile</a></li><li><a href="Phaser.Loader.FileTypes.MultiAtlasFile.html">Phaser.Loader.FileTypes.MultiAtlasFile</a></li><li><a href="Phaser.Loader.FileTypes.MultiScriptFile.html">Phaser.Loader.FileTypes.MultiScriptFile</a></li><li><a href="Phaser.Loader.FileTypes.OBJFile.html">Phaser.Loader.FileTypes.OBJFile</a></li><li><a href="Phaser.Loader.FileTypes.PackFile.html">Phaser.Loader.FileTypes.PackFile</a></li><li><a href="Phaser.Loader.FileTypes.PluginFile.html">Phaser.Loader.FileTypes.PluginFile</a></li><li><a href="Phaser.Loader.FileTypes.SceneFile.html">Phaser.Loader.FileTypes.SceneFile</a></li><li><a href="Phaser.Loader.FileTypes.ScenePluginFile.html">Phaser.Loader.FileTypes.ScenePluginFile</a></li><li><a href="Phaser.Loader.FileTypes.ScriptFile.html">Phaser.Loader.FileTypes.ScriptFile</a></li><li><a href="Phaser.Loader.FileTypes.SpineFile.html">Phaser.Loader.FileTypes.SpineFile</a></li><li><a href="Phaser.Loader.FileTypes.SpriteSheetFile.html">Phaser.Loader.FileTypes.SpriteSheetFile</a></li><li><a href="Phaser.Loader.FileTypes.SVGFile.html">Phaser.Loader.FileTypes.SVGFile</a></li><li><a href="Phaser.Loader.FileTypes.TextFile.html">Phaser.Loader.FileTypes.TextFile</a></li><li><a href="Phaser.Loader.FileTypes.TilemapCSVFile.html">Phaser.Loader.FileTypes.TilemapCSVFile</a></li><li><a href="Phaser.Loader.FileTypes.TilemapImpactFile.html">Phaser.Loader.FileTypes.TilemapImpactFile</a></li><li><a href="Phaser.Loader.FileTypes.TilemapJSONFile.html">Phaser.Loader.FileTypes.TilemapJSONFile</a></li><li><a href="Phaser.Loader.FileTypes.UnityAtlasFile.html">Phaser.Loader.FileTypes.UnityAtlasFile</a></li><li><a href="Phaser.Loader.FileTypes.VideoFile.html">Phaser.Loader.FileTypes.VideoFile</a></li><li><a href="Phaser.Loader.FileTypes.XMLFile.html">Phaser.Loader.FileTypes.XMLFile</a></li><li><a href="Phaser.Loader.LoaderPlugin.html">Phaser.Loader.LoaderPlugin</a></li><li><a href="Phaser.Loader.MultiFile.html">Phaser.Loader.MultiFile</a></li><li><a href="Phaser.Math.Euler.html">Phaser.Math.Euler</a></li><li><a href="Phaser.Math.Matrix3.html">Phaser.Math.Matrix3</a></li><li><a href="Phaser.Math.Matrix4.html">Phaser.Math.Matrix4</a></li><li><a href="Phaser.Math.Quaternion.html">Phaser.Math.Quaternion</a></li><li><a href="Phaser.Math.RandomDataGenerator.html">Phaser.Math.RandomDataGenerator</a></li><li><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></li><li><a href="Phaser.Math.Vector3.html">Phaser.Math.Vector3</a></li><li><a href="Phaser.Math.Vector4.html">Phaser.Math.Vector4</a></li><li><a href="Phaser.Physics.Arcade.ArcadePhysics.html">Phaser.Physics.Arcade.ArcadePhysics</a></li><li><a href="Phaser.Physics.Arcade.Body.html">Phaser.Physics.Arcade.Body</a></li><li><a href="Phaser.Physics.Arcade.Collider.html">Phaser.Physics.Arcade.Collider</a></li><li><a href="Phaser.Physics.Arcade.Factory.html">Phaser.Physics.Arcade.Factory</a></li><li><a href="Phaser.Physics.Arcade.Group.html">Phaser.Physics.Arcade.Group</a></li><li><a href="Phaser.Physics.Arcade.Image.html">Phaser.Physics.Arcade.Image</a></li><li><a href="Phaser.Physics.Arcade.Sprite.html">Phaser.Physics.Arcade.Sprite</a></li><li><a href="Phaser.Physics.Arcade.StaticBody.html">Phaser.Physics.Arcade.StaticBody</a></li><li><a href="Phaser.Physics.Arcade.StaticGroup.html">Phaser.Physics.Arcade.StaticGroup</a></li><li><a href="Phaser.Physics.Arcade.World.html">Phaser.Physics.Arcade.World</a></li><li><a href="Phaser.Physics.Matter.BodyBounds.html">Phaser.Physics.Matter.BodyBounds</a></li><li><a href="Phaser.Physics.Matter.Factory.html">Phaser.Physics.Matter.Factory</a></li><li><a href="Phaser.Physics.Matter.Image.html">Phaser.Physics.Matter.Image</a></li><li><a href="Phaser.Physics.Matter.MatterPhysics.html">Phaser.Physics.Matter.MatterPhysics</a></li><li><a href="Phaser.Physics.Matter.PointerConstraint.html">Phaser.Physics.Matter.PointerConstraint</a></li><li><a href="Phaser.Physics.Matter.Sprite.html">Phaser.Physics.Matter.Sprite</a></li><li><a href="Phaser.Physics.Matter.TileBody.html">Phaser.Physics.Matter.TileBody</a></li><li><a href="Phaser.Physics.Matter.World.html">Phaser.Physics.Matter.World</a></li><li><a href="Phaser.Plugins.BasePlugin.html">Phaser.Plugins.BasePlugin</a></li><li><a href="Phaser.Plugins.PluginManager.html">Phaser.Plugins.PluginManager</a></li><li><a href="Phaser.Plugins.ScenePlugin.html">Phaser.Plugins.ScenePlugin</a></li><li><a href="Phaser.Renderer.Canvas.CanvasRenderer.html">Phaser.Renderer.Canvas.CanvasRenderer</a></li><li><a href="Phaser.Renderer.WebGL.PipelineManager.html">Phaser.Renderer.WebGL.PipelineManager</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.BitmapMaskPipeline.html">Phaser.Renderer.WebGL.Pipelines.BitmapMaskPipeline</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.GraphicsPipeline.html">Phaser.Renderer.WebGL.Pipelines.GraphicsPipeline</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.LightPipeline.html">Phaser.Renderer.WebGL.Pipelines.LightPipeline</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.MultiPipeline.html">Phaser.Renderer.WebGL.Pipelines.MultiPipeline</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.PointLightPipeline.html">Phaser.Renderer.WebGL.Pipelines.PointLightPipeline</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.PostFXPipeline.html">Phaser.Renderer.WebGL.Pipelines.PostFXPipeline</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.RopePipeline.html">Phaser.Renderer.WebGL.Pipelines.RopePipeline</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.SinglePipeline.html">Phaser.Renderer.WebGL.Pipelines.SinglePipeline</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.UtilityPipeline.html">Phaser.Renderer.WebGL.Pipelines.UtilityPipeline</a></li><li><a href="Phaser.Renderer.WebGL.RenderTarget.html">Phaser.Renderer.WebGL.RenderTarget</a></li><li><a href="Phaser.Renderer.WebGL.WebGLPipeline.html">Phaser.Renderer.WebGL.WebGLPipeline</a></li><li><a href="Phaser.Renderer.WebGL.WebGLRenderer.html">Phaser.Renderer.WebGL.WebGLRenderer</a></li><li><a href="Phaser.Renderer.WebGL.WebGLShader.html">Phaser.Renderer.WebGL.WebGLShader</a></li><li><a href="Phaser.Scale.ScaleManager.html">Phaser.Scale.ScaleManager</a></li><li><a href="Phaser.Scene.html">Phaser.Scene</a></li><li><a href="Phaser.Scenes.SceneManager.html">Phaser.Scenes.SceneManager</a></li><li><a href="Phaser.Scenes.ScenePlugin.html">Phaser.Scenes.ScenePlugin</a></li><li><a href="Phaser.Scenes.Systems.html">Phaser.Scenes.Systems</a></li><li><a href="Phaser.Sound.BaseSound.html">Phaser.Sound.BaseSound</a></li><li><a href="Phaser.Sound.BaseSoundManager.html">Phaser.Sound.BaseSoundManager</a></li><li><a href="Phaser.Sound.HTML5AudioSound.html">Phaser.Sound.HTML5AudioSound</a></li><li><a href="Phaser.Sound.HTML5AudioSoundManager.html">Phaser.Sound.HTML5AudioSoundManager</a></li><li><a href="Phaser.Sound.NoAudioSound.html">Phaser.Sound.NoAudioSound</a></li><li><a href="Phaser.Sound.NoAudioSoundManager.html">Phaser.Sound.NoAudioSoundManager</a></li><li><a href="Phaser.Sound.WebAudioSound.html">Phaser.Sound.WebAudioSound</a></li><li><a href="Phaser.Sound.WebAudioSoundManager.html">Phaser.Sound.WebAudioSoundManager</a></li><li><a href="Phaser.Structs.List.html">Phaser.Structs.List</a></li><li><a href="Phaser.Structs.Map.html">Phaser.Structs.Map</a></li><li><a href="Phaser.Structs.ProcessQueue.html">Phaser.Structs.ProcessQueue</a></li><li><a href="Phaser.Structs.RTree.html">Phaser.Structs.RTree</a></li><li><a href="Phaser.Structs.Set.html">Phaser.Structs.Set</a></li><li><a href="Phaser.Structs.Size.html">Phaser.Structs.Size</a></li><li><a href="Phaser.Textures.CanvasTexture.html">Phaser.Textures.CanvasTexture</a></li><li><a href="Phaser.Textures.Frame.html">Phaser.Textures.Frame</a></li><li><a href="Phaser.Textures.Texture.html">Phaser.Textures.Texture</a></li><li><a href="Phaser.Textures.TextureManager.html">Phaser.Textures.TextureManager</a></li><li><a href="Phaser.Textures.TextureSource.html">Phaser.Textures.TextureSource</a></li><li><a href="Phaser.Tilemaps.ImageCollection.html">Phaser.Tilemaps.ImageCollection</a></li><li><a href="Phaser.Tilemaps.LayerData.html">Phaser.Tilemaps.LayerData</a></li><li><a href="Phaser.Tilemaps.MapData.html">Phaser.Tilemaps.MapData</a></li><li><a href="Phaser.Tilemaps.ObjectLayer.html">Phaser.Tilemaps.ObjectLayer</a></li><li><a href="Phaser.Tilemaps.Tile.html">Phaser.Tilemaps.Tile</a></li><li><a href="Phaser.Tilemaps.Tilemap.html">Phaser.Tilemaps.Tilemap</a></li><li><a href="Phaser.Tilemaps.TilemapLayer.html">Phaser.Tilemaps.TilemapLayer</a></li><li><a href="Phaser.Tilemaps.Tileset.html">Phaser.Tilemaps.Tileset</a></li><li><a href="Phaser.Time.Clock.html">Phaser.Time.Clock</a></li><li><a href="Phaser.Time.TimerEvent.html">Phaser.Time.TimerEvent</a></li><li><a href="Phaser.Tweens.Timeline.html">Phaser.Tweens.Timeline</a></li><li><a href="Phaser.Tweens.Tween.html">Phaser.Tweens.Tween</a></li><li><a href="Phaser.Tweens.TweenManager.html">Phaser.Tweens.TweenManager</a></li><li><a href="SpineContainer.html">SpineContainer</a></li><li><a href="SpineGameObject.html">SpineGameObject</a></li><li><a href="SpinePlugin.html">SpinePlugin</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Phaser.Animations.Events.html#event:ADD_ANIMATION">Phaser.Animations.Events#event:ADD_ANIMATION</a></li><li><a href="Phaser.Animations.Events.html#event:ANIMATION_COMPLETE">Phaser.Animations.Events#event:ANIMATION_COMPLETE</a></li><li><a href="Phaser.Animations.Events.html#event:ANIMATION_COMPLETE_KEY">Phaser.Animations.Events#event:ANIMATION_COMPLETE_KEY</a></li><li><a href="Phaser.Animations.Events.html#event:ANIMATION_REPEAT">Phaser.Animations.Events#event:ANIMATION_REPEAT</a></li><li><a href="Phaser.Animations.Events.html#event:ANIMATION_RESTART">Phaser.Animations.Events#event:ANIMATION_RESTART</a></li><li><a href="Phaser.Animations.Events.html#event:ANIMATION_START">Phaser.Animations.Events#event:ANIMATION_START</a></li><li><a href="Phaser.Animations.Events.html#event:ANIMATION_STOP">Phaser.Animations.Events#event:ANIMATION_STOP</a></li><li><a href="Phaser.Animations.Events.html#event:ANIMATION_UPDATE">Phaser.Animations.Events#event:ANIMATION_UPDATE</a></li><li><a href="Phaser.Animations.Events.html#event:PAUSE_ALL">Phaser.Animations.Events#event:PAUSE_ALL</a></li><li><a href="Phaser.Animations.Events.html#event:REMOVE_ANIMATION">Phaser.Animations.Events#event:REMOVE_ANIMATION</a></li><li><a href="Phaser.Animations.Events.html#event:RESUME_ALL">Phaser.Animations.Events#event:RESUME_ALL</a></li><li><a href="Phaser.Cache.Events.html#event:ADD">Phaser.Cache.Events#event:ADD</a></li><li><a href="Phaser.Cache.Events.html#event:REMOVE">Phaser.Cache.Events#event:REMOVE</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:DESTROY">Phaser.Cameras.Scene2D.Events#event:DESTROY</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:FADE_IN_COMPLETE">Phaser.Cameras.Scene2D.Events#event:FADE_IN_COMPLETE</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:FADE_IN_START">Phaser.Cameras.Scene2D.Events#event:FADE_IN_START</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:FADE_OUT_COMPLETE">Phaser.Cameras.Scene2D.Events#event:FADE_OUT_COMPLETE</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:FADE_OUT_START">Phaser.Cameras.Scene2D.Events#event:FADE_OUT_START</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:FLASH_COMPLETE">Phaser.Cameras.Scene2D.Events#event:FLASH_COMPLETE</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:FLASH_START">Phaser.Cameras.Scene2D.Events#event:FLASH_START</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:FOLLOW_UPDATE">Phaser.Cameras.Scene2D.Events#event:FOLLOW_UPDATE</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:PAN_COMPLETE">Phaser.Cameras.Scene2D.Events#event:PAN_COMPLETE</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:PAN_START">Phaser.Cameras.Scene2D.Events#event:PAN_START</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:POST_RENDER">Phaser.Cameras.Scene2D.Events#event:POST_RENDER</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:PRE_RENDER">Phaser.Cameras.Scene2D.Events#event:PRE_RENDER</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:ROTATE_COMPLETE">Phaser.Cameras.Scene2D.Events#event:ROTATE_COMPLETE</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:ROTATE_START">Phaser.Cameras.Scene2D.Events#event:ROTATE_START</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:SHAKE_COMPLETE">Phaser.Cameras.Scene2D.Events#event:SHAKE_COMPLETE</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:SHAKE_START">Phaser.Cameras.Scene2D.Events#event:SHAKE_START</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:ZOOM_COMPLETE">Phaser.Cameras.Scene2D.Events#event:ZOOM_COMPLETE</a></li><li><a href="Phaser.Cameras.Scene2D.Events.html#event:ZOOM_START">Phaser.Cameras.Scene2D.Events#event:ZOOM_START</a></li><li><a href="Phaser.Core.Events.html#event:BLUR">Phaser.Core.Events#event:BLUR</a></li><li><a href="Phaser.Core.Events.html#event:BOOT">Phaser.Core.Events#event:BOOT</a></li><li><a href="Phaser.Core.Events.html#event:CONTEXT_LOST">Phaser.Core.Events#event:CONTEXT_LOST</a></li><li><a href="Phaser.Core.Events.html#event:CONTEXT_RESTORED">Phaser.Core.Events#event:CONTEXT_RESTORED</a></li><li><a href="Phaser.Core.Events.html#event:DESTROY">Phaser.Core.Events#event:DESTROY</a></li><li><a href="Phaser.Core.Events.html#event:FOCUS">Phaser.Core.Events#event:FOCUS</a></li><li><a href="Phaser.Core.Events.html#event:HIDDEN">Phaser.Core.Events#event:HIDDEN</a></li><li><a href="Phaser.Core.Events.html#event:PAUSE">Phaser.Core.Events#event:PAUSE</a></li><li><a href="Phaser.Core.Events.html#event:POST_RENDER">Phaser.Core.Events#event:POST_RENDER</a></li><li><a href="Phaser.Core.Events.html#event:POST_STEP">Phaser.Core.Events#event:POST_STEP</a></li><li><a href="Phaser.Core.Events.html#event:PRE_RENDER">Phaser.Core.Events#event:PRE_RENDER</a></li><li><a href="Phaser.Core.Events.html#event:PRE_STEP">Phaser.Core.Events#event:PRE_STEP</a></li><li><a href="Phaser.Core.Events.html#event:READY">Phaser.Core.Events#event:READY</a></li><li><a href="Phaser.Core.Events.html#event:RESUME">Phaser.Core.Events#event:RESUME</a></li><li><a href="Phaser.Core.Events.html#event:STEP">Phaser.Core.Events#event:STEP</a></li><li><a href="Phaser.Core.Events.html#event:VISIBLE">Phaser.Core.Events#event:VISIBLE</a></li><li><a href="Phaser.Data.Events.html#event:CHANGE_DATA">Phaser.Data.Events#event:CHANGE_DATA</a></li><li><a href="Phaser.Data.Events.html#event:CHANGE_DATA_KEY">Phaser.Data.Events#event:CHANGE_DATA_KEY</a></li><li><a href="Phaser.Data.Events.html#event:DESTROY">Phaser.Data.Events#event:DESTROY</a></li><li><a href="Phaser.Data.Events.html#event:REMOVE_DATA">Phaser.Data.Events#event:REMOVE_DATA</a></li><li><a href="Phaser.Data.Events.html#event:SET_DATA">Phaser.Data.Events#event:SET_DATA</a></li><li><a href="Phaser.GameObjects.Events.html#event:ADDED_TO_SCENE">Phaser.GameObjects.Events#event:ADDED_TO_SCENE</a></li><li><a href="Phaser.GameObjects.Events.html#event:DESTROY">Phaser.GameObjects.Events#event:DESTROY</a></li><li><a href="Phaser.GameObjects.Events.html#event:REMOVED_FROM_SCENE">Phaser.GameObjects.Events#event:REMOVED_FROM_SCENE</a></li><li><a href="Phaser.GameObjects.Events.html#event:VIDEO_COMPLETE">Phaser.GameObjects.Events#event:VIDEO_COMPLETE</a></li><li><a href="Phaser.GameObjects.Events.html#event:VIDEO_CREATED">Phaser.GameObjects.Events#event:VIDEO_CREATED</a></li><li><a href="Phaser.GameObjects.Events.html#event:VIDEO_ERROR">Phaser.GameObjects.Events#event:VIDEO_ERROR</a></li><li><a href="Phaser.GameObjects.Events.html#event:VIDEO_LOOP">Phaser.GameObjects.Events#event:VIDEO_LOOP</a></li><li><a href="Phaser.GameObjects.Events.html#event:VIDEO_PLAY">Phaser.GameObjects.Events#event:VIDEO_PLAY</a></li><li><a href="Phaser.GameObjects.Events.html#event:VIDEO_SEEKED">Phaser.GameObjects.Events#event:VIDEO_SEEKED</a></li><li><a href="Phaser.GameObjects.Events.html#event:VIDEO_SEEKING">Phaser.GameObjects.Events#event:VIDEO_SEEKING</a></li><li><a href="Phaser.GameObjects.Events.html#event:VIDEO_STOP">Phaser.GameObjects.Events#event:VIDEO_STOP</a></li><li><a href="Phaser.GameObjects.Events.html#event:VIDEO_TIMEOUT">Phaser.GameObjects.Events#event:VIDEO_TIMEOUT</a></li><li><a href="Phaser.GameObjects.Events.html#event:VIDEO_UNLOCKED">Phaser.GameObjects.Events#event:VIDEO_UNLOCKED</a></li><li><a href="Phaser.Input.Events.html#event:BOOT">Phaser.Input.Events#event:BOOT</a></li><li><a href="Phaser.Input.Events.html#event:DESTROY">Phaser.Input.Events#event:DESTROY</a></li><li><a href="Phaser.Input.Events.html#event:DRAG">Phaser.Input.Events#event:DRAG</a></li><li><a href="Phaser.Input.Events.html#event:DRAG_END">Phaser.Input.Events#event:DRAG_END</a></li><li><a href="Phaser.Input.Events.html#event:DRAG_ENTER">Phaser.Input.Events#event:DRAG_ENTER</a></li><li><a href="Phaser.Input.Events.html#event:DRAG_LEAVE">Phaser.Input.Events#event:DRAG_LEAVE</a></li><li><a href="Phaser.Input.Events.html#event:DRAG_OVER">Phaser.Input.Events#event:DRAG_OVER</a></li><li><a href="Phaser.Input.Events.html#event:DRAG_START">Phaser.Input.Events#event:DRAG_START</a></li><li><a href="Phaser.Input.Events.html#event:DROP">Phaser.Input.Events#event:DROP</a></li><li><a href="Phaser.Input.Events.html#event:GAME_OUT">Phaser.Input.Events#event:GAME_OUT</a></li><li><a href="Phaser.Input.Events.html#event:GAME_OVER">Phaser.Input.Events#event:GAME_OVER</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_DOWN">Phaser.Input.Events#event:GAMEOBJECT_DOWN</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_DRAG">Phaser.Input.Events#event:GAMEOBJECT_DRAG</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_END">Phaser.Input.Events#event:GAMEOBJECT_DRAG_END</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_ENTER">Phaser.Input.Events#event:GAMEOBJECT_DRAG_ENTER</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_LEAVE">Phaser.Input.Events#event:GAMEOBJECT_DRAG_LEAVE</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_OVER">Phaser.Input.Events#event:GAMEOBJECT_DRAG_OVER</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_START">Phaser.Input.Events#event:GAMEOBJECT_DRAG_START</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_DROP">Phaser.Input.Events#event:GAMEOBJECT_DROP</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_MOVE">Phaser.Input.Events#event:GAMEOBJECT_MOVE</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_OUT">Phaser.Input.Events#event:GAMEOBJECT_OUT</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_OVER">Phaser.Input.Events#event:GAMEOBJECT_OVER</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_DOWN">Phaser.Input.Events#event:GAMEOBJECT_POINTER_DOWN</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_MOVE">Phaser.Input.Events#event:GAMEOBJECT_POINTER_MOVE</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_OUT">Phaser.Input.Events#event:GAMEOBJECT_POINTER_OUT</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_OVER">Phaser.Input.Events#event:GAMEOBJECT_POINTER_OVER</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_UP">Phaser.Input.Events#event:GAMEOBJECT_POINTER_UP</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_WHEEL">Phaser.Input.Events#event:GAMEOBJECT_POINTER_WHEEL</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_UP">Phaser.Input.Events#event:GAMEOBJECT_UP</a></li><li><a href="Phaser.Input.Events.html#event:GAMEOBJECT_WHEEL">Phaser.Input.Events#event:GAMEOBJECT_WHEEL</a></li><li><a href="Phaser.Input.Events.html#event:MANAGER_BOOT">Phaser.Input.Events#event:MANAGER_BOOT</a></li><li><a href="Phaser.Input.Events.html#event:MANAGER_PROCESS">Phaser.Input.Events#event:MANAGER_PROCESS</a></li><li><a href="Phaser.Input.Events.html#event:MANAGER_UPDATE">Phaser.Input.Events#event:MANAGER_UPDATE</a></li><li><a href="Phaser.Input.Events.html#event:POINTER_DOWN">Phaser.Input.Events#event:POINTER_DOWN</a></li><li><a href="Phaser.Input.Events.html#event:POINTER_DOWN_OUTSIDE">Phaser.Input.Events#event:POINTER_DOWN_OUTSIDE</a></li><li><a href="Phaser.Input.Events.html#event:POINTER_MOVE">Phaser.Input.Events#event:POINTER_MOVE</a></li><li><a href="Phaser.Input.Events.html#event:POINTER_OUT">Phaser.Input.Events#event:POINTER_OUT</a></li><li><a href="Phaser.Input.Events.html#event:POINTER_OVER">Phaser.Input.Events#event:POINTER_OVER</a></li><li><a href="Phaser.Input.Events.html#event:POINTER_UP">Phaser.Input.Events#event:POINTER_UP</a></li><li><a href="Phaser.Input.Events.html#event:POINTER_UP_OUTSIDE">Phaser.Input.Events#event:POINTER_UP_OUTSIDE</a></li><li><a href="Phaser.Input.Events.html#event:POINTER_WHEEL">Phaser.Input.Events#event:POINTER_WHEEL</a></li><li><a href="Phaser.Input.Events.html#event:POINTERLOCK_CHANGE">Phaser.Input.Events#event:POINTERLOCK_CHANGE</a></li><li><a href="Phaser.Input.Events.html#event:PRE_UPDATE">Phaser.Input.Events#event:PRE_UPDATE</a></li><li><a href="Phaser.Input.Events.html#event:SHUTDOWN">Phaser.Input.Events#event:SHUTDOWN</a></li><li><a href="Phaser.Input.Events.html#event:START">Phaser.Input.Events#event:START</a></li><li><a href="Phaser.Input.Events.html#event:UPDATE">Phaser.Input.Events#event:UPDATE</a></li><li><a href="Phaser.Input.Gamepad.Events.html#event:BUTTON_DOWN">Phaser.Input.Gamepad.Events#event:BUTTON_DOWN</a></li><li><a href="Phaser.Input.Gamepad.Events.html#event:BUTTON_UP">Phaser.Input.Gamepad.Events#event:BUTTON_UP</a></li><li><a href="Phaser.Input.Gamepad.Events.html#event:CONNECTED">Phaser.Input.Gamepad.Events#event:CONNECTED</a></li><li><a href="Phaser.Input.Gamepad.Events.html#event:DISCONNECTED">Phaser.Input.Gamepad.Events#event:DISCONNECTED</a></li><li><a href="Phaser.Input.Gamepad.Events.html#event:GAMEPAD_BUTTON_DOWN">Phaser.Input.Gamepad.Events#event:GAMEPAD_BUTTON_DOWN</a></li><li><a href="Phaser.Input.Gamepad.Events.html#event:GAMEPAD_BUTTON_UP">Phaser.Input.Gamepad.Events#event:GAMEPAD_BUTTON_UP</a></li><li><a href="Phaser.Input.Keyboard.Events.html#event:ANY_KEY_DOWN">Phaser.Input.Keyboard.Events#event:ANY_KEY_DOWN</a></li><li><a href="Phaser.Input.Keyboard.Events.html#event:ANY_KEY_UP">Phaser.Input.Keyboard.Events#event:ANY_KEY_UP</a></li><li><a href="Phaser.Input.Keyboard.Events.html#event:COMBO_MATCH">Phaser.Input.Keyboard.Events#event:COMBO_MATCH</a></li><li><a href="Phaser.Input.Keyboard.Events.html#event:DOWN">Phaser.Input.Keyboard.Events#event:DOWN</a></li><li><a href="Phaser.Input.Keyboard.Events.html#event:KEY_DOWN">Phaser.Input.Keyboard.Events#event:KEY_DOWN</a></li><li><a href="Phaser.Input.Keyboard.Events.html#event:KEY_UP">Phaser.Input.Keyboard.Events#event:KEY_UP</a></li><li><a href="Phaser.Input.Keyboard.Events.html#event:UP">Phaser.Input.Keyboard.Events#event:UP</a></li><li><a href="Phaser.Loader.Events.html#event:ADD">Phaser.Loader.Events#event:ADD</a></li><li><a href="Phaser.Loader.Events.html#event:COMPLETE">Phaser.Loader.Events#event:COMPLETE</a></li><li><a href="Phaser.Loader.Events.html#event:FILE_COMPLETE">Phaser.Loader.Events#event:FILE_COMPLETE</a></li><li><a href="Phaser.Loader.Events.html#event:FILE_KEY_COMPLETE">Phaser.Loader.Events#event:FILE_KEY_COMPLETE</a></li><li><a href="Phaser.Loader.Events.html#event:FILE_LOAD">Phaser.Loader.Events#event:FILE_LOAD</a></li><li><a href="Phaser.Loader.Events.html#event:FILE_LOAD_ERROR">Phaser.Loader.Events#event:FILE_LOAD_ERROR</a></li><li><a href="Phaser.Loader.Events.html#event:FILE_PROGRESS">Phaser.Loader.Events#event:FILE_PROGRESS</a></li><li><a href="Phaser.Loader.Events.html#event:POST_PROCESS">Phaser.Loader.Events#event:POST_PROCESS</a></li><li><a href="Phaser.Loader.Events.html#event:PROGRESS">Phaser.Loader.Events#event:PROGRESS</a></li><li><a href="Phaser.Loader.Events.html#event:START">Phaser.Loader.Events#event:START</a></li><li><a href="Phaser.Physics.Arcade.Events.html#event:COLLIDE">Phaser.Physics.Arcade.Events#event:COLLIDE</a></li><li><a href="Phaser.Physics.Arcade.Events.html#event:OVERLAP">Phaser.Physics.Arcade.Events#event:OVERLAP</a></li><li><a href="Phaser.Physics.Arcade.Events.html#event:PAUSE">Phaser.Physics.Arcade.Events#event:PAUSE</a></li><li><a href="Phaser.Physics.Arcade.Events.html#event:RESUME">Phaser.Physics.Arcade.Events#event:RESUME</a></li><li><a href="Phaser.Physics.Arcade.Events.html#event:TILE_COLLIDE">Phaser.Physics.Arcade.Events#event:TILE_COLLIDE</a></li><li><a href="Phaser.Physics.Arcade.Events.html#event:TILE_OVERLAP">Phaser.Physics.Arcade.Events#event:TILE_OVERLAP</a></li><li><a href="Phaser.Physics.Arcade.Events.html#event:WORLD_BOUNDS">Phaser.Physics.Arcade.Events#event:WORLD_BOUNDS</a></li><li><a href="Phaser.Physics.Arcade.Events.html#event:WORLD_STEP">Phaser.Physics.Arcade.Events#event:WORLD_STEP</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:AFTER_ADD">Phaser.Physics.Matter.Events#event:AFTER_ADD</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:AFTER_REMOVE">Phaser.Physics.Matter.Events#event:AFTER_REMOVE</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:AFTER_UPDATE">Phaser.Physics.Matter.Events#event:AFTER_UPDATE</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:BEFORE_ADD">Phaser.Physics.Matter.Events#event:BEFORE_ADD</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:BEFORE_REMOVE">Phaser.Physics.Matter.Events#event:BEFORE_REMOVE</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:BEFORE_UPDATE">Phaser.Physics.Matter.Events#event:BEFORE_UPDATE</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:COLLISION_ACTIVE">Phaser.Physics.Matter.Events#event:COLLISION_ACTIVE</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:COLLISION_END">Phaser.Physics.Matter.Events#event:COLLISION_END</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:COLLISION_START">Phaser.Physics.Matter.Events#event:COLLISION_START</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:DRAG">Phaser.Physics.Matter.Events#event:DRAG</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:DRAG_END">Phaser.Physics.Matter.Events#event:DRAG_END</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:DRAG_START">Phaser.Physics.Matter.Events#event:DRAG_START</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:PAUSE">Phaser.Physics.Matter.Events#event:PAUSE</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:RESUME">Phaser.Physics.Matter.Events#event:RESUME</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:SLEEP_END">Phaser.Physics.Matter.Events#event:SLEEP_END</a></li><li><a href="Phaser.Physics.Matter.Events.html#event:SLEEP_START">Phaser.Physics.Matter.Events#event:SLEEP_START</a></li><li><a href="Phaser.Renderer.Events.html#event:POST_RENDER">Phaser.Renderer.Events#event:POST_RENDER</a></li><li><a href="Phaser.Renderer.Events.html#event:PRE_RENDER">Phaser.Renderer.Events#event:PRE_RENDER</a></li><li><a href="Phaser.Renderer.Events.html#event:RENDER">Phaser.Renderer.Events#event:RENDER</a></li><li><a href="Phaser.Renderer.Events.html#event:RESIZE">Phaser.Renderer.Events#event:RESIZE</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.Events.html#event:AFTER_FLUSH">Phaser.Renderer.WebGL.Pipelines.Events#event:AFTER_FLUSH</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.Events.html#event:BEFORE_FLUSH">Phaser.Renderer.WebGL.Pipelines.Events#event:BEFORE_FLUSH</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.Events.html#event:BIND">Phaser.Renderer.WebGL.Pipelines.Events#event:BIND</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.Events.html#event:BOOT">Phaser.Renderer.WebGL.Pipelines.Events#event:BOOT</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.Events.html#event:DESTROY">Phaser.Renderer.WebGL.Pipelines.Events#event:DESTROY</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.Events.html#event:REBIND">Phaser.Renderer.WebGL.Pipelines.Events#event:REBIND</a></li><li><a href="Phaser.Renderer.WebGL.Pipelines.Events.html#event:RESIZE">Phaser.Renderer.WebGL.Pipelines.Events#event:RESIZE</a></li><li><a href="Phaser.Scale.Events.html#event:ENTER_FULLSCREEN">Phaser.Scale.Events#event:ENTER_FULLSCREEN</a></li><li><a href="Phaser.Scale.Events.html#event:FULLSCREEN_FAILED">Phaser.Scale.Events#event:FULLSCREEN_FAILED</a></li><li><a href="Phaser.Scale.Events.html#event:FULLSCREEN_UNSUPPORTED">Phaser.Scale.Events#event:FULLSCREEN_UNSUPPORTED</a></li><li><a href="Phaser.Scale.Events.html#event:LEAVE_FULLSCREEN">Phaser.Scale.Events#event:LEAVE_FULLSCREEN</a></li><li><a href="Phaser.Scale.Events.html#event:ORIENTATION_CHANGE">Phaser.Scale.Events#event:ORIENTATION_CHANGE</a></li><li><a href="Phaser.Scale.Events.html#event:RESIZE">Phaser.Scale.Events#event:RESIZE</a></li><li><a href="Phaser.Scenes.Events.html#event:ADDED_TO_SCENE">Phaser.Scenes.Events#event:ADDED_TO_SCENE</a></li><li><a href="Phaser.Scenes.Events.html#event:BOOT">Phaser.Scenes.Events#event:BOOT</a></li><li><a href="Phaser.Scenes.Events.html#event:CREATE">Phaser.Scenes.Events#event:CREATE</a></li><li><a href="Phaser.Scenes.Events.html#event:DESTROY">Phaser.Scenes.Events#event:DESTROY</a></li><li><a href="Phaser.Scenes.Events.html#event:PAUSE">Phaser.Scenes.Events#event:PAUSE</a></li><li><a href="Phaser.Scenes.Events.html#event:POST_UPDATE">Phaser.Scenes.Events#event:POST_UPDATE</a></li><li><a href="Phaser.Scenes.Events.html#event:PRE_UPDATE">Phaser.Scenes.Events#event:PRE_UPDATE</a></li><li><a href="Phaser.Scenes.Events.html#event:READY">Phaser.Scenes.Events#event:READY</a></li><li><a href="Phaser.Scenes.Events.html#event:REMOVED_FROM_SCENE">Phaser.Scenes.Events#event:REMOVED_FROM_SCENE</a></li><li><a href="Phaser.Scenes.Events.html#event:RENDER">Phaser.Scenes.Events#event:RENDER</a></li><li><a href="Phaser.Scenes.Events.html#event:RESUME">Phaser.Scenes.Events#event:RESUME</a></li><li><a href="Phaser.Scenes.Events.html#event:SHUTDOWN">Phaser.Scenes.Events#event:SHUTDOWN</a></li><li><a href="Phaser.Scenes.Events.html#event:SLEEP">Phaser.Scenes.Events#event:SLEEP</a></li><li><a href="Phaser.Scenes.Events.html#event:START">Phaser.Scenes.Events#event:START</a></li><li><a href="Phaser.Scenes.Events.html#event:TRANSITION_COMPLETE">Phaser.Scenes.Events#event:TRANSITION_COMPLETE</a></li><li><a href="Phaser.Scenes.Events.html#event:TRANSITION_INIT">Phaser.Scenes.Events#event:TRANSITION_INIT</a></li><li><a href="Phaser.Scenes.Events.html#event:TRANSITION_OUT">Phaser.Scenes.Events#event:TRANSITION_OUT</a></li><li><a href="Phaser.Scenes.Events.html#event:TRANSITION_START">Phaser.Scenes.Events#event:TRANSITION_START</a></li><li><a href="Phaser.Scenes.Events.html#event:TRANSITION_WAKE">Phaser.Scenes.Events#event:TRANSITION_WAKE</a></li><li><a href="Phaser.Scenes.Events.html#event:UPDATE">Phaser.Scenes.Events#event:UPDATE</a></li><li><a href="Phaser.Scenes.Events.html#event:WAKE">Phaser.Scenes.Events#event:WAKE</a></li><li><a href="Phaser.Sound.Events.html#event:COMPLETE">Phaser.Sound.Events#event:COMPLETE</a></li><li><a href="Phaser.Sound.Events.html#event:DECODED">Phaser.Sound.Events#event:DECODED</a></li><li><a href="Phaser.Sound.Events.html#event:DECODED_ALL">Phaser.Sound.Events#event:DECODED_ALL</a></li><li><a href="Phaser.Sound.Events.html#event:DESTROY">Phaser.Sound.Events#event:DESTROY</a></li><li><a href="Phaser.Sound.Events.html#event:DETUNE">Phaser.Sound.Events#event:DETUNE</a></li><li><a href="Phaser.Sound.Events.html#event:GLOBAL_DETUNE">Phaser.Sound.Events#event:GLOBAL_DETUNE</a></li><li><a href="Phaser.Sound.Events.html#event:GLOBAL_MUTE">Phaser.Sound.Events#event:GLOBAL_MUTE</a></li><li><a href="Phaser.Sound.Events.html#event:GLOBAL_RATE">Phaser.Sound.Events#event:GLOBAL_RATE</a></li><li><a href="Phaser.Sound.Events.html#event:GLOBAL_VOLUME">Phaser.Sound.Events#event:GLOBAL_VOLUME</a></li><li><a href="Phaser.Sound.Events.html#event:LOOP">Phaser.Sound.Events#event:LOOP</a></li><li><a href="Phaser.Sound.Events.html#event:LOOPED">Phaser.Sound.Events#event:LOOPED</a></li><li><a href="Phaser.Sound.Events.html#event:MUTE">Phaser.Sound.Events#event:MUTE</a></li><li><a href="Phaser.Sound.Events.html#event:PAN">Phaser.Sound.Events#event:PAN</a></li><li><a href="Phaser.Sound.Events.html#event:PAUSE">Phaser.Sound.Events#event:PAUSE</a></li><li><a href="Phaser.Sound.Events.html#event:PAUSE_ALL">Phaser.Sound.Events#event:PAUSE_ALL</a></li><li><a href="Phaser.Sound.Events.html#event:PLAY">Phaser.Sound.Events#event:PLAY</a></li><li><a href="Phaser.Sound.Events.html#event:RATE">Phaser.Sound.Events#event:RATE</a></li><li><a href="Phaser.Sound.Events.html#event:RESUME">Phaser.Sound.Events#event:RESUME</a></li><li><a href="Phaser.Sound.Events.html#event:RESUME_ALL">Phaser.Sound.Events#event:RESUME_ALL</a></li><li><a href="Phaser.Sound.Events.html#event:SEEK">Phaser.Sound.Events#event:SEEK</a></li><li><a href="Phaser.Sound.Events.html#event:STOP">Phaser.Sound.Events#event:STOP</a></li><li><a href="Phaser.Sound.Events.html#event:STOP_ALL">Phaser.Sound.Events#event:STOP_ALL</a></li><li><a href="Phaser.Sound.Events.html#event:UNLOCKED">Phaser.Sound.Events#event:UNLOCKED</a></li><li><a href="Phaser.Sound.Events.html#event:VOLUME">Phaser.Sound.Events#event:VOLUME</a></li><li><a href="Phaser.Structs.Events.html#event:PROCESS_QUEUE_ADD">Phaser.Structs.Events#event:PROCESS_QUEUE_ADD</a></li><li><a href="Phaser.Structs.Events.html#event:PROCESS_QUEUE_REMOVE">Phaser.Structs.Events#event:PROCESS_QUEUE_REMOVE</a></li><li><a href="Phaser.Textures.Events.html#event:ADD">Phaser.Textures.Events#event:ADD</a></li><li><a href="Phaser.Textures.Events.html#event:ERROR">Phaser.Textures.Events#event:ERROR</a></li><li><a href="Phaser.Textures.Events.html#event:LOAD">Phaser.Textures.Events#event:LOAD</a></li><li><a href="Phaser.Textures.Events.html#event:READY">Phaser.Textures.Events#event:READY</a></li><li><a href="Phaser.Textures.Events.html#event:REMOVE">Phaser.Textures.Events#event:REMOVE</a></li><li><a href="Phaser.Tweens.Events.html#event:TIMELINE_COMPLETE">Phaser.Tweens.Events#event:TIMELINE_COMPLETE</a></li><li><a href="Phaser.Tweens.Events.html#event:TIMELINE_LOOP">Phaser.Tweens.Events#event:TIMELINE_LOOP</a></li><li><a href="Phaser.Tweens.Events.html#event:TIMELINE_PAUSE">Phaser.Tweens.Events#event:TIMELINE_PAUSE</a></li><li><a href="Phaser.Tweens.Events.html#event:TIMELINE_RESUME">Phaser.Tweens.Events#event:TIMELINE_RESUME</a></li><li><a href="Phaser.Tweens.Events.html#event:TIMELINE_START">Phaser.Tweens.Events#event:TIMELINE_START</a></li><li><a href="Phaser.Tweens.Events.html#event:TIMELINE_UPDATE">Phaser.Tweens.Events#event:TIMELINE_UPDATE</a></li><li><a href="Phaser.Tweens.Events.html#event:TWEEN_ACTIVE">Phaser.Tweens.Events#event:TWEEN_ACTIVE</a></li><li><a href="Phaser.Tweens.Events.html#event:TWEEN_COMPLETE">Phaser.Tweens.Events#event:TWEEN_COMPLETE</a></li><li><a href="Phaser.Tweens.Events.html#event:TWEEN_LOOP">Phaser.Tweens.Events#event:TWEEN_LOOP</a></li><li><a href="Phaser.Tweens.Events.html#event:TWEEN_REPEAT">Phaser.Tweens.Events#event:TWEEN_REPEAT</a></li><li><a href="Phaser.Tweens.Events.html#event:TWEEN_START">Phaser.Tweens.Events#event:TWEEN_START</a></li><li><a href="Phaser.Tweens.Events.html#event:TWEEN_STOP">Phaser.Tweens.Events#event:TWEEN_STOP</a></li><li><a href="Phaser.Tweens.Events.html#event:TWEEN_UPDATE">Phaser.Tweens.Events#event:TWEEN_UPDATE</a></li><li><a href="Phaser.Tweens.Events.html#event:TWEEN_YOYO">Phaser.Tweens.Events#event:TWEEN_YOYO</a></li><li><a href="SpinePluginEvents.html#event:COMPLETE">SpinePluginEvents#event:COMPLETE</a></li><li><a href="SpinePluginEvents.html#event:DISPOSE">SpinePluginEvents#event:DISPOSE</a></li><li><a href="SpinePluginEvents.html#event:END">SpinePluginEvents#event:END</a></li><li><a href="SpinePluginEvents.html#event:EVENT">SpinePluginEvents#event:EVENT</a></li><li><a href="SpinePluginEvents.html#event:INTERRUPTED">SpinePluginEvents#event:INTERRUPTED</a></li><li><a href="SpinePluginEvents.html#event:START">SpinePluginEvents#event:START</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="Phaser.GameObjects.html" class="dropdown-toggle" data-toggle="dropdown">Game Objects<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Phaser.GameObjects.GameObject.html">Base Game Object</a></li><li><a href="Phaser.GameObjects.GameObjectFactory.html">Game Object Factory</a></li><li><a href="Phaser.GameObjects.GameObjectCreator.html">Game Object Creator</a></li><li>&nbsp;</li><li><a href="Phaser.GameObjects.BitmapText.html">Bitmap Text (Static)</a></li><li><a href="Phaser.GameObjects.DynamicBitmapText.html">Bitmap Text (Dynamic)</a></li><li><a href="Phaser.GameObjects.Blitter.html">Blitter</a></li><li><a href="Phaser.GameObjects.Blitter.Bob.html">Bob (Blitter Object)</a></li><li><a href="Phaser.GameObjects.Container.html">Container</a></li><li><a href="Phaser.GameObjects.DOMElement.html">DOM Element</a></li><li><a href="Phaser.GameObjects.Extern.html">Extern</a></li><li><a href="Phaser.GameObjects.Graphics.html">Graphics</a></li><li><a href="Phaser.GameObjects.Group.html">Group</a></li><li><a href="Phaser.GameObjects.Image.html">Image</a></li><li><a href="Phaser.GameObjects.Layer.html">Layer</a></li><li><a href="Phaser.GameObjects.Particles.ParticleEmitter.html">Particle Emitter</a></li><li><a href="Phaser.GameObjects.Particles.ParticleEmitterManager.html">Particle Emitter Manager</a></li><li><a href="Phaser.GameObjects.PathFollower.html">Path Follower</a></li><li><a href="Phaser.GameObjects.PointLight.html">Point Light</a></li><li><a href="Phaser.GameObjects.RenderTexture.html">Render Texture</a></li><li><a href="Phaser.GameObjects.Shape.html">Shape</a></li><li><a href="Phaser.GameObjects.Sprite.html">Sprite</a></li><li><a href="Phaser.GameObjects.Text.html">Text</a></li><li><a href="Phaser.Tilemaps.Tilemap.html">Tilemap</a></li><li><a href="Phaser.Tilemaps.TilemapLayer.html">Tilemap Layer</a></li><li><a href="Phaser.GameObjects.TileSprite.html">TileSprite</a></li><li><a href="Phaser.GameObjects.Video.html">Video</a></li><li><a href="Phaser.GameObjects.Zone.html">Zone</a></li><li>&nbsp;</li><li><a href="Phaser.GameObjects.Arc.html">Arc</a></li><li><a href="Phaser.GameObjects.Curve.html">Curve</a></li><li><a href="Phaser.GameObjects.Ellipse.html">Ellipse</a></li><li><a href="Phaser.GameObjects.Grid.html">Grid</a></li><li><a href="Phaser.GameObjects.IsoBox.html">IsoBox</a></li><li><a href="Phaser.GameObjects.IsoTriangle.html">IsoTriangle</a></li><li><a href="Phaser.GameObjects.Line.html">Line</a></li><li><a href="Phaser.GameObjects.Polygon.html">Polygon</a></li><li><a href="Phaser.GameObjects.Rectangle.html">Rectangle</a></li><li><a href="Phaser.GameObjects.Star.html">Star</a></li><li><a href="Phaser.GameObjects.Triangle.html">Triangle</a></li><li>&nbsp;</li><li><a href="Phaser.GameObjects.Rope.html">Rope (WebGL only)</a></li><li><a href="Phaser.GameObjects.Shader.html">Shader (WebGL only)</a></li><li><a href="Phaser.GameObjects.LightsPlugin.html">Lights (WebGL only)</a></li><li><a href="Phaser.GameObjects.Mesh.html">Mesh (WebGL only)</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="Phaser.Physics.html" class="dropdown-toggle" data-toggle="dropdown">Physics<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Phaser.Physics.Arcade.html"><strong>Arcade Physics</strong></a></li><li><a href="Phaser.Physics.Arcade.Factory.html">Arcade Physics Factory</a></li><li><a href="Phaser.Physics.Arcade.World.html">Arcade Physics World</a></li><li><a href="Phaser.Physics.Arcade.Image.html">Arcade Physics Image</a></li><li><a href="Phaser.Physics.Arcade.Sprite.html">Arcade Physics Sprite</a></li><li><a href="Phaser.Physics.Arcade.Group.html">Arcade Physics Group</a></li><li>&nbsp;</li><li><a href="Phaser.Physics.Matter.MatterPhysics.html"><strong>Matter Physics</strong></a></li><li><a href="Phaser.Physics.Matter.Factory.html">Matter Physics Factory</a></li><li><a href="Phaser.Physics.Matter.World.html">Matter Physics World</a></li><li><a href="Phaser.Physics.Matter.Image.html">Matter Physics Image</a></li><li><a href="Phaser.Physics.Matter.Sprite.html">Matter Physics Sprite</a></li><li><a href="Phaser.Physics.Matter.PointerConstraint.html">Matter Physics Pointer Constraint</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="Phaser.Scene.html" class="dropdown-toggle" data-toggle="dropdown">Scene<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Phaser.Scene.html">Scene</a></li><li><a href="Phaser.Scenes.ScenePlugin.html">Scene Plugin</a></li><li><a href="Phaser.Scenes.Systems.html">Scene Systems</a></li><li><a href="Phaser.Types.Scenes.html#.SettingsConfig">Scene Configuration</a></li><li>&nbsp;</li><li><a href="Phaser.GameObjects.GameObjectFactory.html">add</a></li><li><a href="Phaser.Animations.AnimationManager.html">anims</a></li><li><a href="Phaser.Cache.CacheManager.html">cache</a></li><li><a href="Phaser.Cameras.Scene2D.CameraManager.html">cameras</a></li><li><a href="Phaser.GameObjects.DisplayList.html">children</a></li><li><a href="Phaser.Data.DataManager.html">data</a></li><li><a href="Phaser.Events.EventEmitter.html">events</a></li><li><a href="Phaser.FacebookInstantGamesPlugin.html">facebook</a></li><li><a href="Phaser.Game.html">game</a></li><li><a href="Phaser.Physics.Impact.ImpactPhysics.html">impact</a></li><li><a href="Phaser.Input.InputPlugin.html">input</a></li><li><a href="Phaser.GameObjects.LightsManager.html">lights</a></li><li><a href="Phaser.Loader.LoaderPlugin.html">load</a></li><li><a href="Phaser.GameObjects.GameObjectCreator.html">make</a></li><li><a href="Phaser.Physics.Matter.MatterPhysics.html">matter</a></li><li><a href="Phaser.Physics.Arcade.ArcadePhysics.html">physics</a></li><li><a href="Phaser.Plugins.PluginManager.html">plugins</a></li><li><a href="Phaser.Data.DataManager.html">registry</a></li><li><a href="Phaser.Scale.ScaleManager.html">scale</a></li><li><a href="Phaser.Scenes.ScenePlugin.html">scene</a></li><li><a href="Phaser.Sound.BaseSoundManager.html">sound</a></li><li><a href="Phaser.Scenes.Systems.html">sys</a></li><li><a href="Phaser.Textures.TextureManager.html">textures</a></li><li><a href="Phaser.Time.Clock.html">time</a></li><li><a href="Phaser.Tweens.TweenManager.html">tweens</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control loading" placeholder="Search" name="q" id="search-input" disabled>
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit" disabled><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Class: QuadraticBezier</h1>
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="Phaser.html">Phaser</a><a href="Phaser.Curves.html">.Curves</a>.</span>
+        
+        QuadraticBezier
+        </h2>
+        
+            <div class="class-description"><p>A quadratic Bézier curve constructed from two control points.</p></div>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+<hr>
+<dt>
+    <h4 class="name" id="QuadraticBezier"><span class="type-signature"></span>new QuadraticBezier(p0, p1, p2)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>p0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+|
+
+<span class="param-type">Array.&lt;number></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Start point, or an array of point pairs.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>p1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Control Point 1.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>p2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Control Point 2.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.2.0</dt>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js">src/curves/QuadraticBezierCurve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js#L12">Line 12</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="Phaser.Curves.Curve.html">Phaser.Curves.Curve</a></li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<hr>
+<dt class="name" id="active">
+    <h4 id="active"><span class="type-signature"></span>active<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>For a curve on a Path, <code>false</code> means the Path will ignore this curve.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#active">Phaser.Curves.Curve#active</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+	<dt class="tag-default method-doc-label method-doc-details-label">Default Value:</dt>
+	<dd class="tag-default">
+		<ul class="dummy">
+			<li>true</li>
+		</ul>
+	</dd>
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L80">Line 80</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="arcLengthDivisions">
+    <h4 id="arcLengthDivisions"><span class="type-signature"></span>arcLengthDivisions<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The quantity of arc length divisions within the curve.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#arcLengthDivisions">Phaser.Curves.Curve#arcLengthDivisions</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+	<dt class="tag-default method-doc-label method-doc-details-label">Default Value:</dt>
+	<dd class="tag-default">
+		<ul class="dummy">
+			<li>100</li>
+		</ul>
+	</dd>
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L50">Line 50</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="cacheArcLengths">
+    <h4 id="cacheArcLengths"><span class="type-signature"></span>cacheArcLengths<span class="type-signature"> :Array.&lt;number></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>An array of cached arc length values.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array.&lt;number></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#cacheArcLengths">Phaser.Curves.Curve#cacheArcLengths</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+	<dt class="tag-default method-doc-label method-doc-details-label">Default Value:</dt>
+	<dd class="tag-default">
+		<ul class="dummy">
+			<li>[]</li>
+		</ul>
+	</dd>
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L60">Line 60</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="defaultDivisions">
+    <h4 id="defaultDivisions"><span class="type-signature"></span>defaultDivisions<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The default number of divisions within the curve.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#defaultDivisions">Phaser.Curves.Curve#defaultDivisions</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+	<dt class="tag-default method-doc-label method-doc-details-label">Default Value:</dt>
+	<dd class="tag-default">
+		<ul class="dummy">
+			<li>5</li>
+		</ul>
+	</dd>
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L40">Line 40</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="needsUpdate">
+    <h4 id="needsUpdate"><span class="type-signature"></span>needsUpdate<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Does the data of this curve need updating?</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#needsUpdate">Phaser.Curves.Curve#needsUpdate</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+	<dt class="tag-default method-doc-label method-doc-details-label">Default Value:</dt>
+	<dd class="tag-default">
+		<ul class="dummy">
+			<li>true</li>
+		</ul>
+	</dd>
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L70">Line 70</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="p0">
+    <h4 id="p0"><span class="type-signature"></span>p0<span class="type-signature"> :<a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The start point.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.2.0</dt>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js">src/curves/QuadraticBezierCurve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js#L43">Line 43</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="p1">
+    <h4 id="p1"><span class="type-signature"></span>p1<span class="type-signature"> :<a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The first control point.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.2.0</dt>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js">src/curves/QuadraticBezierCurve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js#L52">Line 52</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="p2">
+    <h4 id="p2"><span class="type-signature"></span>p2<span class="type-signature"> :<a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The second control point.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.2.0</dt>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js">src/curves/QuadraticBezierCurve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js#L61">Line 61</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="type">
+    <h4 id="type"><span class="type-signature"></span>type<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>String based identifier for the type of curve.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#type">Phaser.Curves.Curve#type</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L31">Line 31</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id=".fromJSON"><span class="type-signature">&lt;static> </span>fromJSON(data)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Creates a curve from a JSON object, e. g. created by <code>toJSON</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Types.Curves.html#.JSONCurve">Phaser.Types.Curves.JSONCurve</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The JSON object containing this curve data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.2.0</dt>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js">src/curves/QuadraticBezierCurve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js#L190">Line 190</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The created curve instance.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Phaser.Curves.QuadraticBezier.html">Phaser.Curves.QuadraticBezier</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="draw"><span class="type-signature"></span>draw(graphics [, pointsTotal])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Draws this curve on the given Graphics object.</p>
+<p>The curve is drawn using <code>Graphics.strokePoints</code> so will be drawn at whatever the present Graphics stroke color is.
+The Graphics object is not cleared before the draw, so the curve will appear on-top of anything else already rendered to it.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>graphics</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.GameObjects.Graphics.html">Phaser.GameObjects.Graphics</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p><code>Graphics</code> object to draw onto.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointsTotal</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    32
+                
+                </td>
+            
+
+            <td class="description last"><p>Number of points to be used for drawing the curve. Higher numbers result in smoother curve but require more processing.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.2.0</dt>
+	
+
+	
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Phaser.Curves.Curve.html#draw">Phaser.Curves.Curve#draw</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js">src/curves/QuadraticBezierCurve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js#L132">Line 132</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p><code>Graphics</code> object that was drawn to.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Phaser.GameObjects.Graphics.html">Phaser.GameObjects.Graphics</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getBounds"><span class="type-signature"></span>getBounds( [out] [, accuracy])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns a Rectangle where the position and dimensions match the bounds of this Curve.</p>
+<p>You can control the accuracy of the bounds. The value given is used to work out how many points
+to plot across the curve. Higher values are more accurate at the cost of calculation speed.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>out</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Geom.Rectangle.html">Phaser.Geom.Rectangle</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The Rectangle to store the bounds in. If falsey a new object will be created.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>accuracy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    16
+                
+                </td>
+            
+
+            <td class="description last"><p>The accuracy of the bounds calculations.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getBounds">Phaser.Curves.Curve#getBounds</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L135">Line 135</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>A Rectangle object holding the bounds of this curve. If <code>out</code> was given it will be this object.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Phaser.Geom.Rectangle.html">Phaser.Geom.Rectangle</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getDistancePoints"><span class="type-signature"></span>getDistancePoints(distance)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns an array of points, spaced out X distance pixels apart.
+The smaller the distance, the larger the array will be.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>distance</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The distance, in pixels, between each point along the curve.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getDistancePoints">Phaser.Curves.Curve#getDistancePoints</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L169">Line 169</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>An Array of Point objects.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="Phaser.Geom.Point.html">Phaser.Geom.Point</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getEndPoint"><span class="type-signature"></span>getEndPoint( [out])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get a point at the end of the curve.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>out</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional Vector object to store the result in.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getEndPoint">Phaser.Curves.Curve#getEndPoint</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L189">Line 189</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>Vector2 containing the coordinates of the curves end point.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getLength"><span class="type-signature"></span>getLength()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get total curve arc length</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getLength">Phaser.Curves.Curve#getLength</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L206">Line 206</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The total length of the curve.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getLengths"><span class="type-signature"></span>getLengths( [divisions])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get a list of cumulative segment lengths.</p>
+<p>These lengths are</p>
+<ul>
+<li>[0] 0</li>
+<li>[1] The first segment</li>
+<li>[2] The first and second segment</li>
+<li>...</li>
+<li>[divisions] All segments</li>
+</ul>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>divisions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The number of divisions or segments.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getLengths">Phaser.Curves.Curve#getLengths</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L222">Line 222</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>An array of cumulative lengths.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;number></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getPoint"><span class="type-signature"></span>getPoint(t [, out])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get point at relative position in curve according to length.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>t</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The position along the curve to return. Where 0 is the start and 1 is the end.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>out</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>A Vector2 object to store the result in. If not given will be created.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.2.0</dt>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js">src/curves/QuadraticBezierCurve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js#L105">Line 105</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The coordinates of the point on the curve. If an <code>out</code> object was given this will be returned.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getPointAt"><span class="type-signature"></span>getPointAt(u [, out])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get a point at a relative position on the curve, by arc length.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>u</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The relative position, [0..1].</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>out</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>A point to store the result in.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getPointAt">Phaser.Curves.Curve#getPointAt</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L278">Line 278</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The point.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getPoints"><span class="type-signature"></span>getPoints( [divisions] [, stepRate] [, out])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get a sequence of evenly spaced points from the curve.</p>
+<p>You can pass <code>divisions</code>, <code>stepRate</code>, or neither.</p>
+<p>The number of divisions will be</p>
+<ol>
+<li><code>divisions</code>, if <code>divisions</code> &gt; 0; or</li>
+<li><code>this.getLength / stepRate</code>, if <code>stepRate</code> &gt; 0; or</li>
+<li><code>this.defaultDivisions</code></li>
+</ol>
+<p><code>1 + divisions</code> points will be returned.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>divisions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The number of divisions to make.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>stepRate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The curve distance between points, implying <code>divisions</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>out</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+|
+
+<span class="param-type">Array.&lt;<a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a>></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>An optional array to store the points in.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getPoints">Phaser.Curves.Curve#getPoints</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L300">Line 300</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>An array of Points from the curve.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array</span>
+|
+
+<span class="param-type">Array.&lt;<a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getRandomPoint"><span class="type-signature"></span>getRandomPoint( [out])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get a random point from the curve.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>out</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>A point object to store the result in.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getRandomPoint">Phaser.Curves.Curve#getRandomPoint</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L349">Line 349</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The point.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getResolution"><span class="type-signature"></span>getResolution(divisions)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get the resolution of the curve.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>divisions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional divisions value.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.2.0</dt>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js">src/curves/QuadraticBezierCurve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js#L90">Line 90</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The curve resolution.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getSpacedPoints"><span class="type-signature"></span>getSpacedPoints( [divisions] [, stepRate] [, out])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get a sequence of equally spaced points (by arc distance) from the curve.</p>
+<p><code>1 + divisions</code> points will be returned.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>divisions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    this.defaultDivisions
+                
+                </td>
+            
+
+            <td class="description last"><p>The number of divisions to make.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>stepRate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Step between points. Used to calculate the number of points to return when divisions is falsy. Ignored if divisions is positive.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>out</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+|
+
+<span class="param-type">Array.&lt;<a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a>></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>An optional array to store the points in.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getSpacedPoints">Phaser.Curves.Curve#getSpacedPoints</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L370">Line 370</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>An array of points.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getStartPoint"><span class="type-signature"></span>getStartPoint( [out])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets the starting point on the curve.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>out</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>A Vector2 object to store the result in. If not given will be created.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.2.0</dt>
+	
+
+	
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Phaser.Curves.Curve.html#getStartPoint">Phaser.Curves.Curve#getStartPoint</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js">src/curves/QuadraticBezierCurve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js#L71">Line 71</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The coordinates of the point on the curve. If an <code>out</code> object was given this will be returned.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getTangent"><span class="type-signature"></span>getTangent(t [, out])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get a unit vector tangent at a relative position on the curve.
+In case any sub curve does not implement its tangent derivation,
+2 points a small delta apart will be used to find its gradient
+which seems to give a reasonable approximation</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>t</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The relative position on the curve, [0..1].</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>out</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>A vector to store the result in.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getTangent">Phaser.Curves.Curve#getTangent</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L430">Line 430</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>Vector approximating the tangent line at the point t (delta +/- 0.0001)</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getTangentAt"><span class="type-signature"></span>getTangentAt(u [, out])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get a unit vector tangent at a relative position on the curve, by arc length.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>u</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The relative position on the curve, [0..1].</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>out</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>A vector to store the result in.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getTangentAt">Phaser.Curves.Curve#getTangentAt</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L472">Line 472</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The tangent vector.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Phaser.Math.Vector2.html">Phaser.Math.Vector2</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getTFromDistance"><span class="type-signature"></span>getTFromDistance(distance [, divisions])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Given a distance in pixels, get a t to find p.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>distance</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The distance, in pixels.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>divisions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional amount of divisions.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getTFromDistance">Phaser.Curves.Curve#getTFromDistance</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L492">Line 492</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The distance.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getUtoTmapping"><span class="type-signature"></span>getUtoTmapping(u, distance [, divisions])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Given u ( 0 .. 1 ), get a t to find p. This gives you points which are equidistant.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>u</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>A float between 0 and 1.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>distance</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The distance, in pixels.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>divisions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional amount of divisions.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#getUtoTmapping">Phaser.Curves.Curve#getUtoTmapping</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L513">Line 513</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The equidistant value.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="toJSON"><span class="type-signature"></span>toJSON()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Converts the curve into a JSON compatible object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.2.0</dt>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js">src/curves/QuadraticBezierCurve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/QuadraticBezierCurve.js#L168">Line 168</a>)</dt>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The JSON object containing this curve data.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Phaser.Types.Curves.html#.JSONCurve">Phaser.Types.Curves.JSONCurve</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="updateArcLengths"><span class="type-signature"></span>updateArcLengths()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Calculate and cache the arc lengths.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since: 3.0.0</dt>
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Phaser.Curves.Curve.html#updateArcLengths">Phaser.Curves.Curve#updateArcLengths</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source: <a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js">src/curves/Curve.js</a> (<a href="https://github.com/photonstorm/phaser/tree/v3.51.0/src/curves/Curve.js#L594">Line 594</a>)</dt>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li>Phaser.Curves.Curve#getLengths()</li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+    <div align="center" style="margin-bottom: 32px">
+
+        <img src="img/phaser3-logo.png" alt="Phaser 3 Logo" title="Phaser 3" /><br />
+
+        <p>Please <a href="https://phaser.io/community/donate">support Phaser development</a> via Patreon or PayPal.</p>
+
+        <p>Found an error in the docs? <a href="https://github.com/photonstorm/phaser/issues">Open an issue</a> and let us know where!</p>
+
+    </div>
+
+
+	<span class="copyright">
+	Phaser Copyright © 2021 Photon Storm Ltd and the contributors to the Phaser projects.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a>
+	
+		on January 5th 2021, 5:25:52 pm
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+<script>
+	(function ( i, s, o, g, r, a, m ) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function () {
+			(i[r].q = i[r].q || []).push( arguments )
+		}, i[r].l = 1 * new Date();
+		a = s.createElement( o ),
+			m = s.getElementsByTagName( o )[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore( a, m )
+	})( window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga' );
+
+	ga( 'create', 'UA-44006568-1', 'phaser.io' );
+	ga( 'send', 'pageview' );
+</script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

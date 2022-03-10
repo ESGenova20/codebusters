@@ -1,0 +1,20 @@
+# System and IDE files
+Thumbs.db
+.DS_Store
+.idea
+.vscode
+*.suo
+*.sublime-project
+*.sublime-workspace
+
+# Vendors
+node_modules/
+
+# Build
+dist/
+/npm-debug.log
+out/
+sqldump.txt
+/tsgen/bin
+/tsgen/test/bin
+phaser3.docset

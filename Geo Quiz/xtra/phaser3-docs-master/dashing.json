@@ -1,0 +1,27 @@
+{
+    "name": "Phaser 3",
+    "package": "phaser3",
+    "index": "docs/index.html",
+    "selectors": {
+        "h1.page-title": [
+            {
+                "requiretext": "^Namespace:",
+                "type": "Namespace",
+                "matchpath": "docs/.*\\.html"
+            },
+            {
+                "requiretext": "^Class:",
+                "type": "Class",
+                "matchpath": "docs/.*\\.html"
+            }
+        ],
+        "h4[id^=\"event:\"]": {
+            "type": "Event",
+            "matchpath": "docs/.*\\.html"
+        }
+    },
+    "ignore": [],
+    "icon32x32": "resources/docset-icon.png",
+    "allowJS": true,
+    "ExternalURL": "https://photonstorm.github.io/phaser3-docs/"
+}

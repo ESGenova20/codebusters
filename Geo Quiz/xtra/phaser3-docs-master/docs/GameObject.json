@@ -1,0 +1,528 @@
+[
+  {
+    "description": "",
+    "tags": [
+      {
+        "title": "author",
+        "description": "Richard Davey <rich@photonstorm.com>",
+        "lineNumber": 1
+      },
+      { "title": "copyright", "description": "2020 Photon Storm Ltd.", "lineNumber": 2 },
+      {
+        "title": "license",
+        "description": "{@link https://opensource.org/licenses/MIT|MIT License}",
+        "lineNumber": 3
+      }
+    ]
+  },
+  {
+    "description": "",
+    "tags": [
+      { "title": "callback", "description": "CreateCallback", "lineNumber": 1 },
+      {
+        "title": "param",
+        "description": "The Bob that was created by the Blitter.",
+        "lineNumber": 3,
+        "type": { "type": "NameExpression", "name": "Phaser.GameObjects.Bob" },
+        "name": "bob"
+      },
+      {
+        "title": "param",
+        "description": "The position of the Bob within the Blitter display list.",
+        "lineNumber": 4,
+        "type": { "type": "NameExpression", "name": "number" },
+        "name": "index"
+      }
+    ]
+  },
+  {
+    "description": "",
+    "tags": [
+      {
+        "title": "classdesc",
+        "description": "A Blitter Game Object.\r\n\r\nThe Blitter Game Object is a special kind of container that creates, updates and manages Bob objects.\r\nBobs are designed for rendering speed rather than flexibility. They consist of a texture, or frame from a texture,\r\na position and an alpha value. You cannot scale or rotate them. They use a batched drawing method for speed\r\nduring rendering.\r\n\r\nA Blitter Game Object has one texture bound to it. Bobs created by the Blitter can use any Frame from this\r\nTexture to render with, but they cannot use any other Texture. It is this single texture-bind that allows\r\nthem their speed.\r\n\r\nIf you have a need to blast a large volume of frames around the screen then Blitter objects are well worth\r\ninvestigating. They are especially useful for using as a base for your own special effects systems.",
+        "lineNumber": 1
+      },
+      { "title": "class", "description": null, "lineNumber": 16, "type": null, "name": "Blitter" },
+      {
+        "title": "extends",
+        "description": null,
+        "lineNumber": 17,
+        "type": null,
+        "name": "Phaser.GameObjects.GameObject"
+      },
+      { "title": "memberof", "description": "Phaser.GameObjects", "lineNumber": 18 },
+      {
+        "title": "constructor",
+        "description": null,
+        "lineNumber": 19,
+        "type": null,
+        "name": null
+      },
+      { "title": "since", "description": "3.0.0", "lineNumber": 20 },
+      {
+        "title": "extends",
+        "description": null,
+        "lineNumber": 22,
+        "type": null,
+        "name": "Phaser.GameObjects.Components.Alpha"
+      },
+      {
+        "title": "extends",
+        "description": null,
+        "lineNumber": 23,
+        "type": null,
+        "name": "Phaser.GameObjects.Components.BlendMode"
+      },
+      {
+        "title": "extends",
+        "description": null,
+        "lineNumber": 24,
+        "type": null,
+        "name": "Phaser.GameObjects.Components.Depth"
+      },
+      {
+        "title": "extends",
+        "description": null,
+        "lineNumber": 25,
+        "type": null,
+        "name": "Phaser.GameObjects.Components.Mask"
+      },
+      {
+        "title": "extends",
+        "description": null,
+        "lineNumber": 26,
+        "type": null,
+        "name": "Phaser.GameObjects.Components.Pipeline"
+      },
+      {
+        "title": "extends",
+        "description": null,
+        "lineNumber": 27,
+        "type": null,
+        "name": "Phaser.GameObjects.Components.ScrollFactor"
+      },
+      {
+        "title": "extends",
+        "description": null,
+        "lineNumber": 28,
+        "type": null,
+        "name": "Phaser.GameObjects.Components.Size"
+      },
+      {
+        "title": "extends",
+        "description": null,
+        "lineNumber": 29,
+        "type": null,
+        "name": "Phaser.GameObjects.Components.Texture"
+      },
+      {
+        "title": "extends",
+        "description": null,
+        "lineNumber": 30,
+        "type": null,
+        "name": "Phaser.GameObjects.Components.Transform"
+      },
+      {
+        "title": "extends",
+        "description": null,
+        "lineNumber": 31,
+        "type": null,
+        "name": "Phaser.GameObjects.Components.Visible"
+      },
+      {
+        "title": "param",
+        "description": "The Scene to which this Game Object belongs. It can only belong to one Scene at any given time.",
+        "lineNumber": 33,
+        "type": { "type": "NameExpression", "name": "Phaser.Scene" },
+        "name": "scene"
+      },
+      {
+        "title": "param",
+        "description": "The x coordinate of this Game Object in world space.",
+        "lineNumber": 34,
+        "type": { "type": "OptionalType", "expression": { "type": "NameExpression", "name": "number" } },
+        "name": "x",
+        "default": "0"
+      },
+      {
+        "title": "param",
+        "description": "The y coordinate of this Game Object in world space.",
+        "lineNumber": 35,
+        "type": { "type": "OptionalType", "expression": { "type": "NameExpression", "name": "number" } },
+        "name": "y",
+        "default": "0"
+      },
+      {
+        "title": "param",
+        "description": "The key of the texture this Game Object will use for rendering. The Texture must already exist in the Texture Manager.",
+        "lineNumber": 36,
+        "type": { "type": "OptionalType", "expression": { "type": "NameExpression", "name": "string" } },
+        "name": "texture",
+        "default": "'__DEFAULT'"
+      },
+      {
+        "title": "param",
+        "description": "The Frame of the Texture that this Game Object will use. Only set if the Texture has multiple frames, such as a Texture Atlas or Sprite Sheet.",
+        "lineNumber": 37,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "UnionType",
+            "elements": [
+              { "type": "NameExpression", "name": "string" },
+              { "type": "NameExpression", "name": "number" }
+            ]
+          }
+        },
+        "name": "frame",
+        "default": "0"
+      }
+    ]
+  },
+  {
+    "description": "The children of this Blitter.\r\nThis List contains all of the Bob objects created by the Blitter.",
+    "tags": [
+      {
+        "title": "name",
+        "description": null,
+        "lineNumber": 4,
+        "name": "Phaser.GameObjects.Blitter#children"
+      },
+      {
+        "title": "type",
+        "description": null,
+        "lineNumber": 5,
+        "type": {
+          "type": "TypeApplication",
+          "expression": { "type": "NameExpression", "name": "Phaser.Structs.List" },
+          "applications": [ { "type": "NameExpression", "name": "Phaser.GameObjects.Bob" } ]
+        }
+      },
+      { "title": "since", "description": "3.0.0", "lineNumber": 6 }
+    ]
+  },
+  {
+    "description": "A transient array that holds all of the Bobs that will be rendered this frame.\r\nThe array is re-populated whenever the dirty flag is set.",
+    "tags": [
+      {
+        "title": "name",
+        "description": null,
+        "lineNumber": 4,
+        "name": "Phaser.GameObjects.Blitter#renderList"
+      },
+      {
+        "title": "type",
+        "description": null,
+        "lineNumber": 5,
+        "type": {
+          "type": "TypeApplication",
+          "expression": { "type": "NameExpression", "name": "Array" },
+          "applications": [ { "type": "NameExpression", "name": "Phaser.GameObjects.Bob" } ]
+        }
+      },
+      { "title": "default", "description": "[]", "lineNumber": 6 },
+      { "title": "private", "description": null, "lineNumber": 7, "type": null },
+      { "title": "since", "description": "3.0.0", "lineNumber": 8 }
+    ]
+  },
+  {
+    "description": "Is the Blitter considered dirty?\r\nA 'dirty' Blitter has had its child count changed since the last frame.",
+    "tags": [
+      {
+        "title": "name",
+        "description": null,
+        "lineNumber": 4,
+        "name": "Phaser.GameObjects.Blitter#dirty"
+      },
+      {
+        "title": "type",
+        "description": null,
+        "lineNumber": 5,
+        "type": { "type": "NameExpression", "name": "boolean" }
+      },
+      { "title": "since", "description": "3.0.0", "lineNumber": 6 }
+    ]
+  },
+  {
+    "description": "Creates a new Bob in this Blitter.\r\n\r\nThe Bob is created at the given coordinates, relative to the Blitter and uses the given frame.\r\nA Bob can use any frame belonging to the texture bound to the Blitter.",
+    "tags": [
+      {
+        "title": "method",
+        "description": null,
+        "lineNumber": 6,
+        "name": "Phaser.GameObjects.Blitter#create"
+      },
+      { "title": "since", "description": "3.0.0", "lineNumber": 7 },
+      {
+        "title": "param",
+        "description": "The x position of the Bob. Bob coordinate are relative to the position of the Blitter object.",
+        "lineNumber": 9,
+        "type": { "type": "NameExpression", "name": "number" },
+        "name": "x"
+      },
+      {
+        "title": "param",
+        "description": "The y position of the Bob. Bob coordinate are relative to the position of the Blitter object.",
+        "lineNumber": 10,
+        "type": { "type": "NameExpression", "name": "number" },
+        "name": "y"
+      },
+      {
+        "title": "param",
+        "description": "The Frame the Bob will use. It _must_ be part of the Texture the parent Blitter object is using.",
+        "lineNumber": 11,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "UnionType",
+            "elements": [
+              { "type": "NameExpression", "name": "string" },
+              { "type": "NameExpression", "name": "number" },
+              { "type": "NameExpression", "name": "Phaser.Textures.Frame" }
+            ]
+          }
+        },
+        "name": "frame"
+      },
+      {
+        "title": "param",
+        "description": "Should the created Bob render or not?",
+        "lineNumber": 12,
+        "type": { "type": "OptionalType", "expression": { "type": "NameExpression", "name": "boolean" } },
+        "name": "visible",
+        "default": "true"
+      },
+      {
+        "title": "param",
+        "description": "The position in the Blitters Display List to add the new Bob at. Defaults to the top of the list.",
+        "lineNumber": 13,
+        "type": { "type": "OptionalType", "expression": { "type": "NameExpression", "name": "number" } },
+        "name": "index"
+      },
+      {
+        "title": "return",
+        "description": "The newly created Bob object.",
+        "lineNumber": 15,
+        "type": { "type": "NameExpression", "name": "Phaser.GameObjects.Bob" }
+      }
+    ]
+  },
+  {
+    "description": "Creates multiple Bob objects within this Blitter and then passes each of them to the specified callback.",
+    "tags": [
+      {
+        "title": "method",
+        "description": null,
+        "lineNumber": 3,
+        "name": "Phaser.GameObjects.Blitter#createFromCallback"
+      },
+      { "title": "since", "description": "3.0.0", "lineNumber": 4 },
+      {
+        "title": "param",
+        "description": "The callback to invoke after creating a bob. It will be sent two arguments: The Bob and the index of the Bob.",
+        "lineNumber": 6,
+        "type": { "type": "NameExpression", "name": "CreateCallback" },
+        "name": "callback"
+      },
+      {
+        "title": "param",
+        "description": "The quantity of Bob objects to create.",
+        "lineNumber": 7,
+        "type": { "type": "NameExpression", "name": "number" },
+        "name": "quantity"
+      },
+      {
+        "title": "param",
+        "description": "The Frame the Bobs will use. It must be part of the Blitter Texture.",
+        "lineNumber": 8,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "UnionType",
+            "elements": [
+              { "type": "NameExpression", "name": "string" },
+              { "type": "NameExpression", "name": "number" },
+              { "type": "NameExpression", "name": "Phaser.Textures.Frame" },
+              {
+                "type": "TypeApplication",
+                "expression": { "type": "NameExpression", "name": "Array" },
+                "applications": [ { "type": "NameExpression", "name": "string" } ]
+              },
+              {
+                "type": "TypeApplication",
+                "expression": { "type": "NameExpression", "name": "Array" },
+                "applications": [ { "type": "NameExpression", "name": "number" } ]
+              },
+              {
+                "type": "TypeApplication",
+                "expression": { "type": "NameExpression", "name": "Array" },
+                "applications": [ { "type": "NameExpression", "name": "Phaser.Textures.Frame" } ]
+              }
+            ]
+          }
+        },
+        "name": "frame"
+      },
+      {
+        "title": "param",
+        "description": "Should the created Bob render or not?",
+        "lineNumber": 9,
+        "type": { "type": "OptionalType", "expression": { "type": "NameExpression", "name": "boolean" } },
+        "name": "visible",
+        "default": "true"
+      },
+      {
+        "title": "return",
+        "description": "An array of Bob objects that were created.",
+        "lineNumber": 11,
+        "type": {
+          "type": "TypeApplication",
+          "expression": { "type": "NameExpression", "name": "Array" },
+          "applications": [ { "type": "NameExpression", "name": "Phaser.GameObjects.Bob" } ]
+        }
+      }
+    ]
+  },
+  {
+    "description": "Creates multiple Bobs in one call.\r\n\r\nThe amount created is controlled by a combination of the `quantity` argument and the number of frames provided.\r\n\r\nIf the quantity is set to 10 and you provide 2 frames, then 20 Bobs will be created. 10 with the first\r\nframe and 10 with the second.",
+    "tags": [
+      {
+        "title": "method",
+        "description": null,
+        "lineNumber": 8,
+        "name": "Phaser.GameObjects.Blitter#createMultiple"
+      },
+      { "title": "since", "description": "3.0.0", "lineNumber": 9 },
+      {
+        "title": "param",
+        "description": "The quantity of Bob objects to create.",
+        "lineNumber": 11,
+        "type": { "type": "NameExpression", "name": "number" },
+        "name": "quantity"
+      },
+      {
+        "title": "param",
+        "description": "The Frame the Bobs will use. It must be part of the Blitter Texture.",
+        "lineNumber": 12,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "UnionType",
+            "elements": [
+              { "type": "NameExpression", "name": "string" },
+              { "type": "NameExpression", "name": "number" },
+              { "type": "NameExpression", "name": "Phaser.Textures.Frame" },
+              {
+                "type": "TypeApplication",
+                "expression": { "type": "NameExpression", "name": "Array" },
+                "applications": [ { "type": "NameExpression", "name": "string" } ]
+              },
+              {
+                "type": "TypeApplication",
+                "expression": { "type": "NameExpression", "name": "Array" },
+                "applications": [ { "type": "NameExpression", "name": "number" } ]
+              },
+              {
+                "type": "TypeApplication",
+                "expression": { "type": "NameExpression", "name": "Array" },
+                "applications": [ { "type": "NameExpression", "name": "Phaser.Textures.Frame" } ]
+              }
+            ]
+          }
+        },
+        "name": "frame"
+      },
+      {
+        "title": "param",
+        "description": "Should the created Bob render or not?",
+        "lineNumber": 13,
+        "type": { "type": "OptionalType", "expression": { "type": "NameExpression", "name": "boolean" } },
+        "name": "visible",
+        "default": "true"
+      },
+      {
+        "title": "return",
+        "description": "An array of Bob objects that were created.",
+        "lineNumber": 15,
+        "type": {
+          "type": "TypeApplication",
+          "expression": { "type": "NameExpression", "name": "Array" },
+          "applications": [ { "type": "NameExpression", "name": "Phaser.GameObjects.Bob" } ]
+        }
+      }
+    ]
+  },
+  {
+    "description": "Checks if the given child can render or not, by checking its `visible` and `alpha` values.",
+    "tags": [
+      {
+        "title": "method",
+        "description": null,
+        "lineNumber": 3,
+        "name": "Phaser.GameObjects.Blitter#childCanRender"
+      },
+      { "title": "since", "description": "3.0.0", "lineNumber": 4 },
+      {
+        "title": "param",
+        "description": "The Bob to check for rendering.",
+        "lineNumber": 6,
+        "type": { "type": "NameExpression", "name": "Phaser.GameObjects.Bob" },
+        "name": "child"
+      },
+      {
+        "title": "return",
+        "description": "Returns `true` if the given child can render, otherwise `false`.",
+        "lineNumber": 8,
+        "type": { "type": "NameExpression", "name": "boolean" }
+      }
+    ]
+  },
+  {
+    "description": "Returns an array of Bobs to be rendered.\r\nIf the Blitter is dirty then a new list is generated and stored in `renderList`.",
+    "tags": [
+      {
+        "title": "method",
+        "description": null,
+        "lineNumber": 4,
+        "name": "Phaser.GameObjects.Blitter#getRenderList"
+      },
+      { "title": "since", "description": "3.0.0", "lineNumber": 5 },
+      {
+        "title": "return",
+        "description": "An array of Bob objects that will be rendered this frame.",
+        "lineNumber": 7,
+        "type": {
+          "type": "TypeApplication",
+          "expression": { "type": "NameExpression", "name": "Array" },
+          "applications": [ { "type": "NameExpression", "name": "Phaser.GameObjects.Bob" } ]
+        }
+      }
+    ]
+  },
+  {
+    "description": "Removes all Bobs from the children List and clears the dirty flag.",
+    "tags": [
+      {
+        "title": "method",
+        "description": null,
+        "lineNumber": 3,
+        "name": "Phaser.GameObjects.Blitter#clear"
+      },
+      { "title": "since", "description": "3.0.0", "lineNumber": 4 }
+    ]
+  },
+  {
+    "description": "Internal destroy handler, called as part of the destroy process.",
+    "tags": [
+      {
+        "title": "method",
+        "description": null,
+        "lineNumber": 3,
+        "name": "Phaser.GameObjects.Blitter#preDestroy"
+      },
+      { "title": "protected", "description": null, "lineNumber": 4, "type": null },
+      { "title": "since", "description": "3.9.0", "lineNumber": 5 }
+    ]
+  }
+]

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Percy Doc Thrower</title>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <script src="./lib/getQueryString.js"></script>
+        <script src="./lib/sql.js"></script>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Percy</a>
+            <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="index.html?filter=all&show=all">All</a>
+                <a class="nav-item nav-link" href="index.html?filter=all&show=done">Done</a>
+                <a class="nav-item nav-link" href="index.html?filter=all&show=todo">Remaining</a>
+                <a class="nav-item nav-link" href="../out/">Output</a>
+            </div>
+            <span class="navbar-text" id="totalDisplay"></span>
+        </nav>
+
+        <div class="container-fluid">
+
+            <div class="progress mt-4">
+                <div id="progressBar" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="height: 24px; color: black; font-size: 16px; font-weight: bold; line-height: 24px">0%</div>
+            </div>
+
+            <div class="progress mt-4" id="progressBar2Container" style="display: none">
+                <div id="progressBar2" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="height: 24px; color: black; font-size: 16px; font-weight: bold; line-height: 24px">0%</div>
+            </div>
+
+            <div class="button-group my-4" id="buttonList"></div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="showOptions" id="showOptions1" value="all" checked>
+                    Show All (<span id="filterTotalAll"></span>)
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="showOptions" id="showOptions2" value="todo">
+                    Show Remaining (<span id="filterTotalRemaining"></span>)
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="showOptions" id="showOptions3" value="done">
+                    Show Completed (<span id="filterTotalCompleted"></span>)
+                </label>
+            </div>
+
+            <ul class="list-group my-4" id="list"></ul>
+
+        </div>
+
+        <script type="text/javascript">
+
+        function renderContents (files)
+        {
+            var list = $('#list');
+
+            var total = files.length;
+            var done = 0;
+
+            for (var i = 0; i < files.length; i++)
+            {
+                var entry = files[i];
+                var filename = entry[0];
+
+                if (filename.indexOf('index.js') !== -1)
+                {
+                    continue;
+                }
+
+                if (entry[1] === 1)
+                {
+                    done++;
+                }
+
+                var state = (entry[1] === 1) ? 'list-group-item list-group-item-success' : 'list-group-item';
+
+                var li = $('<li>', { class: state, style: 'font-family: Consolas; font-size: 14px' }).text(filename);
+                var a1 = $('<a>', { href: 'class.html?f=' + filename, class: 'badge badge-warning mx-4' }).text('Class');
+                // var a2 = $('<a>', { href: 'method.html?f=' + filename, class: 'badge badge-danger mr-4' }).text('Method');
+                var a2 = $('<a>', { href: 'component.html?f=' + filename, class: 'badge badge-danger mr-4' }).text('Component');
+                var a3 = $('<a>', { href: 'function.html?f=' + filename, class: 'badge badge-primary mr-4' }).text('Function');
+
+                if (entry[1] === 1)
+                {
+                    list.append(li.append(a1, a2, a3));
+                }
+                else
+                {
+                    var a4 = $('<button>', { class: 'badge badge-success', data: { filename: filename, parent: li } }).text('Mark Done');
+
+                    var clickHandler = function ()
+                    {
+                        var button = $(this);
+                        var parent = $(this).data('parent');
+                        var filename = $(this).data('filename');
+
+                        var data = {
+                            filename: filename
+                        };
+
+                        //  Save to SQL
+                        $.post('markdone.php', data, function (result) {
+
+                            if (result == 'OK')
+                            {
+                                parent.addClass('list-group-item-success');
+                                button.hide();
+                            }
+
+                        });
+                    };
+
+                    a4.on('click', clickHandler);
+
+                    list.append(li.append(a1, a2, a3, a4));
+                }
+            }
+
+            var progress = Math.round((done / total) * 100);
+
+            // console.log(total, done, progress);
+
+            $('#progressBar2').css('width', progress + '%').text(progress + '%');
+        }
+
+        $(document).ready(function () {
+
+            //  Top-level buttons
+
+            var buttons = [
+                'actions', 'animations', 'boot', 'cache', 'camera', 'create', 'curves',
+                'device', 'display', 'dom', 'events', 'gameobjects', 'geom', 'input',
+                'loader', 'math', 'physics', 'renderer', 'scene', 'sound',
+                'structs', 'textures', 'time', 'tilemaps', 'tweens', 'utils'
+            ];
+
+            var buttonList = $('#buttonList');
+            var filter = getQueryString('filter');
+
+            for (var i = 0; i < buttons.length; i++)
+            {
+                var name = buttons[i];
+                var css = (name === filter) ? 'btn btn-danger btn-sm mx-1 my-1' : 'btn btn-primary btn-sm mx-1 my-1';
+
+                var a = $('<button>', { type: 'button', class: css }).text(name);
+
+                a.on('click', { name: name }, function (event) {
+
+                    var href = 'index.html?filter=' + event.data.name;
+                    var show = $('input[name=showOptions]:checked').val(); 
+
+                    window.location.href = href + '&show=' + show;
+
+                });
+
+                buttonList.append(a);
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/phaser3-docs/percy/files.db', true);
+            xhr.responseType = 'arraybuffer';
+
+            xhr.onload = function (e)
+            {
+                var uInt8Array = new Uint8Array(this.response);
+                var db = new SQL.Database(uInt8Array);
+
+                var result;
+       
+                //  Totals
+                result = db.exec("SELECT COUNT(*) FROM files");
+
+                var total = result[0].values[0][0];
+
+                result = db.exec("SELECT COUNT(*) FROM files WHERE done=1");
+
+                var done = result[0].values[0][0];
+
+                var progress = Math.round((done / total) * 100);
+
+                var filesLeft = total - done;
+
+                $('#totalDisplay').text('Total Files: ' + total + ' - Done: ' + done + ' - Remaining: ' + filesLeft + ' - Complete: ' + progress + '%');
+
+                // console.log(total, done, progress);
+
+                $('#progressBar').css('width', progress + '%').text(progress + '%');
+
+                $('#filterTotalAll').text(total);
+                $('#filterTotalCompleted').text(done);
+                $('#filterTotalRemaining').text(total - done);
+
+                var show = getQueryString('show');
+                var query;
+
+                if (filter === 'all')
+                {
+                    //  Show everything
+                    query = "SELECT path,done FROM files";
+
+                    if (show === 'todo')
+                    {
+                        query = query.concat(' WHERE done=0');
+                    }
+                    else if (show === 'done')
+                    {
+                        query = query.concat(' WHERE done=1');
+                    }
+                }
+                else if (filter !== '')
+                {
+                    //  We've got a filter selected
+                    result = db.exec("SELECT COUNT(*) FROM files WHERE path LIKE '" + filter + "%'");
+
+                    var filteredTotal = result[0].values[0][0];
+
+                    result = db.exec("SELECT COUNT(*) FROM files WHERE path LIKE '" + filter + "%' AND done=1");
+
+                    var filteredTotalDone = result[0].values[0][0];
+
+                    $('#filterTotalAll').text(filteredTotal);
+                    $('#filterTotalCompleted').text(filteredTotalDone);
+                    $('#filterTotalRemaining').text(filteredTotal - filteredTotalDone);
+
+                    query = "SELECT path,done FROM files WHERE path LIKE '" + filter + "%'";
+
+                    if (show === 'todo')
+                    {
+                        query = query.concat(' AND done=0');
+                    }
+                    else if (show === 'done')
+                    {
+                        query = query.concat(' AND done=1');
+                    }
+                    else
+                    {
+                        $('#progressBar2Container').show();
+                    }
+                }
+
+                if (query)
+                {
+                    result = db.exec(query);
+
+                    renderContents(result[0].values);
+                }
+            };
+
+            xhr.send();
+
+        });
+
+        </script>
+
+    </body>
+</html>

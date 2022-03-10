@@ -1,0 +1,37 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "include": [
+            "../phaser/src/",
+            "../phaser/plugins/fbinstant"
+        ],
+        "exclude": [
+            "../phaser/src/phaser-arcade-physics.js",
+            "../phaser/src/phaser-core.js",
+            "../phaser/src/physics/matter-js/poly-decomp/",
+            "../phaser/src/physics/matter-js/lib",
+            "../phaser/src/polyfills",
+            "../phaser/src/phaser-ie9.js"
+        ],
+        "includePattern": ".+\\.js?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": [
+        "jsdoc-plugins/typedef",
+        "jsdoc-plugins/this"
+    ],
+    "opts": {
+        "debug": false,
+        "destination": "./json/phaser.json",
+        "encoding": "utf8",
+        "outputSourceFiles": false,
+        "outputSourcePath": true,
+        "recurse": true,
+        "private": false,
+        "lenient": true,
+        "sourceType": "script",
+        "template": "node_modules/jsdoc-json"
+    }
+}

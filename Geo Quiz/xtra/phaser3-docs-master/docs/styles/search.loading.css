@@ -1,0 +1,7 @@
+#search-input.loading {
+    background: url(/img/loading.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 50px;
+    background-color: #F3F3F3;
+}
