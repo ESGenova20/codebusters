@@ -52,12 +52,22 @@ a, button{
     padding: 15px;
     text-decoration: none;
     font-size: 17px;
+    position: relative;
 }
 
-#navbar a:hover {
-    background-color: #ddd;
-    color: #061a0c;
-}
+
+#navbar a::after {
+  content:'';
+  width:0%;
+  height:3px;
+  display:block;
+  background-color: #fff;
+
+} 
+#navbar a:hover::after {
+  width:100%;
+  transition:all .5s;
+} 
 
 .CenteredDiv {
     margin: auto;
@@ -117,6 +127,7 @@ a, button{
 
 button{
     border-color: transparent;
+    background-color: transparent;
     border-radius: 40%;
     width: 20%;
     
