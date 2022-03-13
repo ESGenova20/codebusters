@@ -198,7 +198,20 @@ button{
       height: 100%;
   }
 
+@font-face {
+    font-family: 'torbalanregular';
+    src: url('../font/torbalan.woff2') format('woff2'),
+        url('../font/torbalan.ttf') format('ttf'),     
+        url('../font/torbalan.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 #letter{
+    font-family: 'torbalanregular';
+    font-weight: normal;
+    font-style: normal;
+    
     background-image: url("../images/old_letter.jpg");
     background-repeat: no-repeat;
     background-size: cover;
