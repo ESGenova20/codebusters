@@ -1,4 +1,16 @@
 var prevScrollpos = window.pageYOffset;
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+
+
 
 window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
@@ -14,6 +26,7 @@ function Easternfront() {
     const element2 = document.getElementById("Fronts");
     element2.innerHTML = "Eastern front. On the Eastern Front of World War I, Russian forces invaded the German-held regions of East Prussia and Poland, but were stopped short by German and Austrian forces at the Battle of Tannenberg in late August 1914. Despite that victory, Russia's assault had forced Germany to move two corps from the Western Front to the Eastern, contributing to the German loss in the Battle of the Marne. Combined with the fierce Allied resistance in France, the ability of Russia’s huge war machine to mobilize relatively quickly in the east ensured a longer, more grueling conflict instead of the quick victory Germany had hoped to win under the Schlieffen Plan.";
     document.getElementById('myImage').src = '../codebusters/Website/images/world-war-one-eastern-front.png';
+
 }
 
 function Westernfront() {
