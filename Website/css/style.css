@@ -194,11 +194,19 @@ button{
 
   #myImage
   {
-    
       width: auto;
       height: 100%;
-      
-      
   }
+
+#letter{
+    background-image: url("../images/old_letter.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    width: 90%;
+    height: auto;
+    padding: 3%;
+}
   
   
