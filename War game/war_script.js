@@ -47,4 +47,34 @@ function game() {
     function move(mouseDirection) {
         player.deg = Math.atan2(mouseDirection.offsetX - (ctxWidth/2), -(mouseDirection.offsetY - (ctxHeight/2)));
     }
+
+    //Prevent unexepcted actions
+    function action(mouseDirection) {
+        mouseDirection.preventDefault();
+
+        if(playing) {
+            //Coincidence of the shot and the weapon
+            var weapon = {
+                x: -8,
+                y: -179,
+                sizeX: 20,
+                sizeY: 10,
+                realX: mouseDirection.offsetX,
+                realY: mouseDirection.offsetY,
+                dirX: mouseDirection.offsetX,
+                dirY: mouseDirection.offsetY,
+                deg: Math.atan2(mouseDirection.offsetX - (ctxWidth/2), -(mouseDirection.offsetY - (ctxHeight/2))),
+                
+                //Opportunity to restart the game
+                destroyed: false
+            };
+
+            //Append a value to object and make the weapon to shoot
+            bullets.push(weapon);
+        } else {
+            var dist;
+            if(gameOver) {
+                //Prevent double shoot
+                dist = Math.sqrt(((mouseDirection.offsetX - ctxWidth/2) * (mouseDirection.offsetX - ctxWidth/2)) + ((mouseDirection.offsetY - (ctxHeight/2 + 45 + 22)) * (mouseDirection.offsetY - (ctxHeight/2+ 45 + 22))));
+    }   }   }
 }
