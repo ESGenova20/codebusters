@@ -76,5 +76,44 @@ function game() {
             if(gameOver) {
                 //Prevent double shoot
                 dist = Math.sqrt(((mouseDirection.offsetX - ctxWidth/2) * (mouseDirection.offsetX - ctxWidth/2)) + ((mouseDirection.offsetY - (ctxHeight/2 + 45 + 22)) * (mouseDirection.offsetY - (ctxHeight/2+ 45 + 22))));
-    }   }   }
+                
+                if (dist < 27) {
+                    if(mouseDirection.type == 'click') {
+                        gameOver   = false;
+                        count      = 0;
+                        bullets    = [];
+                        enemies  = [];
+                        explosions = [];
+                        destroyed  = 0;
+                        player.deg = 0;
+                        canvas.removeEventListener('contextmenu', action);
+                        canvas.removeEventListener('mousemove', move);
+                        canvas.style.cursor = "default";
+                    } else {
+                        canvas.style.cursor = "pointer";
+                    }
+                } else {
+                    canvas.style.cursor = "default";
+                }
+            } else {
+                dist = Math.sqrt(((mouseDirection.offsetX - ctxWidth/2) * (mouseDirection.offsetX - ctxWidth/2)) + ((mouseDirection.offsetY - ctxHeight/2) * (mouseDirection.offsetY - ctxHeight/2)));
+
+                //Start button
+                if (dist < 27) {
+                    if(mouseDirection.type == 'click') {
+                        playing = true;
+                        canvas.removeEventListener('mousemove', action);
+                        canvas.addEventListener('contextmenu', action);
+                        canvas.addEventListener('mousemove', move);
+                        canvas.setAttribute('class', 'playing');
+                        canvas.style.cursor = 'default';
+                    } else {
+                        canvas.style.cursor = 'pointer';
+                    }
+                } else {
+                    canvas.style.cursor = 'default';
+                }
+            }
+        }
+    }
 }
