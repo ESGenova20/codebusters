@@ -29,4 +29,22 @@ function game() {
         playing = false,
         gameOver = false,
         country = {deg: 0}
+
+    //Weapon's coordinates
+    var player = {
+        posX : -35,
+        posY : -180,
+        width : 70,
+        height : 70,
+        deg : 0
+    };
+
+    //Make the weapon work
+    canvas.addEventListener('click', action);
+    canvas.addEventListener('mousemove', action);
+
+    //Coincidence of the weapon and the mouse
+    function move(mouseDirection) {
+        player.deg = Math.atan2(mouseDirection.offsetX - (ctxWidth/2), -(mouseDirection.offsetY - (ctxHeight/2)));
+    }
 }
