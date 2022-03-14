@@ -6,5 +6,8 @@ let game = new Phaser.Game({
     height: 600,
     scene:[
         LoadScene, MenuScene   
-    ]
+    ],
+    render:{
+        pixelArt: true
+    }
 });
