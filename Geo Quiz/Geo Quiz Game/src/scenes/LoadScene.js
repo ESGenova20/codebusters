@@ -12,18 +12,19 @@ export class LoadScene extends Phaser.Scene{
 
     preload()
     {
-        this.load.image("logo", "./dist/assets/image/logo.png");
-        this.load.image("p1_button", "./dist/assets/image/p1_button.png");
-        this.load.image("p2_button", "./dist/assets/image/p2_button.png");
-        this.load.image("title_bg", "./dist/assets/image/title_bg.png");
+        this.load.image("logo", "./assets/image/logo.png");
+        this.load.image("p1_button", "./assets/image/p1_button.png");
+        this.load.image("p2_button", "./assets/image/p2_button.png");
+        this.load.image("title_bg", "./assets/image/title_bg1.png");
     
-        this.load.spritesheet("green_player","./dist/assets/image/green_player.png");
+        this.load.image("green_player","./assets/image/spin.gif");
         ({
-            frameHeight: 32,
-            frameWidth: 32
+            frameWidth: 32,
+            frameHeight: 32
         });    
 
-        this.load.audio("title_music", "./dist/assets/audio/game_audio.mp3");
+
+        this.load.audio("title_music", "./assets/audio/game_audio.mp3");
     
         let loadingBar = this.add.graphics
         ({
@@ -35,7 +36,7 @@ export class LoadScene extends Phaser.Scene{
 
         for (let i = 0; i < 100; i++)
         {
-            this.load.spritesheet("green_player" + i,"./dist/assets/image/green_player.png");
+            this.load.spritesheet("green_player","./assets/image/green_player.png");
             ({
                 frameHeight: 32,
                 frameWidth: 32
