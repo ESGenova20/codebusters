@@ -132,6 +132,29 @@ function game() {
 
                 //Mouse controls shooting direction
                 ctx.rotate(bullets[i].deg);
+
+                //Draw necessary images and set coordinates
+                ctx.drawImage(
+                    sprite,
+                    211,
+                    100,
+                    50,
+                    75,
+                    bullets[i].x,
+                    bullets[i].y -= 20,
+                    19,
+                    30
+                );
+
+                //Restore the default state and allow to continue game after a collision
+                ctx.restore();
+
+                //Real coordinates and disappearance of a hit enemy
+                bullets[i].realX = (0) - (bullets[i].y + 10) * Math.sin(bullets[i].deg);
+                bullets[i].realY = (0) + (bullets[i].y + 10) * Math.cos(bullets[i].deg);
+
+                bullets[i].realX += ctxWidth/2;
+                bullets[i].realY += ctxHeight/2;
             }
         }
     }
