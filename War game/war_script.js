@@ -116,4 +116,23 @@ function game() {
             }
         }
     }
+
+    //Collision and battle function
+    function fire() {
+        var distance;
+        
+        for(var i = 0; i < bullets.length; i++) {
+            if(!bullets[i].destroyed) {
+
+                //Save the default state
+                ctx.save();
+
+                //Set the x and y value of starting and final position of shot
+                ctx.translate(ctxWidth/2,ctxHeight/2);
+
+                //Mouse controls shooting direction
+                ctx.rotate(bullets[i].deg);
+            }
+        }
+    }
 }
