@@ -155,6 +155,22 @@ function game() {
 
                 bullets[i].realX += ctxWidth/2;
                 bullets[i].realY += ctxHeight/2;
+
+                //Collision cycle
+                for(var j = 0; j < enemies.length; j++) {
+                    if(!enemies[j].destroyed) {
+                        //Only hit enemy disappears
+                        distance = Math.sqrt(Math.pow(enemies[j].realX - bullets[i].realX, 2) + Math.pow(enemies[j].realY - bullets[i].realY, 2));
+
+                        //Counter raising and forthcoming enemies
+                        if (distance < (((enemies[j].width/enemies[j].size) / 2) - 4) + ((19 / 2) - 4)) {
+                            destroyed += 1;
+                            enemies[j].destroyed = true;
+                            bullets[i].destroyed   = true;
+                            explosions.push(enemies[j]);
+                        }
+                    }
+                }
             }
         }
     }
