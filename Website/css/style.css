@@ -205,11 +205,11 @@ button{
         url('../font/torbalan.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
+
 #letter{
     font-family: 'torbalanregular';
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
     
     background-image: url("../images/old_letter.jpg");
@@ -221,5 +221,24 @@ button{
     height: auto;
     padding: 3%;
 }
-  
+
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-button{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(13, 31, 16);
+    background-clip: padding-box;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+    border: 1px black solid;
+}
   
