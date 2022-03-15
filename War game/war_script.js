@@ -227,4 +227,51 @@ function game() {
             fire();
         }
     }
+
+    //Function that control new enemies
+    function newEnemy() {
+
+        //Take random coordinates
+        var type = random(1,4),
+            coordsX,
+            coordsY;
+
+        switch(type){
+            case 1:
+                coordsX = random(0, ctxWidth);
+                coordsY = 0 - 150;
+                break;
+            case 2:
+                coordsX = ctxWidth + 150;
+                coordsY = random(0, ctxHeight);
+                break;
+            case 3:
+                coordsX = random(0, ctxWidth);
+                coordsY = ctxHeight + 150;
+                break;
+            case 4:
+                coordsX = 0 - 150;
+                coordsY = random(0, ctxHeight);
+                break;
+        }
+
+        //Enemy realX and realY and its size
+        var asteroid = {
+            x: 278,
+            y: 0,
+            state: 0,
+            stateX: 0,
+            width: 134,
+            height: 123,
+            realX: coordsX,
+            realY: coordsY,
+            moveY: 0,
+            coordsX: coordsX,
+            coordsY: coordsY,
+            size: random(1, 3),
+            deg: Math.atan2(coordsX  - (ctxWidth/2), -(coordsY - (ctxHeight/2))),
+            destroyed: false
+        };
+        enemies.push(asteroid);
+    }
 }
