@@ -175,6 +175,7 @@ function game() {
         }
     }
 
+    //Country set up
     function country() {
         ctx.save();
         ctx.fillStyle   = 'white';
@@ -197,5 +198,33 @@ function game() {
         ctx.rotate((country.deg += 0.1) * (Math.PI / 180));
         ctx.drawImage(sprite, 0, 0, 200, 200, -100, -100, 200,200);
         ctx.restore();
+    }
+
+    function _player() {
+
+        ctx.save();
+        ctx.translate(ctxWidth/2,ctxHeight/2);
+
+        //Regularly rotation
+        ctx.rotate(player.deg);
+
+        //Drawing an image
+        ctx.drawImage(
+            sprite,
+            200,
+            0,
+            player.width,
+            player.height,
+            player.posX,
+            player.posY,
+            player.width,
+            player.height
+        );
+
+        ctx.restore();
+
+        if(bullets.length - destroyed && playing) {
+            fire();
+        }
     }
 }
