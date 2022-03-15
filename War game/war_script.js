@@ -174,4 +174,28 @@ function game() {
             }
         }
     }
+
+    function country() {
+        ctx.save();
+        ctx.fillStyle   = 'white';
+        ctx.shadowBlur    = 100;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+        ctx.shadowColor   = "#999";
+
+        ctx.arc(
+            (ctxWidth/2),
+            (ctxHeight/2),
+            100,
+            0,
+            Math.PI * 2
+        );
+        ctx.fill();
+
+        //Country rotation
+        ctx.translate(ctxWidth/2,ctxHeight/2);
+        ctx.rotate((country.deg += 0.1) * (Math.PI / 180));
+        ctx.drawImage(sprite, 0, 0, 200, 200, -100, -100, 200,200);
+        ctx.restore();
+    }
 }
