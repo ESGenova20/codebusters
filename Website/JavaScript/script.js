@@ -34,3 +34,14 @@ function Westernfront() {
     element.innerHTML = "Western front. On August 4, 1914, German troops crossed the border into Belgium. In the first battle of World War I, the Germans assaulted the heavily fortified city of Liege, using the most powerful weapons in their arsenal—enormous siege cannons—to capture the city by August 15. The Germans left death and destruction in their wake as they advanced through Belgium toward France, shooting civilians and executing a Belgian priest they had accused of inciting civilian resistance.";
     document.getElementById('myImage').src = '../codebusters/Website/images/world-war-one-western-front.png';
 }
+
+/* Open */
+function openNav() {
+    document.getElementById("myNav").style.height = "100vh";
+    
+  }
+  
+  /* Close */
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0vh";
+  }

@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
 
-html{
+html {
     cursor: url('../images/cursor.png'), auto;
 }
+
 body {
 
     margin: 0;
@@ -11,16 +12,17 @@ body {
 
 }
 
-::selection{
-    background: rgb(26, 58, 30);
+::selection {
+    background: rgb(26, 58, 30, 0.5);
     color: #ade7c1;
-  }
+    font-weight: bold;
+}
 
-a, button{
+a, button {
     cursor: url('../images/cursor.png'), auto;
 }
 
-@font-face{
+@font-face {
     font-family: 'torbalan';
     src: url('torbalan.eot');
     /* IE9 Compat Modes */
@@ -57,17 +59,18 @@ a, button{
 
 
 #navbar a::after {
-  content:'';
-  width:0%;
-  height:3px;
-  display:block;
-  background-color: #fff;
+    content: '';
+    width: 0%;
+    height: 3px;
+    display: block;
+    background-color: #fff;
 
-} 
+}
+
 #navbar a:hover::after {
-  width:100%;
-  transition:all .5s;
-} 
+    width: 100%;
+    transition: all .5s;
+}
 
 .CenteredDiv {
     margin: auto;
@@ -90,8 +93,9 @@ a, button{
     background-size: cover;
 }
 
-.LogosInNav{
-    float:left;
+.LogosInNav {
+    height: fixed;
+    width: 10vh;
 }
 
 .sticky {
@@ -108,10 +112,7 @@ a, button{
     padding: 16px;
 }
 
-#Information>.CenteredDiv {
-    background-image: url('papper.png');
 
-}
 
 #tittlebg {
     background-image: url(blank.jpg);
@@ -121,26 +122,28 @@ a, button{
     background-size: cover;
 
 }
+
 .compass {
     width: 60%;
 
 }
 
-button{
+button {
     border-color: transparent;
     background-color: transparent;
     border-radius: 40%;
     width: 20%;
     z-index: -1000;
-    
-    
+
+
 }
+
 .tooltip {
     position: relative;
     display: inline;
-  }
-  
-  .tooltip .tooltiptext {
+}
+
+.tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
     background-color: black;
@@ -153,65 +156,66 @@ button{
     bottom: 100%;
     left: 50%;
     margin-left: -60px;
-    
+
     /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
     opacity: 0;
     transition: opacity 1s;
-  }
-  
-  .tooltip:hover .tooltiptext {
+}
+
+.tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-  }
+}
 
-  .container{
+.container {
     width: 50vw;
     min-height: 20vh;
     height: 30vw;
     position: relative;
     margin: 7%;
-    
+
 
 }
-.box{
+
+.box {
     width: 100%;
-    height: 100%;            
+    height: 100%;
     position: absolute;
     top: 0;
     background-color: 0f0f0f;
     background-image: linear-gradient(319deg, rgb(0, 0, 0) 0%, #000000 37%, #383838 100%);
     left: 0;
-      /*opacity: 0.8; for demo purpose  */
+    /*opacity: 0.8; for demo purpose  */
 }
-.stack-top{
+
+.stack-top {
     z-index: 9;
     margin: 7%;
     transform: rotate(4.5deg);
     height: 100%;
     /* background: none; */
 
-  }
+}
 
-  #myImage
-  {
-      width: auto;
-      height: 100%;
-  }
+#myImage {
+    width: auto;
+    height: 100%;
+}
 
 @font-face {
     font-family: 'torbalanregular';
     src: url('../font/torbalan.woff2') format('woff2'),
-        url('../font/torbalan.ttf') format('ttf'),     
+        url('../font/torbalan.ttf') format('ttf'),
         url('../font/torbalan.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-#letter{
+#letter {
     font-family: 'torbalanregular';
     font-weight: bold;
     font-style: normal;
-    
+
     background-image: url("../images/old_letter.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -223,22 +227,110 @@ button{
 }
 
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 10px;
 }
 
-::-webkit-scrollbar-button{
+::-webkit-scrollbar-button {
     background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
     background-color: rgb(13, 31, 16);
     background-clip: padding-box;
     border: 1px solid black;
     border-radius: 10px;
-  }
+}
+
 ::-webkit-scrollbar-track {
     background: transparent;
     border-radius: 10px;
     border: 1px black solid;
 }
-  
+
+#check {
+    display: none;
+
+}
+
+
+@media (max-width: 952px) {
+    .content {
+        font-size: 14px;
+    }
+
+    #check {
+        display: none;
+
+    }
+
+}
+
+@media (max-width: 858px) {
+    #check {
+        display: block;
+
+    }
+
+    .content {
+        display: none;
+    }
+
+}
+
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100vh;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100vw; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
