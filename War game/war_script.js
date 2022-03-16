@@ -274,4 +274,55 @@ function game() {
         };
         enemies.push(asteroid);
     }
+
+    function _enemies() {
+        var distance;
+
+        for(var i = 0; i < enemies.length; i++) {
+            if (!enemies[i].destroyed) {
+                ctx.save();
+                ctx.translate(enemies[i].coordsX, enemies[i].coordsY);
+                ctx.rotate(enemies[i].deg);
+
+                //Draw new image and set its coordinates
+                ctx.drawImage(
+                    sprite,
+                    enemies[i].x,
+                    enemies[i].y,
+                    enemies[i].width,
+                    enemies[i].height,
+                    -(enemies[i].width / enemies[i].size) / 2,
+                    enemies[i].moveY += 1/(enemies[i].size),
+                    enemies[i].width / enemies[i].size,
+                    enemies[i].height / enemies[i].size
+                );
+
+                ctx.restore();
+
+                //Real coordinates
+                enemies[i].realX = (0) - (enemies[i].moveY + ((enemies[i].height / enemies[i].size)/2)) * Math.sin(enemies[i].deg);
+                enemies[i].realY = (0) + (enemies[i].moveY + ((enemies[i].height / enemies[i].size)/2)) * Math.cos(enemies[i].deg);
+
+                enemies[i].realX += enemies[i].coordsX;
+                enemies[i].realY += enemies[i].coordsY;
+
+                //Game over
+                distance = Math.sqrt(Math.pow(enemies[i].realX -  ctxWidth/2, 2) + Math.pow(enemies[i].realY - ctxHeight/2, 2));
+                if (distance < (((enemies[i].width/enemies[i].size) / 2) - 4) + 100) {
+                    gameOver = true;
+                    playing  = false;
+                    canvas.addEventListener('mousemove', action);
+                }
+
+            //Become an explosion
+            } else if(!enemies[i].extinct) {
+                explosion(enemies[i]);
+            }
+        }
+
+        //Generate new enemy
+        if(enemies.length - destroyed < 10 + (Math.floor(destroyed/6))) {
+            newEnemy();
+        }
+    }
 }
