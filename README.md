@@ -1,7 +1,7 @@
 # Team Codebusters
-
-<img src = "images/logo.png" hight = "100%">  <!-- add logo image -->
-
+<div align = "center">
+<img src = "https://media.discordapp.net/attachments/943471118109507617/953738494084268082/logo.png" style = "width: 60%;">
+</div>
 
 ## Table of contents
 [Preview of the website](#preview) <br>
