@@ -325,4 +325,51 @@ function game() {
             newEnemy();
         }
     }
+
+
+    //Generate an explosion function
+    function explosion(enemy) {
+        ctx.save();
+        ctx.translate(enemy.realX, enemy.realY);
+        ctx.rotate(enemy.deg);
+
+        var spriteY,
+            spriteX = 256;
+        if(enemy.state == 0) {
+            spriteY = 0;
+            spriteX = 0;
+        } else if (enemy.state < 8) {
+            spriteY = 0;
+        } else if(enemy.state < 16) {
+            spriteY = 256;
+        } else if(enemy.state < 24) {
+            spriteY = 512;
+        } else {
+            spriteY = 768;
+        }
+
+        if(enemy.state == 8 || enemy.state == 16 || enemy.state == 24) {
+            enemy.stateX = 0;
+        }
+
+        //Draw necessary image
+        ctx.drawImage(
+            spriteExplosion,
+            enemy.stateX += spriteX,
+            spriteY,
+            256,
+            256,
+            - (enemy.width / enemy.size)/2,
+            -(enemy.height / enemy.size)/2,
+            enemy.width / enemy.size,
+            enemy.height / enemy.size
+        );
+        enemy.state += 1;
+
+        if(enemy.state == 31) {
+            enemy.extinct = true;
+        }
+
+        ctx.restore();
+    }
 }
