@@ -5,14 +5,13 @@ export class PlayP1Scene extends Phaser.Scene{
         });
     }
     preload(){
-//
+
 this.load.spritesheet("playerOne","./assets/image/sprite/playerone.png", 
 {
     frameWidth: 96,
     frameHeight: 96
 });    
 this.load.atlas("playerOne", "./assets/image/sprite/playerone.png", "./assets/image/sprite/playerone_atlas.json");
-//
     }
     
     create(){
@@ -21,8 +20,6 @@ this.load.atlas("playerOne", "./assets/image/sprite/playerone.png", "./assets/im
     }
     anyKey (event)
     {
-        //  Only allow A-Z . and -
-
         let code = event.keyCode;
         if (code == Phaser.Input.Keyboard.KeyCodes.LEFT)
         {
