@@ -25,8 +25,6 @@ export class LoadScene extends Phaser.Scene{
             frameWidth: 32,
             frameHeight: 32
         });    
-
-
         this.load.audio("title_music", "./assets/audio/game_audio.mp3");
     
         let loadingBar = this.add.graphics
@@ -36,15 +34,6 @@ export class LoadScene extends Phaser.Scene{
                 color: 0xffffff
             }
         })
-
-        for (let i = 0; i < 100; i++)
-        {
-            this.load.spritesheet("green_player","./assets/image/green_player.png");
-            ({
-                frameHeight: 32,
-                frameWidth: 32
-            });  
-        }
 
     this.load.on("progress", (percent)=>{
         loadingBar.fillRect(0, this.game.renderer.height / 2, this.game.renderer.width * percent, 50);

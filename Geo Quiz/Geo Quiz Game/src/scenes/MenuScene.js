@@ -5,9 +5,8 @@ export class MenuScene extends Phaser.Scene{
             key: CST.SCENES.MENU
         })
     }
-    init(data){
-        console.log(data);
-        console.log("I GOT IT");
+    init(){
+
     }
     preload(){
 
@@ -24,6 +23,7 @@ export class MenuScene extends Phaser.Scene{
         hoverpOne.setVisible(false);
         hoverpTwo.setVisible(false);
 
+        this.sound.pauseOnBlur = false; 
         this.sound.play("title_music", {
             loop: true
         })
@@ -38,7 +38,7 @@ export class MenuScene extends Phaser.Scene{
             hoverpOne.setVisible(false);
         })
         pOneButton.on("pointerup", ()=>{
-         
+            this.scene.start(CST.SCENES.PLAYP1);
         })
 
         pTwoButton.setInteractive();
@@ -50,7 +50,7 @@ export class MenuScene extends Phaser.Scene{
             hoverpTwo.setVisible(false);
         })
         pTwoButton.on("pointerup", ()=>{
-         
+            this.scene.start(CST.SCENES.PLAYP2);
         })
     }
 }
