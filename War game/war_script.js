@@ -1,10 +1,20 @@
 window.addEventListener('DOMContentLoaded', game);
 
-//Import necessary images
-var sprite = new Image();
-var spriteExplosion = new Image();
+//General sprite load
+var central = new Image();
+var light = new Image();
+var near = new Image();
+var arsenal = new Image();
+var blowup = new Image();
+var startBtn = new Image();
+var restartBtn = new Image();
 
-sprite.src = 'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80';
+central.src = 'https://cdn.discordapp.com/attachments/944900916451090473/954473738735345754/1200px-Flag_of_Germany-modified.png';
+near.src = 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png';
+arsenal.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/sprite_bj90k9.png';
+light.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/sprite_bj90k9.png';
+startBtn.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/sprite_bj90k9.png';
+restartBtn.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/sprite_bj90k9.png';
 
 window.onload = function() {
     spriteExplosion.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/explosion_g9ncyg.png';

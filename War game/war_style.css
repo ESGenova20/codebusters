@@ -6,7 +6,7 @@ html {
 }
 
 #canvas {
-    background: black;
+    background: url('https://cdn.discordapp.com/attachments/944900916451090473/954474743501824050/image.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -15,5 +15,5 @@ html {
 
 #canvas.playing {
     cursor: auto !important;
-    cursor: url('https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612589/Codepen/aim_red_j9cyuq.png') 17.5 17.5;
+    cursor: url('https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612589/Codepen/aim_red_j9cyuq.png');
 }
