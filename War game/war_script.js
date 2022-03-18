@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', game);
+window.addEventListener("DOMContentLoaded", game);
 
 //General sprite load
 var central = new Image();
@@ -17,78 +17,69 @@ startBtn.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Co
 restartBtn.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/sprite_bj90k9.png';
 
 window.onload = function() {
-    spriteExplosion.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/explosion_g9ncyg.png';
+    blowup.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/explosion_g9ncyg.png';
 };
 
-//Main function for the whole game
 function game() {
+
     var canvas = document.getElementById('canvas'),
-        ctx = canvas.getContext('2d'),
+        ctx    = canvas.getContext('2d'),
+        cH     = ctx.canvas.height = window.innerHeight,
+        cW     = ctx.canvas.width  = window.innerWidth ;
 
-        //Get the height and width for the game shield
-        ctxHeight = ctx.canvas.height = window.innerHeight,
-        ctxWidth = ctx.canvas.width  = window.innerWidth;
-
-    //Set a value of assets
-    var bullets = [],
-        enemies = [],
+    var bullets    = [],
+        enemies  = [],
         explosions = [],
-        destroyed = 0,
-        record = 0,
-        count = 0,
-        playing = false,
-        gameOver = false,
-        country = {deg: 0}
+        destroyed  = 0,
+        record     = 0,
+        count      = 0,
+        playing    = false,
+        gameOver   = false,
+        _planet    = {deg: 0};
 
-    //Weapon's coordinates
     var player = {
-        posX : -35,
-        posY : -180,
-        width : 70,
+        posX   : -35,
+        posY   : -(100+82),
+        width  : 70,
         height : 70,
-        deg : 0
+        deg    : 0
     };
 
-    //Make the weapon work
     canvas.addEventListener('click', action);
     canvas.addEventListener('mousemove', action);
 
-    //Coincidence of the weapon and the mouse
-    function move(mouseDirection) {
-        player.deg = Math.atan2(mouseDirection.offsetX - (ctxWidth/2), -(mouseDirection.offsetY - (ctxHeight/2)));
+    function update() {
+        cH = ctx.canvas.height = window.innerHeight;
+        cW = ctx.canvas.width  = window.innerWidth ;
     }
 
-    //Prevent unexepcted actions
-    function action(mouseDirection) {
-        mouseDirection.preventDefault();
+    function move(e) {
+        player.deg = Math.atan2(e.offsetX - (cW/2), -(e.offsetY - (cH/2)));
+    }
 
+    function action(e) {
+        e.preventDefault();
         if(playing) {
-            //Coincidence of the shot and the weapon
-            var weapon = {
+            var bullet = {
                 x: -8,
                 y: -179,
-                sizeX: 20,
-                sizeY: 10,
-                realX: mouseDirection.offsetX,
-                realY: mouseDirection.offsetY,
-                dirX: mouseDirection.offsetX,
-                dirY: mouseDirection.offsetY,
-                deg: Math.atan2(mouseDirection.offsetX - (ctxWidth/2), -(mouseDirection.offsetY - (ctxHeight/2))),
-                
-                //Opportunity to restart the game
+                sizeX : 2,
+                sizeY : 10,
+                realX : e.offsetX,
+                realY : e.offsetY,
+                dirX  : e.offsetX,
+                dirY  : e.offsetY,
+                deg   : Math.atan2(e.offsetX - (cW/2), -(e.offsetY - (cH/2))),
                 destroyed: false
             };
 
-            //Append a value to object and make the weapon to shoot
-            bullets.push(weapon);
+            bullets.push(bullet);
         } else {
             var dist;
             if(gameOver) {
-                //Prevent double shoot
-                dist = Math.sqrt(((mouseDirection.offsetX - ctxWidth/2) * (mouseDirection.offsetX - ctxWidth/2)) + ((mouseDirection.offsetY - (ctxHeight/2 + 45 + 22)) * (mouseDirection.offsetY - (ctxHeight/2+ 45 + 22))));
-                
+                dist = Math.sqrt(((e.offsetX - cW/2) * (e.offsetX - cW/2)) + ((e.offsetY - (cH/2 + 45 + 22)) * (e.offsetY - (cH/2+ 45 + 22))));
                 if (dist < 27) {
-                    if(mouseDirection.type == 'click') {
+                    if(e.type == 'click') {
                         gameOver   = false;
                         count      = 0;
                         bullets    = [];
@@ -106,46 +97,37 @@ function game() {
                     canvas.style.cursor = "default";
                 }
             } else {
-                dist = Math.sqrt(((mouseDirection.offsetX - ctxWidth/2) * (mouseDirection.offsetX - ctxWidth/2)) + ((mouseDirection.offsetY - ctxHeight/2) * (mouseDirection.offsetY - ctxHeight/2)));
+                dist = Math.sqrt(((e.offsetX - cW/2) * (e.offsetX - cW/2)) + ((e.offsetY - cH/2) * (e.offsetY - cH/2)));
 
-                //Start button
                 if (dist < 27) {
-                    if(mouseDirection.type == 'click') {
+                    if(e.type == 'click') {
                         playing = true;
-                        canvas.removeEventListener('mousemove', action);
+                        canvas.removeEventListener("mousemove", action);
                         canvas.addEventListener('contextmenu', action);
                         canvas.addEventListener('mousemove', move);
-                        canvas.setAttribute('class', 'playing');
-                        canvas.style.cursor = 'default';
+                        canvas.setAttribute("class", "playing");
+                        canvas.style.cursor = "default";
                     } else {
-                        canvas.style.cursor = 'pointer';
+                        canvas.style.cursor = "pointer";
                     }
                 } else {
-                    canvas.style.cursor = 'default';
+                    canvas.style.cursor = "default";
                 }
             }
         }
     }
 
-    //Collision and battle function
     function fire() {
         var distance;
-        
+
         for(var i = 0; i < bullets.length; i++) {
             if(!bullets[i].destroyed) {
-
-                //Save the default state
                 ctx.save();
-
-                //Set the x and y value of starting and final position of shot
-                ctx.translate(ctxWidth/2,ctxHeight/2);
-
-                //Mouse controls shooting direction
+                ctx.translate(cW/2,cH/2);
                 ctx.rotate(bullets[i].deg);
 
-                //Draw necessary images and set coordinates
                 ctx.drawImage(
-                    sprite,
+                    light,
                     211,
                     100,
                     50,
@@ -156,23 +138,21 @@ function game() {
                     30
                 );
 
-                //Restore the default state and allow to continue game after a collision
                 ctx.restore();
 
-                //Real coordinates and disappearance of a hit enemy
                 bullets[i].realX = (0) - (bullets[i].y + 10) * Math.sin(bullets[i].deg);
                 bullets[i].realY = (0) + (bullets[i].y + 10) * Math.cos(bullets[i].deg);
 
-                bullets[i].realX += ctxWidth/2;
-                bullets[i].realY += ctxHeight/2;
+                bullets[i].realX += cW/2;
+                bullets[i].realY += cH/2;
 
-                //Collision cycle
                 for(var j = 0; j < enemies.length; j++) {
                     if(!enemies[j].destroyed) {
-                        //Only hit enemy disappears
-                        distance = Math.sqrt(Math.pow(enemies[j].realX - bullets[i].realX, 2) + Math.pow(enemies[j].realY - bullets[i].realY, 2));
+                        distance = Math.sqrt(Math.pow(
+                                enemies[j].realX - bullets[i].realX, 2) +
+                            Math.pow(enemies[j].realY - bullets[i].realY, 2)
+                        );
 
-                        //Counter raising and forthcoming enemies
                         if (distance < (((enemies[j].width/enemies[j].size) / 2) - 4) + ((19 / 2) - 4)) {
                             destroyed += 1;
                             enemies[j].destroyed = true;
@@ -185,8 +165,7 @@ function game() {
         }
     }
 
-    //Country set up
-    function country() {
+    function germany() {
         ctx.save();
         ctx.fillStyle   = 'white';
         ctx.shadowBlur    = 100;
@@ -195,32 +174,28 @@ function game() {
         ctx.shadowColor   = "#999";
 
         ctx.arc(
-            (ctxWidth/2),
-            (ctxHeight/2),
+            (cW/2),
+            (cH/2),
             100,
             0,
             Math.PI * 2
         );
         ctx.fill();
 
-        //Country rotation
-        ctx.translate(ctxWidth/2,ctxHeight/2);
-        ctx.rotate((country.deg += 0.1) * (Math.PI / 180));
-        ctx.drawImage(sprite, 0, 0, 200, 200, -100, -100, 200,200);
+        ctx.translate(cW/2,cH/2);
+        ctx.rotate((_planet.deg += 0.1) * (Math.PI / 180));
+        ctx.drawImage(central, -100, -100, 200, 200);
         ctx.restore();
     }
 
     function _player() {
 
         ctx.save();
-        ctx.translate(ctxWidth/2,ctxHeight/2);
+        ctx.translate(cW/2,cH/2);
 
-        //Regularly rotation
         ctx.rotate(player.deg);
-
-        //Drawing an image
         ctx.drawImage(
-            sprite,
+            arsenal,
             200,
             0,
             player.width,
@@ -238,35 +213,32 @@ function game() {
         }
     }
 
-    //Function that control new enemies
     function newEnemy() {
 
-        //Take random coordinates
         var type = random(1,4),
             coordsX,
             coordsY;
 
         switch(type){
             case 1:
-                coordsX = random(0, ctxWidth);
+                coordsX = random(0, cW);
                 coordsY = 0 - 150;
                 break;
             case 2:
-                coordsX = ctxWidth + 150;
-                coordsY = random(0, ctxHeight);
+                coordsX = cW + 150;
+                coordsY = random(0, cH);
                 break;
             case 3:
-                coordsX = random(0, ctxWidth);
-                coordsY = ctxHeight + 150;
+                coordsX = random(0, cW);
+                coordsY = cH + 150;
                 break;
             case 4:
                 coordsX = 0 - 150;
-                coordsY = random(0, ctxHeight);
+                coordsY = random(0, cH);
                 break;
         }
 
-        //Enemy realX and realY and its size
-        var asteroid = {
+        var enemy = {
             x: 278,
             y: 0,
             state: 0,
@@ -279,10 +251,10 @@ function game() {
             coordsX: coordsX,
             coordsY: coordsY,
             size: random(1, 3),
-            deg: Math.atan2(coordsX  - (ctxWidth/2), -(coordsY - (ctxHeight/2))),
+            deg: Math.atan2(coordsX  - (cW/2), -(coordsY - (cH/2))),
             destroyed: false
         };
-        enemies.push(asteroid);
+        enemies.push(enemy);
     }
 
     function _enemies() {
@@ -294,9 +266,8 @@ function game() {
                 ctx.translate(enemies[i].coordsX, enemies[i].coordsY);
                 ctx.rotate(enemies[i].deg);
 
-                //Draw new image and set its coordinates
                 ctx.drawImage(
-                    sprite,
+                    near,
                     enemies[i].x,
                     enemies[i].y,
                     enemies[i].width,
@@ -309,35 +280,28 @@ function game() {
 
                 ctx.restore();
 
-                //Real coordinates
                 enemies[i].realX = (0) - (enemies[i].moveY + ((enemies[i].height / enemies[i].size)/2)) * Math.sin(enemies[i].deg);
                 enemies[i].realY = (0) + (enemies[i].moveY + ((enemies[i].height / enemies[i].size)/2)) * Math.cos(enemies[i].deg);
 
                 enemies[i].realX += enemies[i].coordsX;
                 enemies[i].realY += enemies[i].coordsY;
 
-                //Game over
-                distance = Math.sqrt(Math.pow(enemies[i].realX -  ctxWidth/2, 2) + Math.pow(enemies[i].realY - ctxHeight/2, 2));
+                distance = Math.sqrt(Math.pow(enemies[i].realX -  cW/2, 2) + Math.pow(enemies[i].realY - cH/2, 2));
                 if (distance < (((enemies[i].width/enemies[i].size) / 2) - 4) + 100) {
                     gameOver = true;
                     playing  = false;
                     canvas.addEventListener('mousemove', action);
                 }
-
-            //Become an explosion
             } else if(!enemies[i].extinct) {
                 explosion(enemies[i]);
             }
         }
 
-        //Generate new enemy
         if(enemies.length - destroyed < 10 + (Math.floor(destroyed/6))) {
             newEnemy();
         }
     }
 
-
-    //Generate an explosion function
     function explosion(enemy) {
         ctx.save();
         ctx.translate(enemy.realX, enemy.realY);
@@ -362,9 +326,8 @@ function game() {
             enemy.stateX = 0;
         }
 
-        //Draw necessary image
         ctx.drawImage(
-            spriteExplosion,
+            blowup,
             enemy.stateX += spriteX,
             spriteY,
             256,
@@ -381,5 +344,80 @@ function game() {
         }
 
         ctx.restore();
+    }
+
+    function start() {
+        if(!gameOver) {
+
+            ctx.clearRect(0, 0, cW, cH);
+            ctx.beginPath();
+
+            germany();
+
+            _player();
+
+            if(playing) {
+                _enemies();
+
+                ctx.font = "20px Verdana";
+                ctx.fillStyle = "white";
+                ctx.textBaseline = 'middle';
+                ctx.textAlign = "left";
+                ctx.fillText('Record: '+record+'', 20, 30);
+
+                ctx.font = "40px Verdana";
+                ctx.fillStyle = "white";
+                ctx.strokeStyle = "black";
+                ctx.textAlign = "center";
+                ctx.textBaseline = 'middle';
+                ctx.strokeText(''+destroyed+'', cW/2,cH/2);
+                ctx.fillText(''+destroyed+'', cW/2,cH/2);
+
+            } else {
+                ctx.drawImage(startBtn, 428, 12, 70, 70, cW/2 - 35, cH/2 - 35, 70,70);
+            }
+        } else if(count < 1) {
+            count = 1;
+            ctx.fillStyle = 'rgba(0,0,0,0.85)';
+            ctx.rect(0,0, cW,cH);
+            ctx.fill();
+
+            ctx.font = "60px Verdana";
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            ctx.fillText("GAME OVER",cW/2,cH/2 - 150);
+
+            ctx.font = "20px Verdana";
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            ctx.fillText("Total destroyed: "+ destroyed, cW/2,cH/2 + 140);
+
+            record = destroyed > record ? destroyed : record;
+
+            ctx.font = "20px Verdana";
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            ctx.fillText("Record: "+ record, cW/2,cH/2 + 185);
+
+            ctx.drawImage(restartBtn, 500, 18, 70, 70, cW/2 - 35, cH/2 + 40, 70,70);
+
+            canvas.removeAttribute('class');
+        }
+    }
+
+    function init() {
+        window.requestAnimationFrame(init);
+        start();
+    }
+
+    init();
+
+    function random(from, to) {
+        return Math.floor(Math.random() * (to - from + 1)) + from;
+    }
+
+    if(~window.location.href.indexOf('full')) {
+        var full = document.getElementsByTagName('a');
+        full[0].setAttribute('style', 'display: none');
     }
 }
