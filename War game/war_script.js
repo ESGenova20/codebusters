@@ -11,7 +11,7 @@ var restartBtn = new Image();
 
 //Links for images we use
 central.src = 'https://cdn.discordapp.com/attachments/944900916451090473/954473738735345754/1200px-Flag_of_Germany-modified.png';
-near.src = 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png';
+near.src = 'https://cdn-icons-png.flaticon.com/512/6551/6551200.png';
 arsenal.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/sprite_bj90k9.png';
 light.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/sprite_bj90k9.png';
 startBtn.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/sprite_bj90k9.png';
@@ -267,8 +267,8 @@ function game() {
             y: 0,
             state: 0,
             stateX: 0,
-            width: 134,
-            height: 123,
+            width: 100,
+            height: 100,
             realX: coordsX,
             realY: coordsY,
             moveY: 0,
@@ -292,17 +292,17 @@ function game() {
                 ctx.translate(enemies[i].coordsX, enemies[i].coordsY);
                 ctx.rotate(enemies[i].deg);
 
-                //Draw them and set their spped and coordinates
+                //Draw them and set their speed and coordinates
                 ctx.drawImage(
                     near,
                     enemies[i].x,
                     enemies[i].y,
-                    enemies[i].width,
-                    enemies[i].height,
+                    400,
+                    750,
                     -(enemies[i].width / enemies[i].size) / 2,
                     enemies[i].moveY += 1/(enemies[i].size),
-                    enemies[i].width / enemies[i].size,
-                    enemies[i].height / enemies[i].size
+                    120,
+                    150
                 );
 
                 ctx.restore();
