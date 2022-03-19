@@ -9,6 +9,7 @@ var blowup = new Image();
 var startBtn = new Image();
 var restartBtn = new Image();
 
+//Links for images we use
 central.src = 'https://cdn.discordapp.com/attachments/944900916451090473/954473738735345754/1200px-Flag_of_Germany-modified.png';
 near.src = 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png';
 arsenal.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/sprite_bj90k9.png';
@@ -16,17 +17,21 @@ light.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codep
 startBtn.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/sprite_bj90k9.png';
 restartBtn.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/sprite_bj90k9.png';
 
+//Explosion onload function
 window.onload = function() {
     blowup.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/explosion_g9ncyg.png';
 };
 
+//Main function for war game
 function game() {
 
+    //Canvas height and width
     var canvas = document.getElementById('canvas'),
         ctx    = canvas.getContext('2d'),
         cH     = ctx.canvas.height = window.innerHeight,
         cW     = ctx.canvas.width  = window.innerWidth ;
 
+    //Set values for necessary arrays and variables
     var bullets    = [],
         enemies  = [],
         explosions = [],
@@ -37,6 +42,7 @@ function game() {
         gameOver   = false,
         _planet    = {deg: 0};
 
+    //Player's position, height and width
     var player = {
         posX   : -35,
         posY   : -(100+82),
@@ -45,19 +51,24 @@ function game() {
         deg    : 0
     };
 
+    //Click and mousemove actions
     canvas.addEventListener('click', action);
     canvas.addEventListener('mousemove', action);
 
+    //Update function
     function update() {
         cH = ctx.canvas.height = window.innerHeight;
         cW = ctx.canvas.width  = window.innerWidth ;
     }
 
+    //Movement of mouse
     function move(e) {
         player.deg = Math.atan2(e.offsetX - (cW/2), -(e.offsetY - (cH/2)));
     }
 
     function action(e) {
+
+        //Prevent unexpected actions and double shoot
         e.preventDefault();
         if(playing) {
             var bullet = {
@@ -73,10 +84,13 @@ function game() {
                 destroyed: false
             };
 
+            //Append a value to bullet
             bullets.push(bullet);
         } else {
             var dist;
             if(gameOver) {
+
+                //What happens when game over and change cursor style
                 dist = Math.sqrt(((e.offsetX - cW/2) * (e.offsetX - cW/2)) + ((e.offsetY - (cH/2 + 45 + 22)) * (e.offsetY - (cH/2+ 45 + 22))));
                 if (dist < 27) {
                     if(e.type == 'click') {
@@ -117,6 +131,7 @@ function game() {
         }
     }
 
+    //When there is a collision
     function fire() {
         var distance;
 
@@ -126,6 +141,7 @@ function game() {
                 ctx.translate(cW/2,cH/2);
                 ctx.rotate(bullets[i].deg);
 
+                ///Draw necessary image and its position
                 ctx.drawImage(
                     light,
                     211,
@@ -146,6 +162,7 @@ function game() {
                 bullets[i].realX += cW/2;
                 bullets[i].realY += cH/2;
 
+                //Collision cycle
                 for(var j = 0; j < enemies.length; j++) {
                     if(!enemies[j].destroyed) {
                         distance = Math.sqrt(Math.pow(
@@ -165,6 +182,7 @@ function game() {
         }
     }
 
+    //Country set up
     function germany() {
         ctx.save();
         ctx.fillStyle   = 'white';
@@ -182,17 +200,19 @@ function game() {
         );
         ctx.fill();
 
+        //Rotation and drawing image
         ctx.translate(cW/2,cH/2);
         ctx.rotate((_planet.deg += 0.1) * (Math.PI / 180));
         ctx.drawImage(central, -100, -100, 200, 200);
         ctx.restore();
     }
 
+    //Player function
     function _player() {
-
         ctx.save();
         ctx.translate(cW/2,cH/2);
 
+        //Rotate regularly
         ctx.rotate(player.deg);
         ctx.drawImage(
             arsenal,
@@ -207,14 +227,17 @@ function game() {
         );
 
         ctx.restore();
-
+        
+        //Fire activation
         if(bullets.length - destroyed && playing) {
             fire();
         }
     }
 
+    //Generate new enemy
     function newEnemy() {
 
+        //Choose random position
         var type = random(1,4),
             coordsX,
             coordsY;
@@ -238,6 +261,7 @@ function game() {
                 break;
         }
 
+        //Enemy and its coordinates
         var enemy = {
             x: 278,
             y: 0,
@@ -257,6 +281,8 @@ function game() {
         enemies.push(enemy);
     }
 
+
+    //Enemies' coming up function
     function _enemies() {
         var distance;
 
@@ -266,6 +292,7 @@ function game() {
                 ctx.translate(enemies[i].coordsX, enemies[i].coordsY);
                 ctx.rotate(enemies[i].deg);
 
+                //Draw them and set their spped and coordinates
                 ctx.drawImage(
                     near,
                     enemies[i].x,
@@ -302,6 +329,7 @@ function game() {
         }
     }
 
+    //Explosion when there is a collision
     function explosion(enemy) {
         ctx.save();
         ctx.translate(enemy.realX, enemy.realY);
@@ -326,6 +354,7 @@ function game() {
             enemy.stateX = 0;
         }
 
+        //Draw necassary image and set its coordinates
         ctx.drawImage(
             blowup,
             enemy.stateX += spriteX,
@@ -346,6 +375,7 @@ function game() {
         ctx.restore();
     }
 
+    //Start function
     function start() {
         if(!gameOver) {
 
@@ -374,9 +404,12 @@ function game() {
                 ctx.fillText(''+destroyed+'', cW/2,cH/2);
 
             } else {
+                //Draw start button
                 ctx.drawImage(startBtn, 428, 12, 70, 70, cW/2 - 35, cH/2 - 35, 70,70);
             }
         } else if(count < 1) {
+
+            //Game over display
             count = 1;
             ctx.fillStyle = 'rgba(0,0,0,0.85)';
             ctx.rect(0,0, cW,cH);
@@ -399,6 +432,7 @@ function game() {
             ctx.textAlign = "center";
             ctx.fillText("Record: "+ record, cW/2,cH/2 + 185);
 
+            //Draw restart button
             ctx.drawImage(restartBtn, 500, 18, 70, 70, cW/2 - 35, cH/2 + 40, 70,70);
 
             canvas.removeAttribute('class');
