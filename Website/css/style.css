@@ -5,8 +5,7 @@ html {
 }
 
 body {
-
-    margin: 0;
+    overflow-x: hidden;
     background-image: url(../images/bg.jfif);
     font-family: 'Goudy Bookletter 1911', serif;
     font-size: larger;
@@ -38,11 +37,12 @@ a, button {
 }
 
 #navbar {
+    left: -10px;
     cursor: url('../images/cursor.png'), auto;
     background-color: #061a0c;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 102%;
     display: block;
     transition: top 0.3s;
     z-index: 15000000;
@@ -76,14 +76,7 @@ a, button {
 
 .CenteredDiv {
     margin: auto;
-    width: 90%;
-}
-
-@media screen and(min-width: 1000px) {
-    .CenteredDiv {
-        margin: auto;
-        width: 90%;
-    }
+    width: 80%;
 }
 
 #Information {
@@ -407,4 +400,30 @@ s
     width: 30%;
     border-color: transparent;
     background-color: transparent;
+}
+
+#footer {
+    background-image: linear-gradient(319deg, rgb(26, 26, 26) 0%, #000000 37%, #383838 );
+    color: #fff;
+    padding: 2%;
+    bottom: 0%;
+    width: 100%;
+}
+ul {
+
+    list-style-type: none;
+    
+}
+
+.footer-sections {
+    display: inline-block;
+    width: 27%;
+    height: auto;
+    position: relative;
+    text-align: center;
+
+}
+a {
+    text-decoration: none;
+    color: #fff;
 }
