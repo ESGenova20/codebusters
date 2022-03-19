@@ -7,10 +7,9 @@ html {
 body {
 
     margin: 0;
-    background: linear-gradient(rgb(124, 83, 29), rgb(148, 73, 12), rgb(78, 44, 5), rgb(187, 108, 44)); /* Standard syntax */
-
+    background-image: url(../images/bg.jfif);
     font-family: 'Goudy Bookletter 1911', serif;
-    font-size:larger;
+    font-size: larger;
 
 }
 
@@ -88,7 +87,7 @@ a, button {
 }
 
 #Information {
-    color: black;
+    color: rgb(201, 201, 201);
     margin-top: 6%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -185,18 +184,16 @@ button {
     height: 100%;
     position: absolute;
     top: 0;
-    background-color: 0f0f0f;
+    background-color: #0f0f0f;
     background-image: linear-gradient(319deg, rgb(0, 0, 0) 0%, #000000 37%, #383838 100%);
     left: 0;
-    /*opacity: 0.8; for demo purpose  */
+    
 }
 
 .stack-top {
-    z-index: 9;
     margin: 7%;
     transform: rotate(4.5deg);
     height: 100%;
-    /* background: none; */
 
 }
 
@@ -219,8 +216,8 @@ button {
     font-weight: bold;
     font-style: normal;
     font-size: larger;
-
-    background-image: url("../images/old_letter.jpg");
+    color: #000000;
+    background-image: url("../images/papper_bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -284,61 +281,130 @@ button {
 
 /* The Overlay (background) */
 .overlay {
-  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
-  height: 100vh;
-  width: 0;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  background-color: rgb(0,0,0); /* Black fallback color */
-  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    z-index: 10000000000000;
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
 /* Position the content inside the overlay */
 .overlay-content {
-  position: relative;
-  top: 25%; /* 25% from the top */
-  width: 100vw; /* 100% width */
-  text-align: center; /* Centered text/links */
-  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    position: relative;
+    top: 25%;
+    /* 25% from the top */
+    width: 100vw;
+    /* 100% width */
+    text-align: center;
+    /* Centered text/links */
+    margin-top: 30px;
+    /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
 
 /* The navigation links inside the overlay */
 .overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block; /* Display block instead of inline */
-  transition: 0.3s; /* Transition effects on hover (color) */
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */
 }
 
 /* When you mouse over the navigation links, change their color */
 .overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
+    color: #f1f1f1;
 }
 
 /* Position the close button (top right corner) */
 .overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
 }
 
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
 }
 
-canvas{
+canvas {
     filter: blur(1px);
+}
+
+.box2 {
+    position: absolute;
+    margin: 10%;
+    width: 90%;
+    height: auto;
+    padding: 3%;
+
+}
+
+#myImg {
+    width: 100px;
+    height: auto;
+}
+
+#d1 {
+    width: 80%;
+    height: auto;
+    z-index: 1000000;
+    top: 10vw;
+    right: -1%;
+
+}
+
+.d3 {
+    right: -5%;
+    display: inline;
+    position: relative;
+}
+s
+.d3 :hover {
+    top: -100%;
+}
+
+
+
+.file {
+    height: 100%;
+    width: 100%;
+}
+
+
+.files {
+    height: 100%;
+    width: 100%;
+}
+
+.button-folder {
+    height: auto;
+    width: 30%;
+    border-color: transparent;
+    background-color: transparent;
 }
