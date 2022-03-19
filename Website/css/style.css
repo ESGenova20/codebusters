@@ -7,8 +7,10 @@ html {
 body {
 
     margin: 0;
-    background-color: #f1f1f1;
+    background: linear-gradient(rgb(124, 83, 29), rgb(148, 73, 12), rgb(78, 44, 5), rgb(187, 108, 44)); /* Standard syntax */
+
     font-family: 'Goudy Bookletter 1911', serif;
+    font-size:larger;
 
 }
 
@@ -44,6 +46,7 @@ a, button {
     width: 100%;
     display: block;
     transition: top 0.3s;
+    z-index: 15000000;
 }
 
 #navbar a {
@@ -215,6 +218,7 @@ button {
     font-family: 'torbalanregular';
     font-weight: bold;
     font-style: normal;
+    font-size: larger;
 
     background-image: url("../images/old_letter.jpg");
     background-repeat: no-repeat;
@@ -333,4 +337,8 @@ button {
     top: 15px;
     right: 35px;
   }
+}
+
+canvas{
+    filter: blur(1px);
 }
