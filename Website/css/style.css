@@ -60,7 +60,7 @@ a, button {
 }
 
 
-#navbar a::after {
+.content a::after {
     content: '';
     width: 0%;
     height: 3px;
@@ -93,8 +93,9 @@ a, button {
 }
 
 .LogosInNav {
-    height: fixed;
-    width: 10vh;
+    width: auto;
+    vertical-align: top;
+    height: 50px;
 }
 
 .sticky {
@@ -104,11 +105,11 @@ a, button {
 }
 
 .sticky+.content {
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
 .content {
-    padding: 16px;
+    padding: 5px;
 }
 
 
@@ -172,8 +173,6 @@ button {
     height: 30vw;
     position: relative;
     margin: 7%;
-
-
 }
 
 .box {
@@ -248,7 +247,7 @@ button {
 
 #check {
     display: none;
-
+    padding-right: 50px;
 }
 
 
@@ -407,5 +406,57 @@ a {
         display: block;
     }
 
+}
+
+
+
+.overlay {
+  height: 0vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 10000000000000000000;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  text-align: center;
+  top: 25%;
+  width: 100%;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 26px;
+  color: #818181;
+  display: block;
+  transition: 0.2s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 30px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 30px;
+  top: 15px;
+  right: 35px;
+  }
 }
 

@@ -17,7 +17,7 @@ window.onscroll = function () {
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("navbar").style.top = "0px";
     } else {
-        document.getElementById("navbar").style.top = "-50px";
+        document.getElementById("navbar").style.top = "-80px";
     }
     prevScrollpos = currentScrollPos;
 }
@@ -69,4 +69,12 @@ function Westernfront() {
       }
     });
     
+  }
+
+  function OpenNavBar() {
+    document.getElementById("DropNav").style.height = "100vh";
+  }
+  
+  function CloseNavBar() {
+    document.getElementById("DropNav").style.height = "0vh";
   }

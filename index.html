@@ -14,35 +14,30 @@
 </head>
 
 <body>
+
     <nav>
-        <!-- The overlay -->
-        <div id="myNav" class="overlay">
-
-            <!-- Button to close the overlay navigation -->
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-            <!-- Overlay content -->
+        <!--<li><a href="#d1">Info</a></li>
+                <li><a href="#Fronts">Fronts</a></li>
+                <li><a href="#letter">Letter</a></li>
+                <li><a href="#Map">Map</a></li>-->
+        <div id="DropNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="CloseNavBar()">&times;</a>
             <div class="overlay-content">
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Clients</a>
-                <a href="#">Contact</a>
+                <a onclick="CloseNavBar()" href="#Information">Information</a>
+                <a onclick="CloseNavBar()" href="#Fronts">Fonts</a>
+                <a onclick="CloseNavBar()" href="#letter">GaLetterme</a>
+                <a onclick="CloseNavBar()" href="#Map">Map</a>
             </div>
-
         </div>
-
-        <!-- Use any element to open/show the overlay navigation menu -->
-
         <div id="navbar">
-            <a href="#" class="LogosInNav" style="float:left">*logo website*</a>
+            <a href="#"  style="float:left"><img class="LogosInNav" src="../codebusters/Website/images/logo.png"></a>
             <div class="content">
-                <a href="#">*logo team*</a>
-                <a href="#">*contact us*</a>
-                <a href="#rules">Rules</a>
-                <a href="#game">Game</a>
                 <a href="#Information">Information</a>
+                <a href="#Fronts">Fonts</a>
+                <a href="#letter">Letter</a>
+                <a href="#Map">Map</a>
             </div>
-            <span onclick="openNav()" id="check"><a>more</a></span>
+            <span onclick="OpenNavBar()" id="check"><a style="font-size: 30px;">&#9776; </a></span>
 
 
         </div>
