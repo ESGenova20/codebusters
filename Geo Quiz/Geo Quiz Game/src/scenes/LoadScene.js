@@ -1,4 +1,4 @@
-import { CST } from "../CST.js";
+import { CST } from "../CST.js"; //iconnect to CST
 export class LoadScene extends Phaser.Scene{
     constructor(){
         super({
@@ -10,15 +10,15 @@ export class LoadScene extends Phaser.Scene{
 
     }
 
-    preload()
+    preload() //Make assets preload
     {
-        this.load.image("logo", "./assets/image/logo.png");
+        this.load.image("logo", "./assets/image/logo.png"); //preload logo, buttons,backgrounds
         this.load.image("p1_button", "./assets/image/p1_button.png");
         this.load.image("p2_button", "./assets/image/p2_button.png");
         this.load.image("title_bg", "./assets/image/title_bg2.png");
         this.load.image("playsceneBG", "./assets/image/playsceneBG.png")
 
-        this.load.image("A_button", "./assets/image/A_button.png");
+        this.load.image("A_button", "./assets/image/A_button.png");//preload option buttons
         this.load.image("B_button", "./assets/image/B_button.png");
         this.load.image("YES_button", "./assets/image/YES_button.png");
         this.load.image("NO_button", "./assets/image/NO_button.png");
@@ -34,7 +34,7 @@ export class LoadScene extends Phaser.Scene{
         this.load.image("NextButton", "./assets/image/NextButton.png");
         this.load.image("NextButton_S", "./assets/image/NextButton_S.png");
 
-        this.load.image("Q1", "./assets/image/questions/Q1.png");
+        this.load.image("Q1", "./assets/image/questions/Q1.png"); //preload questions
         this.load.image("Q2", "./assets/image/questions/Q2.png");
         this.load.image("Q3", "./assets/image/questions/Q3.png");
         this.load.image("Q4", "./assets/image/questions/Q4.png");
@@ -50,37 +50,37 @@ export class LoadScene extends Phaser.Scene{
             frameHeight: 32
         });    
         
-        this.load.audio("title_music", "./assets/audio/game_audio.mp3");
+        this.load.audio("title_music", "./assets/audio/game_audio.mp3"); //preload audio
     
-        let loadingBar = this.add.graphics
+        let loadingBar = this.add.graphics //Add loading bar
         ({
-            fillStyle: 
+            fillStyle: //Color loading bar
             {
                 color: 0xADFF2F
             }
         })
 
-    this.load.on("progress", (percent)=>{
+    this.load.on("progress", (percent)=>{ //Make it load depending on percent
         loadingBar.fillRect(0, this.game.renderer.height / 2, this.game.renderer.width * percent, 50);
     })
 
-    var width = this.cameras.main.width;
+    var width = this.cameras.main.width; //make width and height variables
     var height = this.cameras.main.height;
-    var loadingText = this.make.text({
-        x: width / 2,
+    var loadingText = this.make.text({ //Add loading text
+        x: width / 2, //Position text
         y: height / 2 - 50,
             text: '✈ Loading...',
-        style: {
+        style: {    //Pick font and color for text
             font: '20px monospace',
             fill: '#ADFF2F'
         }
 });
-loadingText.setOrigin(0.5, 0.5);
+loadingText.setOrigin(0.5, 0.5); //Furthermore position text
 
     }
     
     create()
     {
-        this.scene.start(CST.SCENES.MENU);
+        this.scene.start(CST.SCENES.MENU); //Start menu scene after loading finishes
     }
 }

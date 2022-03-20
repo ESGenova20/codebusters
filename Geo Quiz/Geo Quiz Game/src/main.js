@@ -3,13 +3,13 @@ import {MenuScene} from "./scenes/MenuScene.js";
 import {PlayP1Scene} from "./scenes/PlayP1Scene.js"; 
 import {PlayP2Scene} from "./scenes/PlayP2Scene.js";
 
-let game = new Phaser.Game({
+let game = new Phaser.Game({ //Initialize game
     width: 800,
     height: 600,
     scene:[
-        LoadScene, MenuScene, PlayP1Scene, PlayP2Scene
+        LoadScene, MenuScene, PlayP1Scene, PlayP2Scene //Put all scenes together
     ],
     render:{
-        pixelArt: true
+        pixelArt: true //Sharpen pixels
     }
 });
