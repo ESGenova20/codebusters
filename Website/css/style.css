@@ -507,8 +507,8 @@ a {
 }
 
 #download {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 10%;
+    margin-bottom: 10%;
     color: white;
     text-align: center;
     width: 100%;
@@ -519,6 +519,9 @@ a {
     );
   }
 
+  #extra-margin{
+      margin-top: 10%;
+  }
 .map-text{
     text-align: center;
     display: inline;
@@ -533,12 +536,3 @@ a {
     border-radius: 100%;
 }
 
-/*#description{
-    font-family: 'torbalanregular';
-    font-weight: bold;
-    font-style: normal;
-    font-size: larger;
-    color: black;
-    margin-top: -30px;
-    z-index: 999999909999999999999000999999990000000000;
-}*/
