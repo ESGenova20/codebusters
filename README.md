@@ -6,6 +6,7 @@
 ## Table of contents
 [Preview of the website](#preview) <br>
 [About](#about) <br>
+[Languages and tools](#tools)<br>
 [Presentation and Documentation](#documentation) <br>
 [Team members](#team)
 
@@ -14,6 +15,18 @@
 
 ## About <a name = "about"></a>
 We have created an informational site, JS war game and quiz game with which you can learn about WW1 and then test your knowledge.
+
+
+## Languages and tools <a name = "tools"></a>
+<p>
+  
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" width = "5%">
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png" width = "7%">
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" width = "5%">
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Javascript-shield.svg/1200px-Javascript-shield.svg.png" width = "5%">
+
+
+</p>         
 
 ## Documentation and Presentation <a name = "documentation"></a>
 **<a href = "">Documentation</a>**
