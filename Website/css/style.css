@@ -80,7 +80,13 @@ a, button {
 }
 
 .Centered {
-    align-items: center;
+    margin-left: auto;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    margin-right: auto;
+    
+
 }
 
 #Information {
@@ -326,6 +332,10 @@ canvas {
 .files {
     height: 100%;
     width: 100%;
+}
+
+.files :hover{
+    top: 100px;
 }
 
 .button-folder {

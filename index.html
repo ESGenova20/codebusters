@@ -30,7 +30,7 @@
             </div>
         </div>
         <div id="navbar">
-            <a href="#"  style="float:left"><img class="LogosInNav" src="../codebusters/Website/images/logo.png"></a>
+            <a href="#" style="float:left"><img class="LogosInNav" src="../codebusters/Website/images/logo.png"></a>
             <div class="content">
                 <a href="#Information">Information</a>
                 <a href="#Fronts">Fonts</a>
@@ -42,39 +42,50 @@
 
         </div>
     </nav>
-    <div style="width: 100%; height: 200px;">
 
+    <div style="width: 100%; height: 200px;"></div>
     </div>
 
     <div id="Information">
         <div class="CenteredDiv">
-            <div class="d3"><button><img class="files"
+            <div class="d3"><button><img onclick="Introuction()" class="files"
                         src="../codebusters/Website/images/FolderElements/mid1.png"></button></div>
             <div class="d3" style="background-image: url('../codebusters/Website/images/FolderElements/mid2.png');">
-                <button><img class="files" src="../codebusters/Website/images/FolderElements/mid2.png"></button>
+                <button><img onclick="events()" class="files"
+                        src="../codebusters/Website/images/FolderElements/mid2.png"></button>
             </div>
-            <div class="d3"><button><img class="files"
+            <div class="d3"><button><img onclick="Casualties()" class="files"
                         src="../codebusters/Website/images/FolderElements/mid3.png"></button></div>
+
             <div class="box2 " id="d1"><img class="file" src="../codebusters/Website/images/FolderElements/top.png">
             </div>
 
-
-
-
-            <h3>Introduction</h3>
-            <p>World War I, also known as the Great War, began in 1914 after the assassination of Archduke Franz
-                Ferdinand of Austria. His murder catapulted into a war across Europe that lasted until 1918. During the
-                conflict, Germany, Austria-Hungary, Bulgaria and the Ottoman Empire (the Central Powers) fought against
-                Great Britain, France, Russia, Italy, Romania, Japan and the United States (the Allied Powers). Thanks
-                to new military technologies and the horrors of trench warfare, World War I saw unprecedented levels of
-                carnage and destruction. By the time the war was over and the Allied Powers claimed victory, more than
-                16 million people—soldiers and civilians alike—were dead.</p>
+            <div id="Paper">
+                <h3 id="Tittle">Introduction</h3>
+                <p id="Text"> World War I, also known as the Great War, began in 1914 after the assassination of
+                    Archduke Franz
+                    Ferdinand of Austria. His murder catapulted into a war across Europe that lasted until 1918. During
+                    the
+                    conflict, Germany, Austria-Hungary, Bulgaria and the Ottoman Empire (the Central Powers) fought
+                    against
+                    Great Britain, France, Russia, Italy, Romania, Japan and the United States (the Allied Powers).
+                    Thanks
+                    to new military technologies and the horrors of trench warfare, World War I saw unprecedented levels
+                    of
+                    carnage and destruction. By the time the war was over and the Allied Powers claimed victory, more
+                    than
+                    16 million people—soldiers and civilians alike—were dead.</p>
+            </div>
 
             <h3>Fronts</h3>
 
             <p>According to an aggressive military strategy known as the Schlieffen Plan (named for its mastermind,
                 German Field Marshal Alfred von Schlieffen), Germany began fighting World War I on two fronts, invading
                 France through neutral Belgium in the west and confronting Russia in the east.</p>
+
+
+
+
 
             <div class="Centered">
                 <div class="container">
@@ -175,48 +186,50 @@
 
             <div id="BigMaps">
                 <div class="m1914">
-
-                    <!--onmouseover="changeText('1')"-->
-                    <img src="../codebusters/Website/images/europe_before_WW1-mid.png" alt="" usemap="#map" />
-                    <map name="map">
-                        <area shape="poly"
-                            coords="59, 515, 49, 549, 17, 581, 31, 613, 27, 648, 53, 650, 48, 623, 66, 620, 66, 594, 75, 595, 62, 567, 82, 559, 102, 527" />
-                        <area shape="poly"
-                            coords="200, 502, 89, 467, 55, 471, 56, 509, 108, 524, 85, 570, 72, 573, 87, 593, 70, 605, 72, 621, 57, 636, 53, 714, 177, 739, 333, 609, 289, 556" />
-                        <area shape="poly"
-                            coords="383, 429, 360, 445, 375, 454, 395, 443, 427, 438, 440, 433, 439, 420, 430, 429, 392, 433" />
-                        <area shape="poly"
-                            coords="309, 319, 259, 349, 241, 337, 228, 371, 174, 351, 200, 406, 231, 450, 207, 506, 293, 553, 302, 523, 359, 531, 385, 516, 358, 484, 371, 458, 356, 442, 385, 424, 380, 384" />
-                        <area shape="poly" coords="329, 305, 311, 323, 368, 378, 373, 342" />
-                        <area shape="poly"
-                            coords="385, 262, 367, 268, 368, 295, 350, 279, 334, 306, 371, 331, 368, 302, 384, 292, 388, 260" />
-                        <area shape="poly" coords="443, 155, 415, 189, 423, 224, 449, 198, 446, 151" />
-                        <area shape="poly" coords="174, 114, 79, 247, 170, 330, 297, 320, 314, 146, 313, 37" />
-                        <area shape="poly"
-                            coords="612, 213, 585, 227, 573, 236, 560, 225, 508, 256, 480, 249, 456, 249, 440, 232, 420, 224, 422, 253, 391, 262, 391, 291, 371, 310, 375, 338, 389, 400, 389, 426, 431, 425, 439, 409, 488, 410, 497, 393, 464, 350, 515, 318, 574, 339, 575, 335, 558, 283, 584, 262, 645, 242, 641, 224" />
-                        <area shape="poly"
-                            coords="608, 521, 598, 552, 522, 510, 492, 467, 502, 444, 444, 437, 442, 417, 491, 415, 503, 391, 472, 353, 520, 325, 568, 343, 587, 353, 591, 346, 614, 359, 632, 339, 652, 332, 692, 343, 716, 360, 719, 393, 698, 407, 724, 435, 727, 451, 680, 455, 670, 471, 613, 477, 593, 475" />
-                        <area shape="poly"
-                            coords="495, 459, 482, 475, 467, 506, 489, 523, 515, 537, 534, 566, 582, 593, 599, 606, 591, 628, 573, 667, 533, 709, 497, 705, 468, 680, 531, 668, 555, 647, 545, 622, 503, 603, 388, 674, 380, 574, 424, 516, 421, 509, 388, 516, 367, 488, 376, 459, 398, 448, 436, 439" />
-                        <area shape="poly" coords="631, 547, 615, 568, 620, 611, 632, 611, 640, 595, 639, 561" />
-                        <area shape="poly"
-                            coords="720, 575, 710, 564, 648, 602, 635, 620, 656, 653, 677, 694, 790, 737, 760, 683, 722, 652, 695, 614, 710, 589" />
-                        <area shape="poly"
-                            coords="673, 505, 687, 527, 687, 546, 692, 570, 711, 559, 735, 575, 747, 576, 746, 550, 778, 529, 775, 512, 748, 495, 733, 508" />
-                        <area shape="poly"
-                            coords="655, 486, 604, 484, 611, 517, 637, 546, 651, 593, 687, 575, 679, 544, 682, 529" />
-                        <area shape="poly"
-                            coords="722, 396, 705, 413, 733, 433, 731, 459, 689, 460, 663, 485, 677, 506, 728, 508, 745, 490, 776, 506, 794, 451, 771, 445" />
-                        <area shape="poly"
-                            coords="898, 515, 864, 531, 812, 547, 777, 539, 753, 552, 756, 578, 798, 563, 811, 563, 818, 568, 785, 581, 772, 585, 755, 606, 774, 627, 786, 646, 812, 701, 861, 683, 888, 667, 895, 667" />
-                        <area shape="poly"
-                            coords="735, 2, 727, 19, 732, 54, 725, 66, 718, 56, 702, 75, 639, 91, 627, 110, 642, 125, 650, 146, 627, 153, 618, 144, 606, 176, 615, 203, 647, 222, 647, 246, 579, 271, 565, 291, 583, 339, 611, 351, 636, 332, 663, 328, 693, 336, 720, 352, 727, 390, 750, 411, 777, 442, 796, 446, 814, 402, 847, 402, 844, 427, 880, 444, 897, 423, 887, 405, 896, 383, 897, 1" />
-                        <area shape="poly"
-                            coords="589, 1, 585, 19, 598, 62, 645, 75, 702, 61, 711, 55, 703, 34, 715, 16, 724, 19, 732, -1" />
-                        <area shape="poly"
-                            coords="562, 4, 527, 45, 546, 82, 567, 102, 575, 169, 519, 193, 481, 224, 464, 232, 454, 209, 482, 181, 460, 132, 476, 90, 467, 6" />
-                        <area shape="poly" coords="376, 29, 384, 112, 407, 139, 465, 123, 479, 79, 469, 2, 423, 6" />
-                    </map>
+                    <div class="Centered">
+                        <!--onmouseover="changeText('1')"-->
+                        <img src="../codebusters/Website/images/europe_before_WW1-mid.png" alt="" usemap="#map" />
+                        <map name="map">
+                            <area shape="poly"
+                                coords="59, 515, 49, 549, 17, 581, 31, 613, 27, 648, 53, 650, 48, 623, 66, 620, 66, 594, 75, 595, 62, 567, 82, 559, 102, 527" />
+                            <area shape="poly"
+                                coords="200, 502, 89, 467, 55, 471, 56, 509, 108, 524, 85, 570, 72, 573, 87, 593, 70, 605, 72, 621, 57, 636, 53, 714, 177, 739, 333, 609, 289, 556" />
+                            <area shape="poly"
+                                coords="383, 429, 360, 445, 375, 454, 395, 443, 427, 438, 440, 433, 439, 420, 430, 429, 392, 433" />
+                            <area shape="poly"
+                                coords="309, 319, 259, 349, 241, 337, 228, 371, 174, 351, 200, 406, 231, 450, 207, 506, 293, 553, 302, 523, 359, 531, 385, 516, 358, 484, 371, 458, 356, 442, 385, 424, 380, 384" />
+                            <area shape="poly" coords="329, 305, 311, 323, 368, 378, 373, 342" />
+                            <area shape="poly"
+                                coords="385, 262, 367, 268, 368, 295, 350, 279, 334, 306, 371, 331, 368, 302, 384, 292, 388, 260" />
+                            <area shape="poly" coords="443, 155, 415, 189, 423, 224, 449, 198, 446, 151" />
+                            <area shape="poly" coords="174, 114, 79, 247, 170, 330, 297, 320, 314, 146, 313, 37" />
+                            <area shape="poly"
+                                coords="612, 213, 585, 227, 573, 236, 560, 225, 508, 256, 480, 249, 456, 249, 440, 232, 420, 224, 422, 253, 391, 262, 391, 291, 371, 310, 375, 338, 389, 400, 389, 426, 431, 425, 439, 409, 488, 410, 497, 393, 464, 350, 515, 318, 574, 339, 575, 335, 558, 283, 584, 262, 645, 242, 641, 224" />
+                            <area shape="poly"
+                                coords="608, 521, 598, 552, 522, 510, 492, 467, 502, 444, 444, 437, 442, 417, 491, 415, 503, 391, 472, 353, 520, 325, 568, 343, 587, 353, 591, 346, 614, 359, 632, 339, 652, 332, 692, 343, 716, 360, 719, 393, 698, 407, 724, 435, 727, 451, 680, 455, 670, 471, 613, 477, 593, 475" />
+                            <area shape="poly"
+                                coords="495, 459, 482, 475, 467, 506, 489, 523, 515, 537, 534, 566, 582, 593, 599, 606, 591, 628, 573, 667, 533, 709, 497, 705, 468, 680, 531, 668, 555, 647, 545, 622, 503, 603, 388, 674, 380, 574, 424, 516, 421, 509, 388, 516, 367, 488, 376, 459, 398, 448, 436, 439" />
+                            <area shape="poly" coords="631, 547, 615, 568, 620, 611, 632, 611, 640, 595, 639, 561" />
+                            <area shape="poly"
+                                coords="720, 575, 710, 564, 648, 602, 635, 620, 656, 653, 677, 694, 790, 737, 760, 683, 722, 652, 695, 614, 710, 589" />
+                            <area shape="poly"
+                                coords="673, 505, 687, 527, 687, 546, 692, 570, 711, 559, 735, 575, 747, 576, 746, 550, 778, 529, 775, 512, 748, 495, 733, 508" />
+                            <area shape="poly"
+                                coords="655, 486, 604, 484, 611, 517, 637, 546, 651, 593, 687, 575, 679, 544, 682, 529" />
+                            <area shape="poly"
+                                coords="722, 396, 705, 413, 733, 433, 731, 459, 689, 460, 663, 485, 677, 506, 728, 508, 745, 490, 776, 506, 794, 451, 771, 445" />
+                            <area shape="poly"
+                                coords="898, 515, 864, 531, 812, 547, 777, 539, 753, 552, 756, 578, 798, 563, 811, 563, 818, 568, 785, 581, 772, 585, 755, 606, 774, 627, 786, 646, 812, 701, 861, 683, 888, 667, 895, 667" />
+                            <area shape="poly"
+                                coords="735, 2, 727, 19, 732, 54, 725, 66, 718, 56, 702, 75, 639, 91, 627, 110, 642, 125, 650, 146, 627, 153, 618, 144, 606, 176, 615, 203, 647, 222, 647, 246, 579, 271, 565, 291, 583, 339, 611, 351, 636, 332, 663, 328, 693, 336, 720, 352, 727, 390, 750, 411, 777, 442, 796, 446, 814, 402, 847, 402, 844, 427, 880, 444, 897, 423, 887, 405, 896, 383, 897, 1" />
+                            <area shape="poly"
+                                coords="589, 1, 585, 19, 598, 62, 645, 75, 702, 61, 711, 55, 703, 34, 715, 16, 724, 19, 732, -1" />
+                            <area shape="poly"
+                                coords="562, 4, 527, 45, 546, 82, 567, 102, 575, 169, 519, 193, 481, 224, 464, 232, 454, 209, 482, 181, 460, 132, 476, 90, 467, 6" />
+                            <area shape="poly"
+                                coords="376, 29, 384, 112, 407, 139, 465, 123, 479, 79, 469, 2, 423, 6" />
+                        </map>
+                    </div>
                 </div>
                 <div class="m1923">
                     <img src="../codebusters/Website/images/europe_after_WW1-mid.png" alt="" usemap="#map" />
