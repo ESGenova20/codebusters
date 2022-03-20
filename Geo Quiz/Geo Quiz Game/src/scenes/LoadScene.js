@@ -30,6 +30,18 @@ export class LoadScene extends Phaser.Scene{
 
         this.load.image("p1_button_S", "./assets/image/p1_button_S.png");
         this.load.image("p2_button_S", "./assets/image/p2_button_S.png");
+
+        this.load.image("Q1", "./assets/image/questions/Q1.png");
+        this.load.image("Q2", "./assets/image/questions/Q2.png");
+        this.load.image("Q3", "./assets/image/questions/Q3.png");
+        this.load.image("Q4", "./assets/image/questions/Q4.png");
+        this.load.image("Q5", "./assets/image/questions/Q5.png");
+        this.load.image("Q6", "./assets/image/questions/Q6.png");
+        this.load.image("Q7", "./assets/image/questions/Q7.png");
+        this.load.image("Q8", "./assets/image/questions/Q8.png");
+        this.load.image("Q9", "./assets/image/questions/Q9.png");
+        this.load.image("Q10", "./assets/image/questions/Q10.png");
+
         ({
             frameWidth: 32,
             frameHeight: 32
