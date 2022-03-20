@@ -1,5 +1,4 @@
 import { CST } from "../CST.js";
-let score = 0;
 let questionCount = 0;
 let endCheck = false;
 export class PlayP1Scene extends Phaser.Scene{
