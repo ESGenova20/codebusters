@@ -1,4 +1,4 @@
-export const CST = {
+export const CST = { //Put scenes together
     SCENES: {
         LOAD: "LOAD",
         MENU: "MENU",

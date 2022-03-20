@@ -1,14 +1,14 @@
 import { CST } from "../CST.js";
-let questionCount = 0;
+let questionCount = 0; //initialize question count and check if questions are finished
 let endCheck = false;
-export class PlayP1Scene extends Phaser.Scene{
+export class PlayP1Scene extends Phaser.Scene{ 
     constructor(){
         super({ key: CST.SCENES.PLAYP1,
         });
     }
     preload(){
 
-    this.load.spritesheet("playerOne","./assets/image/sprite/greenP-L.png", 
+    this.load.spritesheet("playerOne","./assets/image/sprite/greenP-L.png",  //Load player
     {
         frameWidth: 96,
         frameHeight: 96
@@ -16,8 +16,8 @@ export class PlayP1Scene extends Phaser.Scene{
 }
     
     create(){
-        this.isCorrect = [];
-        this.add.image(0,0, "playsceneBG").setOrigin(0);
+        this.isCorrect = []; //Make array which checks if answer is correct
+        this.add.image(0,0, "playsceneBG").setOrigin(0); //Load background and buttons
         this.YES_button = this.add.image(210, 410, "YES_button");
         this.NO_button = this.add.image(590, 410, "NO_button");
         this.A_button = this.add.image(210,410,"A_button");
@@ -32,7 +32,7 @@ export class PlayP1Scene extends Phaser.Scene{
         this.NextButton_S = this.add.image(700, 500, "NextButton_S");
         this.NextButton_S.setVisible(false);
 
-        this.Q1 = this.add.image(400, 200, "Q1");
+        this.Q1 = this.add.image(400, 200, "Q1"); //Load Questions
         this.Q2 = this.add.image(400, 200, "Q2");
         this.Q3 = this.add.image(400, 200, "Q3");
         this.Q4 = this.add.image(400, 200, "Q4");
@@ -46,7 +46,7 @@ export class PlayP1Scene extends Phaser.Scene{
         this.YES_button.setVisible(false);
         this.NO_button.setVisible(false);
 
-        this.Q2.setVisible(false);
+        this.Q2.setVisible(false); //Hide all questions except question 1
         this.Q3.setVisible(false);
         this.Q4.setVisible(false);
         this.Q5.setVisible(false);
@@ -56,24 +56,24 @@ export class PlayP1Scene extends Phaser.Scene{
         this.Q9.setVisible(false);
         this.Q10.setVisible(false);
         
-        this.A_button.setVisible(false);
+        this.A_button.setVisible(false); //Hide unused buttons
         this.B_button.setVisible(false);
         this.A_button_S.setVisible(false);
         this.B_button_S.setVisible(false);
         
-        this.playerOne = this.add.sprite(96, 96, "playerOne", "./assets/image/sprite/greenP-L.png");
-        this.input.keyboard.on('keydown', this.anyKey, this);
+        this.playerOne = this.add.sprite(96, 96, "playerOne", "./assets/image/sprite/greenP-L.png"); //Spawn player
+        this.input.keyboard.on('keydown', this.anyKey, this);//declare movement when key is down
 
-        this.NextButton.setInteractive();
+        this.NextButton.setInteractive(); //Make NextButton interactive
 
-        this.NextButton.on("pointerover", ()=>{
+        this.NextButton.on("pointerover", ()=>{ //When hovering over and when no longer hovering over
             this.NextButton_S.setVisible(true);
         })
         this.NextButton.on("pointerout", ()=>{
             this.NextButton_S.setVisible(false);
         })
-        this.NextButton.on("pointerup", ()=>{
-           questionCount++;
+        this.NextButton.on("pointerup", ()=>{ //When clicked
+           questionCount++; //Go to next question
         })
 
     
@@ -81,15 +81,15 @@ export class PlayP1Scene extends Phaser.Scene{
     anyKey (event)
     {
        
-        let code = event.keyCode;
-        if (code == Phaser.Input.Keyboard.KeyCodes.A)
+        let code = event.keyCode; //initialize player movement
+        if (code == Phaser.Input.Keyboard.KeyCodes.A) //When WASD buttons are pressed
         {
-            this.playerOne.flipX = false;
-            this.playerOne.x -= (this.playerOne.x < 24 ? 0: 4);
+            this.playerOne.flipX = false; //reverses flipped sprite
+            this.playerOne.x -= (this.playerOne.x < 24 ? 0: 4); //changes player coordinates to simulate movement
         }
         else if (code == Phaser.Input.Keyboard.KeyCodes.D)
         {
-            this.playerOne.flipX = true;
+            this.playerOne.flipX = true; //flips sprite
             this.playerOne.x += (this.playerOne.x > 700 ? 0 : 4);
         }
     
@@ -103,68 +103,68 @@ export class PlayP1Scene extends Phaser.Scene{
             this.playerOne.y += (this.playerOne.y > 500 ? 0: 4);
         }
 
-        let playerOne_X_coords = this.playerOne.x;
+        let playerOne_X_coords = this.playerOne.x; //make player coordinates into variables
         let playerOne_Y_coords = this.playerOne.y;
       
-        this.input.keyboard.on('keyup-Z', function (event) {
+        this.input.keyboard.on('keyup-Z', function (event) { //checks player coordinates and which question it is
             if ((((playerOne_X_coords > 130) && (playerOne_X_coords < 280)) && ((playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && questionCount < 1)
             {
-               this.scene.isCorrect[0] = true;
+               this.scene.isCorrect[0] = true; //If the correct button is pressed it marks the question as correct
             };
 
             if ((((playerOne_X_coords > 130) && (playerOne_X_coords < 280)) && ((playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && questionCount == 1)
             {
-                this.scene.isCorrect[1] = true;
+                this.scene.isCorrect[1] = true; //Marks question correct
             };
 
             if ((((playerOne_X_coords > 520) && (playerOne_X_coords < 620)) && ((playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && questionCount == 2)
             { 
-                this.scene.isCorrect[2] = true;
+                this.scene.isCorrect[2] = true; //Marks question correct
             };
 
             if ((((playerOne_X_coords > 520) && (playerOne_X_coords < 620)) && ((playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && questionCount == 3)
             { 
-                this.scene.isCorrect[3] = true;
+                this.scene.isCorrect[3] = true; //Marks question correct
             };
 
             if ((((playerOne_X_coords > 130) && (playerOne_X_coords < 280)) && ((playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && questionCount == 4)
             { 
-                this.scene.isCorrect[4] = true;
+                this.scene.isCorrect[4] = true; //Marks question correct
             };
 
             if ((((playerOne_X_coords > 520) && (playerOne_X_coords < 620)) && ((playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && questionCount == 5)
             { 
-                this.scene.isCorrect[5] = true;
+                this.scene.isCorrect[5] = true; //Marks question correct
             };
 
             if ((((playerOne_X_coords > 520) && (playerOne_X_coords < 620)) && ((playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && questionCount == 6)
             { 
-                this.scene.isCorrect[6] = true;
+                this.scene.isCorrect[6] = true; //Marks question correct
             };
 
             if ((((playerOne_X_coords > 130) && (playerOne_X_coords < 280)) && ((playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && questionCount == 7)
             { 
-                this.scene.isCorrect[7] = true;
+                this.scene.isCorrect[7] = true; //Marks question correct
             };
 
             if ((((playerOne_X_coords > 520) && (playerOne_X_coords < 620)) && ((playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && questionCount == 8)
             { 
-                this.scene.isCorrect[8] = true;
+                this.scene.isCorrect[8] = true; //Marks question correct
             };
 
              if ((((playerOne_X_coords > 520) && (playerOne_X_coords < 620)) && ((playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && questionCount == 9)
             { 
-                this.scene.isCorrect[9] = true;
-                endCheck = true;
-            };
-
-            if ((((playerOne_X_coords > 130) && (playerOne_X_coords < 280)) && ((playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && questionCount == 9)
-            { 
-                endCheck = true;
+                this.scene.isCorrect[9] = true; //Marks question correct
+                endCheck = true; //confirms this is the last question
             };
         });
      
-        if(endCheck == true)
+        if (questionCount == 9)
+        { 
+            endCheck = true; //confirms this is the last question
+        };
+
+        if(endCheck == true) //if the questions have finished and a button is pressed, show which questions are wrong
         {
             this.make.text({
                 x: 400,
@@ -175,7 +175,7 @@ export class PlayP1Scene extends Phaser.Scene{
                     fill: '#ffffff'
                 }
             });
-            if (this.isCorrect[0] == true){
+            if (this.isCorrect[0] == true){ //If the question is correct
                 this.make.text({
                 x: 400,
                 y: 100,
@@ -187,7 +187,7 @@ export class PlayP1Scene extends Phaser.Scene{
             });
             }
             else{
-                this.make.text({
+                this.make.text({ //If the question is wrong
                     x: 400,
                     y: 100,
                          text: "1. Wrong!",
@@ -198,7 +198,7 @@ export class PlayP1Scene extends Phaser.Scene{
                 });  
             }
 
-            if (this.isCorrect[1] == true){
+            if (this.isCorrect[1] == true){ //Repeats the process above for the rest of the questions
                 this.make.text({
                 x: 400,
                 y: 140,
@@ -409,25 +409,25 @@ export class PlayP1Scene extends Phaser.Scene{
     }
 
     update(){
-        if (questionCount == 1)
+        if (questionCount == 1) //If Question 1 has passed
         {
-            this.Q1.setVisible(false);
-            this.YES_button_S.setVisible(false);
+            this.Q1.setVisible(false); //Hide question 1
+            this.YES_button_S.setVisible(false); //Hide unsuitable buttons
             this.NO_button_S.setVisible(false);
 
-            this.Q2.setVisible(true);
+            this.Q2.setVisible(true); //Show suitable buttons and question
             this.A_button_S.setVisible(true);
             this.B_button_S.setVisible(true);
 
         }
-        else if (questionCount == 2)
+        else if (questionCount == 2)//If Question 2 has passed
         {
-            this.Q2.setVisible(false);
-            this.Q3.setVisible(true);
+            this.Q2.setVisible(false); //Hides question 2 to show question 3
+            this.Q3.setVisible(true); //Leaves the same buttons since they are suitable
         }
-        else if (questionCount == 3)
+        else if (questionCount == 3) //Repeats the process above for the rest of the questions
         {
-            this.Q3.setVisible(false);
+            this.Q3.setVisible(false);//The repeated process differs depending on the questions
             this.A_button_S.setVisible(false);
             this.B_button_S.setVisible(false);
 

@@ -1,6 +1,6 @@
 import { CST } from "../CST.js";
-export class MenuScene extends Phaser.Scene{
-    constructor(){
+export class MenuScene extends Phaser.Scene{ //export class
+    constructor(){ //connect to CST
         super({
             key: CST.SCENES.MENU
         })
@@ -12,36 +12,36 @@ export class MenuScene extends Phaser.Scene{
 
     }
     create(){
-        this.add.image(0,0, "title_bg").setOrigin(0);
-        this.add.image(this.game.renderer.width / 2, this.game.renderer.height * 0.20, "logo");
-        let pOneButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "p1_button");
+        this.add.image(0,0, "title_bg").setOrigin(0); //Add background
+        this.add.image(this.game.renderer.width / 2, this.game.renderer.height * 0.20, "logo");//Add logo
+        let pOneButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "p1_button"); //Add buttons
         let pTwoButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 100, "p2_button");
    
-        let hoverpOne =  this.add.sprite(this.game.renderer.width / 2, this.game.renderer.height / 2, "p1_button_S");
+        let hoverpOne =  this.add.sprite(this.game.renderer.width / 2, this.game.renderer.height / 2, "p1_button_S"); //Add hovering color to buttons
         let hoverpTwo =  this.add.sprite(this.game.renderer.width / 2, this.game.renderer.height / 2 + 100, "p2_button_S");
         
-        hoverpOne.setVisible(false);
+        hoverpOne.setVisible(false); //Hide the highlighted text
         hoverpTwo.setVisible(false);
 
-        this.sound.pauseOnBlur = false; 
-        this.sound.play("title_music", {
-            loop: true
+        this.sound.pauseOnBlur = false; //Make sound hearable when away from tab
+        this.sound.play("title_music", { //Play audio
+            loop: true //Make audio loop
         })
 
-        pOneButton.setInteractive();
+        pOneButton.setInteractive(); //Make button interactive
 
-        pOneButton.on("pointerover", ()=>{
+        pOneButton.on("pointerover", ()=>{ //when hovering over
             
             hoverpOne.setVisible(true);
         })
-        pOneButton.on("pointerout", ()=>{
+        pOneButton.on("pointerout", ()=>{ //When no longer hovering over
             hoverpOne.setVisible(false);
         })
-        pOneButton.on("pointerup", ()=>{
-            this.scene.start(CST.SCENES.PLAYP1);
+        pOneButton.on("pointerup", ()=>{ //When clicked
+            this.scene.start(CST.SCENES.PLAYP1); //Go to next scene
         })
 
-        pTwoButton.setInteractive();
+        pTwoButton.setInteractive(); //Repeated steps from pOneButton
 
         pTwoButton.on("pointerover", ()=>{
             hoverpTwo.setVisible(true);
