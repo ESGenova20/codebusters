@@ -1,4 +1,6 @@
 import { CST } from "../CST.js";
+let score = 0;
+let checkCount = 0;
 export class PlayP1Scene extends Phaser.Scene{
     constructor(){
         super({ key: CST.SCENES.PLAYP1,
@@ -61,9 +63,34 @@ export class PlayP1Scene extends Phaser.Scene{
         {
             this.playerOne.y += (this.playerOne.y > 500 ? 0: 4);
         }
+
+        let playerOne_X_coords = this.playerOne.x;
+        let playerOne_Y_coords = this.playerOne.y;
+        console.log(playerOne_X_coords, playerOne_Y_coords)
+        this.input.keyboard.on('keyup-Z', function (event) {
+            if ((((playerOne_X_coords > 130) && (playerOne_X_coords < 280)) && ((playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && checkCount < 1)
+            {
+                score++;
+                checkCount++;
+            console.log('yes');
+            
+            };
+            if ((((playerOne_X_coords > 520) && (playerOne_X_coords < 620) && (playerOne_Y_coords > 350) && (playerOne_Y_coords < 460))) && checkCount < 1)
+            { 
+            console.log('no');
+            checkCount++;
+            };
+        });
      
     }
 
     update(){
+        if (checkCount == 1)
+        {
+            this.YES_button.setVisible(false);
+            this.NO_button.setVisible(false);
+            this.YES_button_S.setVisible(true);
+            this.NO_button_S.setVisible(true);
+        }
        }
 }
