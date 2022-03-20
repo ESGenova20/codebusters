@@ -504,3 +504,31 @@ a {
     border-bottom-left-radius: 20px 115px;
     border-bottom-right-radius: 105px 15px;
 }
+
+#download {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: white;
+    text-align: center;
+    width: 100%;
+    background-image:
+    radial-gradient(
+    black,
+    transparent
+    );
+  }
+
+.map-text{
+    text-align: center;
+    display: inline;
+    color: white;
+}
+
+#button-to1914y, #button-to1923y{
+    font-family: 'torbalanregular';
+    font-weight: bold;
+    font-style: normal;
+    font-size: larger;
+    
+    border-radius: 100%;
+}
