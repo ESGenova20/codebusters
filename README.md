@@ -11,7 +11,7 @@
 [Team members](#team)
 
 ## Preview of the website <a name = "preview"></a>
-<img src = "" width = "100%">  <!-- add image of the site -->
+<img src = "https://media.discordapp.net/attachments/943471118109507617/955213132849098822/unknown.png?width=794&height=406" width = "100%">  
 
 ## About <a name = "about"></a>
 We have created an informational site, JS war game and quiz game with which you can learn about WW1 and then test your knowledge.
