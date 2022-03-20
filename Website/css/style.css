@@ -229,6 +229,23 @@ button {
     padding: 3%;
 }
 
+#Paper>h3{
+    font-family: 'torbalanregular';
+    font-weight: bold;
+    font-style: normal;
+    font-size: larger;
+}
+#Paper{
+    color: #000000;
+    background-image: url("../images/papper_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    width: 90%;
+    height: auto;
+    padding: 3%;
+}
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -482,3 +499,8 @@ a {
   }
 }
 
+.rounded {
+    border-top-left-radius: 250px 15px;
+    border-bottom-left-radius: 20px 115px;
+    border-bottom-right-radius: 105px 15px;
+}
