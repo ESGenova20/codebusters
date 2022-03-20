@@ -62,25 +62,25 @@ function game() {
     }
 
     //Movement of mouse
-    function move(e) {
-        player.deg = Math.atan2(e.offsetX - (cW/2), -(e.offsetY - (cH/2)));
+    function move(mouse) {
+        player.deg = Math.atan2(mouse.offsetX - (cW/2), -(mouse.offsetY - (cH/2)));
     }
 
-    function action(e) {
+    function action(mouse) {
 
         //Prevent unexpected actions and double shoot
-        e.preventDefault();
+        mouse.preventDefault();
         if(playing) {
             var bullet = {
                 x: -8,
                 y: -179,
                 sizeX : 2,
                 sizeY : 10,
-                realX : e.offsetX,
-                realY : e.offsetY,
-                dirX  : e.offsetX,
-                dirY  : e.offsetY,
-                deg   : Math.atan2(e.offsetX - (cW/2), -(e.offsetY - (cH/2))),
+                realX : mouse.offsetX,
+                realY : mouse.offsetY,
+                dirX  : mouse.offsetX,
+                dirY  : mouse.offsetY,
+                deg   : Math.atan2(mouse.offsetX - (cW/2), -(mouse.offsetY - (cH/2))),
                 destroyed: false
             };
 
@@ -91,9 +91,9 @@ function game() {
             if(gameOver) {
 
                 //What happens when game over and change cursor style
-                dist = Math.sqrt(((e.offsetX - cW/2) * (e.offsetX - cW/2)) + ((e.offsetY - (cH/2 + 45 + 22)) * (e.offsetY - (cH/2+ 45 + 22))));
+                dist = Math.sqrt(((mouse.offsetX - cW/2) * (mouse.offsetX - cW/2)) + ((mouse.offsetY - (cH/2 + 45 + 22)) * (mouse.offsetY - (cH/2+ 45 + 22))));
                 if (dist < 27) {
-                    if(e.type == 'click') {
+                    if(mouse.type == 'click') {
                         gameOver   = false;
                         count      = 0;
                         bullets    = [];
@@ -111,10 +111,10 @@ function game() {
                     canvas.style.cursor = "default";
                 }
             } else {
-                dist = Math.sqrt(((e.offsetX - cW/2) * (e.offsetX - cW/2)) + ((e.offsetY - cH/2) * (e.offsetY - cH/2)));
+                dist = Math.sqrt(((mouse.offsetX - cW/2) * (mouse.offsetX - cW/2)) + ((mouse.offsetY - cH/2) * (mouse.offsetY - cH/2)));
 
                 if (dist < 27) {
-                    if(e.type == 'click') {
+                    if(mouse.type == 'click') {
                         playing = true;
                         canvas.removeEventListener("mousemove", action);
                         canvas.addEventListener('contextmenu', action);
@@ -166,7 +166,7 @@ function game() {
                 for(var j = 0; j < enemies.length; j++) {
                     if(!enemies[j].destroyed) {
                         distance = Math.sqrt(Math.pow(
-                                enemies[j].realX - bullets[i].realX, 2) +
+                            enemies[j].realX - bullets[i].realX, 2) +
                             Math.pow(enemies[j].realY - bullets[i].realY, 2)
                         );
 
@@ -191,13 +191,7 @@ function game() {
         ctx.shadowOffsetY = 0;
         ctx.shadowColor   = "#999";
 
-        ctx.arc(
-            (cW/2),
-            (cH/2),
-            100,
-            0,
-            Math.PI * 2
-        );
+        ctx.arc((cW/2), (cH/2), 100, 0, Math.PI * 2);
         ctx.fill();
 
         //Rotation and drawing image
