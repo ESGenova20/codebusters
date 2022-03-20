@@ -99,3 +99,7 @@ function Casualties() {
   element.innerHTML = "World War I took the lives of more than 9 million soldiers; 21 million more were wounded. Civilian casualties numbered close to 10 million. The two nations most affected were Germany and France, each of which sent some 80 percent of their male populations between the ages of 15 and 49 into battle.";
 
 }
+
+function changeText(txt) {
+  document.getElementById("desc").innerHTML = txt;
+}
