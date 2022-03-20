@@ -296,22 +296,24 @@ canvas {
 }
 
 #d1 {
+    position: relative;
+
     width: 80%;
     height: auto;
     z-index: 1000000;
-    top: 10vw;
-    right: -1%;
+    top: -17vw;
+    right: 10vw;
 
 }
 
 .d3 {
-    right: -5%;
-    display: inline;
     position: relative;
+    display: inline;
+    top: -80%;
 }
 
-s .d3 :hover {
-    top: -100%;
+ .d3 :hover {
+    top: -1000px;
 }
 
 
@@ -369,11 +371,11 @@ a {
 }
 
 #MidMaps {
-    display: block;
+    display: none;
 }
 
 #SmlMaps {
-    display: block;
+    display: none;
 }
 .m1923 {
     display: none;
@@ -387,9 +389,13 @@ a {
     #MidMaps {
         display: none;
     }
+    #SmlMaps {
+        display: block;
+    }
+    
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200) {
     #BigMaps {
         display: none;
     }
@@ -397,13 +403,9 @@ a {
     #SmlMaps {
         display: none;
     }
-}
-@media screen and (max-width: 1700px) {
     #MidMaps {
-        display: none;
+        display: block;
     }
 
-    #SmlMaps {
-        display: none;
-    }
 }
+
