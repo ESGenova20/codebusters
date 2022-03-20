@@ -79,7 +79,7 @@
                 German Field Marshal Alfred von Schlieffen), Germany began fighting World War I on two fronts, invading
                 France through neutral Belgium in the west and confronting Russia in the east.</p>
 
-            <center>
+            <div class="Centered">
                 <div class="container">
                     <div class="box"></div>
                     <div class="box stack-top"><img id="myImage"
@@ -87,7 +87,7 @@
                             alt="Here lies a picture of a font"></div>
                 </div>
 
-            </center>
+            </div>>
 
 
 
@@ -97,7 +97,7 @@
                 powerful weapons in their arsenal—enormous siege cannons—to capture the city by August 15. The Germans
                 left death and destruction in their wake as they advanced through Belgium toward France, shooting
                 civilians and executing a Belgian priest they had accused of inciting civilian resistance.</p>
-            <center>
+            <div class="Centered">
                 <div style="display: inline-block;">
                     <div class="tooltip">
                         <button onclick="Westernfront()"><img src="../codebusters/Website/images/compas-west.png"
@@ -111,7 +111,7 @@
                         <span class="tooltiptext">Click to see more info</span>
                     </div>
                 </div>
-            </center>
+            </div>
 
 
 
@@ -165,18 +165,198 @@
 
         </div>
     </div>
-    <div id="game">
+
+    <div id="Map">
         <div class="CenteredDiv">
+            <h3>Map of</h3>
+            <button onclick="to1914y()" id="button-to1914y">1914</button>
+            <p> / </p><button onclick="to1923y()" id="button-to1923y">1923</button>
+            <div id="BigMaps">
+                <div class="m1914">
+                    <img src="../codebusters/Website/images/europe_before_WW1.png" alt="" usemap="#map" />
+                    <map name="map">
+                        <area shape="poly" coords="81, 690, 36, 772, 39, 857, 84, 852, 103, 810, 95, 752, 139, 701"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="260, 671, 128, 619, 81, 632, 89, 684, 146, 698, 104, 757, 108, 806, 88, 850, 87, 955, 205, 962, 443, 814, 390, 737, 336, 724, 321, 710, 273, 707"
+                            onmouseover="changeText('2')" />
+                        <area shape="poly" coords="391, 419, 409, 362, 357, 202, 422, 75, 109, 106, 119, 460"
+                            onmouseover="changeText('3')" />
+                        <area shape="poly" coords="594, 206, 557, 242, 561, 285, 584, 293, 600, 249"
+                            onmouseover="changeText('4')" />
+                        <area shape="poly"
+                            coords="812, 278, 801, 294, 780, 299, 786, 321, 758, 322, 758, 299, 719, 311, 667, 342, 643, 332, 606, 337, 595, 314, 563, 290, 557, 338, 552, 353, 526, 348, 539, 364, 520, 417, 501, 431, 503, 465, 488, 487, 516, 511, 519, 547, 569, 557, 630, 560, 651, 548, 628, 487, 646, 446, 710, 446, 781, 463, 789, 460, 754, 386, 817, 340, 853, 313, 843, 289, 820, 283, 808, 298, 796, 324, 776, 341"
+                            onmouseover="changeText('5')" />
+                        <area shape="poly" coords="454, 407, 471, 371, 484, 374, 493, 352, 529, 362, 511, 413, 493, 430"
+                            onmouseover="changeText('6')" />
+                        <area shape="poly" coords="426, 435, 428, 410, 455, 414, 496, 438, 497, 461, 485, 481, 455, 453"
+                            onmouseover="changeText('7')" />
+                        <area shape="poly"
+                            coords="408, 425, 460, 464, 502, 508, 513, 559, 475, 592, 491, 616, 493, 681, 517, 692, 471, 708, 426, 690, 386, 703, 385, 734, 348, 721, 337, 705, 296, 699, 269, 666, 305, 617, 302, 580, 265, 538, 242, 479, 289, 480, 319, 449, 371, 457"
+                            onmouseover="changeText('8')" />
+                        <area shape="poly" coords="564, 563, 526, 555, 481, 593, 490, 607, 528, 593, 560, 603, 566, 584"
+                            onmouseover="changeText('9')" />
+                        <area shape="poly"
+                            coords="576, 590, 560, 610, 532, 600, 501, 610, 497, 671, 523, 681, 560, 670, 457, 881, 688, 828, 720, 832, 740, 862, 713, 904, 652, 905, 683, 948, 721, 946, 742, 904, 777, 856, 753, 803, 802, 837, 809, 814, 740, 780, 730, 760, 714, 745, 673, 724, 640, 676, 646, 647, 656, 626, 644, 610, 580, 628"
+                            onmouseover="changeText('10')" />
+                        <area shape="poly"
+                            coords="787, 472, 748, 463, 718, 455, 655, 453, 638, 492, 661, 549, 629, 567, 574, 566, 584, 618, 648, 601, 666, 638, 682, 671, 695, 660, 737, 712, 789, 740, 808, 738, 807, 705, 804, 659, 805, 648, 876, 645, 910, 605, 970, 602, 967, 566, 928, 553, 955, 520, 955, 487, 917, 451, 851, 454, 815, 464, 796, 477"
+                            onmouseover="changeText('11')" />
+                        <area shape="poly"
+                            coords="872, 653, 838, 651, 810, 656, 808, 691, 835, 717, 862, 780, 908, 760, 900, 707"
+                            onmouseover="changeText('12')" />
+                        <area shape="poly" coords="835, 736, 820, 735, 820, 773, 834, 827, 850, 836, 849, 797, 860, 784"
+                            onmouseover="changeText('13')" />
+                        <area shape="poly"
+                            coords="1042, 967, 992, 952, 1085, 930, 998, 848, 996, 796, 971, 767, 913, 763, 859, 791, 851, 827, 881, 889, 922, 946, 1000, 986"
+                            onmouseover="changeText('14')" />
+                        <area shape="poly"
+                            coords="1199, 685, 1165, 696, 1132, 731, 1045, 722, 1031, 717, 1012, 732, 1015, 773, 1088, 752, 1087, 765, 1029, 780, 1009, 825, 1026, 837, 1067, 899, 1146, 912, 1196, 882"
+                            onmouseover="changeText('15')" />
+                        <area shape="poly"
+                            coords="899, 685, 906, 705, 913, 756, 985, 768, 1009, 767, 1008, 729, 1039, 705, 1034, 682, 1002, 661, 971, 678"
+                            onmouseover="changeText('16')" />
+                        <area shape="poly"
+                            coords="1045, 612, 1040, 680, 1000, 655, 968, 673, 902, 679, 879, 654, 915, 610, 976, 606, 973, 560, 946, 552, 961, 529, 967, 529, 993, 540, 1034, 606"
+                            onmouseover="changeText('17')" />
+                        <area shape="poly"
+                            coords="971, 12, 960, 21, 979, 60, 962, 78, 935, 87, 917, 119, 859, 121, 841, 140, 860, 191, 851, 213, 812, 187, 804, 270, 856, 286, 857, 325, 761, 386, 799, 467, 844, 444, 918, 445, 956, 471, 967, 515, 1002, 538, 1040, 607, 1060, 607, 1063, 567, 1096, 527, 1124, 548, 1130, 604, 1198, 613, 1197, 2"
+                            onmouseover="changeText('18')" />
+                        <area shape="poly"
+                            coords="782, 11, 780, 30, 792, 88, 850, 107, 936, 75, 957, 71, 932, 56, 958, 20, 967, 9"
+                            onmouseover="changeText('19')" />
+                        <area shape="poly"
+                            coords="749, 4, 713, 71, 755, 130, 719, 183, 715, 264, 618, 303, 628, 231, 613, 168, 638, 162, 640, 1"
+                            onmouseover="changeText('20')" />
+                        <area shape="poly"
+                            coords="583, 5, 535, 33, 505, 72, 520, 156, 545, 192, 599, 164, 630, 159, 637, 31, 634, 3"
+                            onmouseover="changeText('21')" />
+                    </map>
+                </div>
+                <div class="m1923">
+                    <img src="../codebusters/Website/images/europe_after_WW1.png" alt="" usemap="#map" />
+                    <map name="map">
+                        <area shape="poly"
+                            coords="1019, 807, 1008, 851, 1072, 954, 1198, 905, 1195, 678, 1102, 734, 1113, 761, 1067, 803"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="1013, 744, 1062, 730, 1085, 729, 1081, 742, 1038, 765, 1012, 786, 1039, 777, 1070, 763, 1085, 752, 1094, 739, 1104, 757, 1068, 792, 1010, 810, 996, 791, 1007, 778, 1025, 763, 1020, 748"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="755, 315, 750, 352, 731, 374, 775, 444, 771, 478, 782, 483, 897, 480, 918, 524, 933, 494, 952, 488, 936, 460, 967, 408, 922, 329, 929, 259, 899, 316, 847, 332, 835, 361, 798, 358"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly" coords="815, 270, 761, 312, 802, 347, 834, 350, 845, 321, 837, 281"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly" coords="810, 255, 842, 282, 851, 323, 897, 302, 916, 258, 869, 239"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="916, 181, 898, 193, 873, 170, 861, 178, 867, 205, 846, 214, 821, 191, 811, 248, 869, 232, 921, 248, 931, 239"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="1031, 5, 1041, 33, 1014, 28, 994, 1, 975, 22, 967, 27, 984, 57, 973, 73, 951, 65, 918, 102, 911, 154, 937, 234, 926, 320, 973, 403, 946, 466, 961, 489, 996, 485, 1045, 508, 1071, 566, 1086, 533, 1113, 543, 1147, 542, 1135, 576, 1165, 602, 1197, 577, 1196, 556, 1174, 532, 1197, 522, 1197, 3"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="788, 0, 776, 25, 798, 102, 859, 120, 936, 85, 941, 63, 942, 23, 974, 16, 980, 2"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="635, 3, 639, 92, 613, 163, 638, 255, 608, 266, 608, 310, 651, 290, 681, 286, 726, 229, 723, 176, 754, 132, 746, 0"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly" coords="580, 2, 519, 52, 519, 111, 534, 198, 612, 151, 631, 133, 631, 1"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="925, 529, 939, 500, 988, 491, 1035, 516, 1063, 564, 1037, 671, 1005, 631, 977, 672, 909, 662, 901, 647, 841, 612, 857, 598, 857, 564, 886, 540" />
+                        <area shape="poly"
+                            coords="749, 551, 733, 589, 792, 615, 849, 597, 849, 563, 877, 539, 853, 517, 804, 543"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="668, 523, 640, 538, 630, 563, 573, 563, 569, 602, 580, 600, 589, 571, 668, 593, 731, 585, 745, 551, 741, 525, 693, 516, 676, 531"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="681, 450, 641, 480, 676, 523, 692, 509, 747, 520, 747, 547, 792, 541, 853, 511, 877, 535, 916, 526, 888, 485, 777, 491, 764, 478, 714, 468"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="426, 416, 417, 427, 474, 478, 491, 488, 473, 467, 482, 431, 454, 416, 431, 416"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="504, 351, 517, 360, 518, 400, 490, 407, 480, 428, 455, 412, 430, 412, 462, 388, 474, 361"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="486, 412, 482, 475, 530, 501, 533, 507, 521, 552, 554, 499, 535, 428, 508, 407"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="108, 620, 194, 651, 270, 672, 277, 662, 273, 692, 369, 721, 394, 734, 376, 759, 317, 786, 435, 806, 202, 970, 85, 945, 89, 853, 115, 816, 104, 756, 151, 701, 79, 682, 78, 635"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="510, 615, 528, 605, 547, 616, 582, 607, 596, 574, 645, 591, 673, 606, 691, 640, 679, 657, 659, 644, 646, 632, 636, 661, 654, 704, 684, 743, 709, 767, 734, 762, 759, 788, 791, 808, 799, 841, 773, 826, 763, 811, 754, 837, 767, 860, 742, 884, 705, 940, 672, 940, 631, 895, 679, 893, 715, 883, 733, 854, 714, 815, 661, 798, 532, 908, 489, 802, 539, 681, 517, 688, 498, 638"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="862, 788, 852, 814, 870, 860, 886, 897, 901, 986, 1068, 984, 1023, 903, 935, 840, 909, 803, 934, 804, 964, 783, 983, 774, 1008, 778, 1018, 760, 1013, 743, 1002, 730, 992, 749, 978, 763, 919, 763, 872, 785"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="909, 667, 979, 677, 1006, 639, 1027, 668, 1034, 679, 1026, 714, 996, 727, 983, 751, 966, 753, 918, 758, 899, 724"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="676, 597, 722, 702, 813, 749, 821, 721, 850, 730, 870, 781, 909, 758, 894, 727, 898, 682, 895, 652, 853, 633, 833, 606, 794, 621, 743, 607, 719, 591"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="605, 325, 625, 340, 661, 321, 677, 339, 752, 307, 747, 347, 723, 375, 752, 421, 772, 446, 767, 474, 719, 465, 682, 446, 635, 481, 666, 521, 636, 537, 626, 560, 571, 557, 535, 544, 558, 497, 541, 429, 517, 413, 523, 362, 528, 348, 562, 332, 571, 314, 591, 311"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly"
+                            coords="374, 446, 341, 464, 319, 442, 312, 483, 257, 461, 230, 488, 299, 573, 282, 683, 398, 725, 419, 689, 472, 710, 504, 682, 492, 635, 504, 617, 478, 603, 470, 584, 512, 557, 529, 512, 509, 493, 475, 487, 432, 444, 414, 431, 421, 415, 394, 423"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly" coords="835, 736, 820, 735, 820, 773, 834, 827, 850, 836, 849, 797, 860, 784"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly" coords="564, 563, 526, 555, 481, 593, 490, 607, 528, 593, 560, 603, 566, 584"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly" coords="391, 419, 409, 362, 357, 202, 422, 75, 109, 106, 119, 460"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly" coords="81, 690, 36, 772, 39, 857, 84, 852, 103, 810, 95, 752, 139, 701"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly" coords="835, 736, 820, 735, 820, 773, 834, 827, 850, 836, 849, 797, 860, 784"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly" coords="564, 563, 526, 555, 481, 593, 490, 607, 528, 593, 560, 603, 566, 584"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly" coords="587, 212, 550, 248, 554, 291, 577, 299, 593, 255"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly" coords="391, 419, 409, 362, 357, 202, 422, 75, 109, 106, 119, 460"
+                            onmouseover="changeText('1')" />
+                        <area shape="poly" coords="81, 690, 36, 772, 39, 857, 84, 852, 103, 810, 95, 752, 139, 701"
+                            onmouseover="changeText('1')" />
+                    </map>
+                </div>
+            </div>
+
+            <div id="MidMaps">
+                <div class="m1914">
+
+                </div>
+
+                <div class="m1923">
+
+                </div>
+
+            </div>
 
 
+            <div id="SmlMaps">
+                <div class="m1914">
+
+                </div>
+
+                <div class="m1923">
+
+                </div>
+            </div>
+
+
+
+
+            <p id="desc">Move your mouse over the different countries to see their descriptions.</p>
         </div>
     </div>
-    <div id="rules">
 
-    </div>
-    <div id="game">
 
-    </div>
+
     <div id="footer">
         <div class="footer-sections" style="float: left; margin-left: -40px;">
             <p>About us:</p>

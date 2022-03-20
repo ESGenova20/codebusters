@@ -35,13 +35,38 @@ function Westernfront() {
     document.getElementById('myImage').src = '../codebusters/Website/images/world-war-one-western-front.png';
 }
 
-/* Open */
-function openNav() {
-    document.getElementById("myNav").style.height = "100vh";
-    
+  function changeText(txt) {
+    document.getElementById("desc").innerHTML = txt;
   }
-  
-  /* Close */
-  function closeNav() {
-    document.getElementById("myNav").style.height = "0vh";
+
+  function to1914y() {
+    const bt1914y = document.getElementById('button-to1914y');
+
+    bt1914y.addEventListener('click', () => {
+      const map1 = document.getElementsByClassName('m1923');
+      const map2 = document.getElementsByClassName('m1914');
+      for (const m1923 of map1) {
+        m1923.style.display = 'none';
+      }
+      const map = document.getElementsByClassName('m1914');
+      for (const m1914 of map2) {
+        m1914.style.display = 'block';
+      }
+    });
+  }
+  function to1923y() {
+    const bt1923y = document.getElementById('button-to1923y');
+
+    bt1923y.addEventListener('click', () => {
+      const map1 = document.getElementsByClassName('m1923');
+      const map2 = document.getElementsByClassName('m1914');
+      for (const m1923 of map1) {
+        m1923.style.display = 'block';
+      }
+      const map = document.getElementsByClassName('m1914');
+      for (const m1914 of map2) {
+        m1914.style.display = 'none';
+      }
+    });
+    
   }
