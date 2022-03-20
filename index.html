@@ -16,8 +16,14 @@
 <body>
 
     <nav>
+        <!-- The overlay -->
+
         <div id="DropNav" class="overlay">
+
+            <!-- Button to close the overlay navigation -->
             <a href="javascript:void(0)" class="closebtn" onclick="CloseNavBar()">&times;</a>
+
+            <!-- Overlay content -->
             <div class="overlay-content">
                 <a onclick="CloseNavBar()" href="#Information">Information</a>
                 <a onclick="CloseNavBar()" href="#Fronts">Fonts</a>
@@ -26,8 +32,14 @@
                 <a onclick="CloseNavBar()" href="#Map">Map</a>
             </div>
         </div>
+        <!-- The navigation bar -->
+
         <div id="navbar">
+
+            <!-- Logo -->
             <a href="#" style="float:left"><img class="LogosInNav" src="../codebusters/Website/images/logo.png"></a>
+
+            <!-- Content -->
             <div class="content">
                 <a href="#Map">Map</a>
                 <a href="#download">Games</a>
@@ -36,15 +48,21 @@
                 <a href="#Information">Information</a>
 
             </div>
+
+            <!-- Button to open the overlay navigation -->
             <span onclick="OpenNavBar()" id="check"><a style="font-size: 30px;">&#9776; </a></span>
 
 
         </div>
     </nav>
 
+    <!-- Free space -->
     <div style="width: 100%; height: 10vw;"></div>
     </div>
+    <!-- Folder -->
 
+
+    <!-- Start of Information section -->
     <div id="Information">
         <div class="CenteredDiv">
             <div class="d3"><button><img onclick="Introuction()" class="files"
@@ -61,7 +79,7 @@
             </div>
 
 
-
+            <!-- Main inofrmation -->
             <div class="rounded" id="Paper">
                 <h3 id="Tittle">Introduction</h3>
                 <p id="Text"> World War I, also known as the Great War, began in 1914 after the assassination of
@@ -78,16 +96,16 @@
                     than
                     16 million people—soldiers and civilians alike—were dead.</p>
             </div>
+            <!-- End of Information section -->
 
+
+            <!-- Start of Fronts section -->
             <h3 id="extra-margin">Fronts</h3>
             <p>According to an aggressive military strategy known as the Schlieffen Plan (named for its mastermind,
                 German Field Marshal Alfred von Schlieffen), Germany began fighting World War I on two fronts, invading
                 France through neutral Belgium in the west and confronting Russia in the east.</p>
 
-
-
-
-
+            <!-- Picture for fronts -->
             <div class="Centered">
                 <div class="container">
                     <div class="box"></div>
@@ -98,14 +116,13 @@
 
             </div>
 
-
-
-
             <p id="Fronts">Western front. On August 4, 1914, German troops crossed the border into Belgium. In the first
                 battle of World War I, the Germans assaulted the heavily fortified city of Liege, using the most
                 powerful weapons in their arsenal—enormous siege cannons—to capture the city by August 15. The Germans
                 left death and destruction in their wake as they advanced through Belgium toward France, shooting
                 civilians and executing a Belgian priest they had accused of inciting civilian resistance.</p>
+
+            <!-- Buttons to change image for fronts -->
             <div class="Centered">
                 <div style="display: inline-block;">
                     <div class="tooltip">
@@ -121,10 +138,12 @@
                     </div>
                 </div>
             </div>
+            <!-- End of Fronts section -->
 
 
 
 
+            <!-- Start of Letter section -->
             <h3 id="extra-margin">Letters</h3>
             <p>Many touching personal stories are vividly brought to life through letters exchanged during the First
                 World War. The correspondence between Private William Martin and his fiancée Emily Chitticks reveals one
@@ -147,12 +166,14 @@
                     letters. There is good news in the papers. Love from Mum and Dad.'
                 </p>
             </div>
+            <!-- End of Letter section -->
 
 
         </div>
     </div>
     </div>
 
+    <!-- Download game from here -->
     <div>
         <div id="download" class="CenteredDiv">
 
@@ -165,7 +186,7 @@
     </div>
 
 
-
+    <!-- Start of Map -->
     <div id="Map">
         <div class="CenteredDiv">
 
@@ -266,6 +287,7 @@
                     </map>
                 </div>
             </div>
+            <!-- End Map -->
 
 
 
@@ -277,7 +299,7 @@
 
 
 
-
+    <!-- Start of Footer section -->
     <div id="footer">
         <div id="about" class="footer-sections">
             <p>About us:</p>
@@ -309,6 +331,7 @@
         </div>
 
     </div>
+    <!-- End of footer section -->
 
 </body>
 
