@@ -18,7 +18,7 @@ body {
     font-weight: bold;
 }
 
-a, button {
+a, button, #SmlMaps, #BigMaps, #MidMaps, map, #Map, #map, .m1923, .m1914, area, .CenteredDiv {
     cursor: url('../images/cursor.png'), auto;
 }
 
@@ -131,7 +131,7 @@ a, button {
 
 .compass {
     width: 60%;
-
+    margin-left: 25vw;
 }
 
 button {
@@ -364,7 +364,11 @@ canvas {
 }
 
 #footer {
-    background-color: #101214;
+    background-image:
+    radial-gradient(
+    transparent,
+    black
+    );
     color: #fff;
     padding: 2%;
     bottom: 0%;
@@ -536,3 +540,14 @@ a {
     border-radius: 100%;
 }
 
+#description{
+    margin-left: 10%;
+margin-right: 30%;
+    color: black;
+    position: absolute;
+    z-index: 99999999999999999999999;
+    font-family: 'torbalanregular';
+    font-weight: bold;
+    font-style: normal;
+    font-size: larger;
+}
