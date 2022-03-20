@@ -29,9 +29,9 @@ We have created an informational site, JS war game and quiz game with which you 
 </p>         
 
 ## Documentation and Presentation <a name = "documentation"></a>
-**<a href = "">Documentation</a>**
+**<a href = "https://codingburgas-my.sharepoint.com/:w:/g/personal/esgenova20_codingburgas_bg/EYGR6Qj6v_5LnG-ycwtB3B4BlYjlLjydUCVGR15fWN6SGg?e=tAtBYY">Documentation</a>**
 <br>
-**<a href = "">Presentation</a>**
+**<a href = "https://codingburgas-my.sharepoint.com/:p:/g/personal/esgenova20_codingburgas_bg/EcbuxWNp8g5JmET0ZxV5KCkB_32rSJnsWrXXXR1d7IEMHw?e=3ReQDf">Presentation</a>**
 
 
 ## Team members <a name = "team"></a>
