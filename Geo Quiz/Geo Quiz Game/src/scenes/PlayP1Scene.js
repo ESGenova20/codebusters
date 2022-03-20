@@ -6,15 +6,35 @@ export class PlayP1Scene extends Phaser.Scene{
     }
     preload(){
 
-this.load.spritesheet("playerOne","./assets/image/sprite/playerone.png", 
-{
-    frameWidth: 96,
-    frameHeight: 96
-});    
-this.load.atlas("playerOne", "./assets/image/sprite/playerone.png", "./assets/image/sprite/playerone_atlas.json");
-    }
+    this.load.spritesheet("playerOne","./assets/image/sprite/greenP-L.png", 
+    {
+        frameWidth: 96,
+        frameHeight: 96
+    });    
+}
     
     create(){
+        this.add.image(0,0, "playsceneBG").setOrigin(0);
+        this.YES_button = this.add.image(210, 410, "YES_button");
+        this.NO_button = this.add.image(590, 410, "NO_button");
+        this.A_button = this.add.image(210,410,"A_button");
+        this.B_button = this.add.image(590,410,"B_button");
+
+        this.YES_button_S = this.add.image(210, 410, "YES_button_S");
+        this.NO_button_S = this.add.image(590, 410, "NO_button_S");
+        this.A_button_S = this.add.image(210, 410, "A_button_S");
+        this.B_button_S = this.add.image(590, 410, "B_button_S");
+
+        this.YES_button.setVisible(true);
+        this.NO_button.setVisible(true);
+        this.YES_button_S.setVisible(false);
+        this.NO_button_S.setVisible(false);
+
+        this.A_button.setVisible(false);
+        this.B_button.setVisible(false);
+        this.A_button_S.setVisible(false);
+        this.B_button_S.setVisible(false);
+        
         this.playerOne = this.add.sprite(96, 96, "playerOne", "./assets/image/sprite/playerone.png");
         this.input.keyboard.on('keydown', this.anyKey, this);
     }

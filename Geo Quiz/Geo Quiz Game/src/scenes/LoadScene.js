@@ -16,22 +16,32 @@ export class LoadScene extends Phaser.Scene{
         this.load.image("p1_button", "./assets/image/p1_button.png");
         this.load.image("p2_button", "./assets/image/p2_button.png");
         this.load.image("title_bg", "./assets/image/title_bg2.png");
-    
+        this.load.image("playsceneBG", "./assets/image/playsceneBG.png")
+
+        this.load.image("A_button", "./assets/image/A_button.png");
+        this.load.image("B_button", "./assets/image/B_button.png");
+        this.load.image("YES_button", "./assets/image/YES_button.png");
+        this.load.image("NO_button", "./assets/image/NO_button.png");
+
+        this.load.image("A_button_S", "./assets/image/A_button_S.png");
+        this.load.image("B_button_S", "./assets/image/B_button_S.png");
+        this.load.image("YES_button_S", "./assets/image/YES_button_S.png");
+        this.load.image("NO_button_S", "./assets/image/NO_button_S.png");
+
         this.load.image("p1_button_S", "./assets/image/p1_button_S.png");
         this.load.image("p2_button_S", "./assets/image/p2_button_S.png");
-
-        this.load.image("green_player","./assets/image/spin.gif");
         ({
             frameWidth: 32,
             frameHeight: 32
         });    
+        
         this.load.audio("title_music", "./assets/audio/game_audio.mp3");
     
         let loadingBar = this.add.graphics
         ({
             fillStyle: 
             {
-                color: 0xffffff
+                color: 0xADFF2F
             }
         })
 

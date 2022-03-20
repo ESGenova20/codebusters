@@ -5,21 +5,17 @@ export class PlayP2Scene extends Phaser.Scene{
         });
     }
     preload(){
-//
-this.load.spritesheet("playerOne","./assets/image/sprite/playerone.png", 
-{
-    frameWidth: 96,
-    frameHeight: 96
-});    
+    this.load.spritesheet("playerOne","./assets/image/sprite/greenP-L.png", 
+    {
+        frameWidth: 96,
+        frameHeight: 96
+    });    
 
-this.load.spritesheet("playerTwo","./assets/image/sprite/blueP-L.png", 
-{
-    frameWidth: 96,
-    frameHeight: 96
-});  
-
-this.load.atlas("playerOne", "./assets/image/sprite/playerone.png", "./assets/image/sprite/playerone_atlas.json");
-//
+    this.load.spritesheet("playerTwo","./assets/image/sprite/blueP-L.png", 
+    {
+        frameWidth: 96,
+        frameHeight: 96
+    });  
     }
     
     create(){
