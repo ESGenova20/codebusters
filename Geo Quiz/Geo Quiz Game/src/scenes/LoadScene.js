@@ -31,6 +31,9 @@ export class LoadScene extends Phaser.Scene{
         this.load.image("p1_button_S", "./assets/image/p1_button_S.png");
         this.load.image("p2_button_S", "./assets/image/p2_button_S.png");
 
+        this.load.image("NextButton", "./assets/image/NextButton.png");
+        this.load.image("NextButton_S", "./assets/image/NextButton_S.png");
+
         this.load.image("Q1", "./assets/image/questions/Q1.png");
         this.load.image("Q2", "./assets/image/questions/Q2.png");
         this.load.image("Q3", "./assets/image/questions/Q3.png");
@@ -59,19 +62,18 @@ export class LoadScene extends Phaser.Scene{
 
     this.load.on("progress", (percent)=>{
         loadingBar.fillRect(0, this.game.renderer.height / 2, this.game.renderer.width * percent, 50);
-        console.log(percent);
     })
 
     var width = this.cameras.main.width;
-var height = this.cameras.main.height;
-var loadingText = this.make.text({
-    x: width / 2,
-    y: height / 2 - 50,
-         text: '✈ Loading...',
-    style: {
-        font: '20px monospace',
-        fill: '#ADFF2F'
-    }
+    var height = this.cameras.main.height;
+    var loadingText = this.make.text({
+        x: width / 2,
+        y: height / 2 - 50,
+            text: '✈ Loading...',
+        style: {
+            font: '20px monospace',
+            fill: '#ADFF2F'
+        }
 });
 loadingText.setOrigin(0.5, 0.5);
 
@@ -79,6 +81,6 @@ loadingText.setOrigin(0.5, 0.5);
     
     create()
     {
-        this.scene.start(CST.SCENES.MENU, "hello from the load scene");
+        this.scene.start(CST.SCENES.MENU);
     }
 }

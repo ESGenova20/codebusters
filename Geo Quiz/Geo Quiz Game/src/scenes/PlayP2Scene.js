@@ -19,7 +19,7 @@ export class PlayP2Scene extends Phaser.Scene{
     }
     
     create(){
-        this.playerOne = this.add.sprite(200, 96, "playerOne", "./assets/image/sprite/playerone.png");
+        this.playerOne = this.add.sprite(200, 96, "playerOne", "./assets/image/sprite/greenP-L.png");
         this.playerTwo = this.add.sprite(500, 96, "playerTwo", "./assets/image/sprite/blueP-L.png");
         this.input.keyboard.on('keydown', this.anyKey, this);
     }
